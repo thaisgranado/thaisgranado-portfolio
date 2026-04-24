@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Evaluation & Data Quality | Thais Granado</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b0b0b;
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav a {
+  margin-left: 18px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.language {
+  margin-top: 12px;
+  text-align: right;
+}
+
+.language button {
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 6px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.language button:hover {
+  color: white;
+  border-color: white;
+}
+
+.container {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+p {
+  color: #ddd;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.card {
+  background: #111;
+  padding: 22px;
+  border: 1px solid #222;
+  margin-top: 22px;
+}
+
+.small {
+  color: #999;
+  font-size: 14px;
+}
+
+.pt {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Thais<br>Granado</div>
+
+  <div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="learning.html">Learning</a>
+      <a href="minutes.html">Minutes</a>
+      <a href="insights.html">Insights</a>
+    </nav>
+
+    <div class="language">
+      <button onclick="showEnglish()">🇬🇧 English</button>
+      <button onclick="showPortuguese()">🇧🇷 Português</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="en">
+
+<h1>AI Evaluation & Data Quality</h1>
+
+<p>
+I approach AI (Artificial Intelligence) evaluation with the same mindset I developed in legal and governance environments: accuracy matters, context matters and decisions need to be justified.
+</p>
+
+<p>
+For me, AI evaluation is not only about knowing concepts. It is about identifying what works, what fails, why it fails and how a response can be improved.
+</p>
+
+<div class="card">
+<h2>Human Evaluation</h2>
+<p>
+Human evaluation is the process of reviewing AI outputs with judgement, context and responsibility.
+</p>
+<p>
+A response can sound fluent and still be wrong, incomplete or not aligned with the task.
+</p>
+<p class="small">
+How I evaluate: I check accuracy, clarity, usefulness, completeness and whether the response follows the instruction.
+</p>
+</div>
+
+<div class="card">
+<h2>Data Quality</h2>
+<p>
+Data quality is essential because AI systems learn from data. If the data is inconsistent, duplicated or incomplete, the output becomes less reliable.
+</p>
+<p>
+Example: if a dataset mixes Brazilian Portuguese and European Portuguese without clear labelling, the model may learn the wrong tone, vocabulary or spelling for the target audience.
+</p>
+<p class="small">
+My judgement: I would flag the inconsistency and recommend standardising the language variant according to the task.
+</p>
+</div>
+
+<div class="card">
+<h2>Language and Localisation</h2>
+<p>
+AI evaluation also requires cultural and linguistic judgement. Portuguese is not the same in every context. Brazilian Portuguese and European Portuguese can differ in vocabulary, tone, spelling, legal expressions and user expectations.
+</p>
+<p>
+Example: if a task asks for Brazilian Portuguese, a response using European Portuguese terms may be understandable, but still not fully aligned with the user’s request.
+</p>
+<p class="small">
+How I evaluate: I check whether the language matches the required variant, audience and context.
+</p>
+</div>
+
+<div class="card">
+<h2>Hallucinations</h2>
+<p>
+AI hallucinations happen when a system produces information that sounds confident but is false, unsupported or impossible to verify.
+</p>
+<p>
+Example: in a legal context, this would be similar to citing a law, case or regulation that does not exist.
+</p>
+<p class="small">
+How I evaluate: I look for factual errors, unsupported claims and information that requires verification.
+</p>
+</div>
+
+<div class="card">
+<h2>Bias and Fairness</h2>
+<p>
+Bias can appear when responses reflect limited, unfair or unbalanced perspectives.
+</p>
+<p>
+Example: if an AI system assumes that only one cultural, social or linguistic perspective is standard, the output may exclude or misrepresent users.
+</p>
+<p class="small">
+How I evaluate: I check assumptions, representation, tone and possible harm.
+</p>
+</div>
+
+<div class="card">
+<h2>Instruction Following</h2>
+<p>
+A strong AI response must follow the user’s instruction. Good writing is not enough if the answer ignores part of the task.
+</p>
+<p>
+Example: if the prompt asks for a short answer in Brazilian Portuguese and the response is long, formal and written in European Portuguese, it fails the instruction.
+</p>
+<p class="small">
+How I evaluate: I compare the response directly with the prompt and check if every requirement was met.
+</p>
+</div>
+
+<div class="card">
+<h2>Response Ranking</h2>
+<p>
+Response ranking means comparing different outputs and deciding which one better meets the task.
+</p>
+<p>
+This requires judgement. The best response is not always the longest one. It is the one that is most accurate, useful and aligned with the user’s need.
+</p>
+<p class="small">
+How I evaluate: I compare relevance, completeness, clarity and instruction-following.
+</p>
+</div>
+
+<div class="card">
+<h2>Why this matters</h2>
+<p>
+Small mistakes in AI outputs can be repeated at scale. This is why structured evaluation, human judgement and data quality are essential.
+</p>
+<p>
+My background in law and governance helps me see AI evaluation as a responsibility, not just a technical task.
+</p>
+</div>
+
+</div>
+
+<div class="pt">
+
+<h1>Avaliação de IA e Qualidade de Dados</h1>
+
+<p>
+Eu abordo a avaliação de IA (Inteligência Artificial) com a mesma mentalidade que desenvolvi em ambientes jurídicos e de governança: precisão importa, contexto importa e decisões precisam ser justificadas.
+</p>
+
+<p>
+Para mim, avaliar IA não é apenas conhecer conceitos. É identificar o que funciona, o que falha, por que falha e como uma resposta pode ser melhorada.
+</p>
+
+<div class="card">
+<h2>Avaliação Humana</h2>
+<p>
+A avaliação humana é o processo de revisar respostas de IA com julgamento, contexto e responsabilidade.
+</p>
+<p>
+Uma resposta pode parecer bem escrita e ainda assim estar errada, incompleta ou desalinhada com a tarefa.
+</p>
+<p class="small">
+Como eu avalio: verifico precisão, clareza, utilidade, completude e aderência às instruções.
+</p>
+</div>
+
+<div class="card">
+<h2>Qualidade de Dados</h2>
+<p>
+A qualidade dos dados é essencial porque sistemas de IA aprendem a partir de dados. Se os dados são inconsistentes, duplicados ou incompletos, o resultado se torna menos confiável.
+</p>
+<p>
+Exemplo: se um conjunto de dados mistura português brasileiro e português europeu sem identificação clara, o modelo pode aprender tom, vocabulário ou ortografia inadequados para o público-alvo.
+</p>
+<p class="small">
+Meu julgamento: eu sinalizaria a inconsistência e recomendaria padronizar a variante linguística de acordo com a tarefa.
+</p>
+</div>
+
+<div class="card">
+<h2>Linguagem e Localização</h2>
+<p>
+Avaliar IA também exige julgamento cultural e linguístico. O português não é igual em todos os contextos. O português brasileiro e o português europeu podem variar em vocabulário, tom, ortografia, expressões jurídicas e expectativas do usuário.
+</p>
+<p>
+Exemplo: se a tarefa pede português brasileiro, uma resposta com termos de português europeu pode até ser compreensível, mas ainda assim não estar totalmente alinhada ao pedido.
+</p>
+<p class="small">
+Como eu avalio: verifico se a linguagem corresponde à variante exigida, ao público e ao contexto.
+</p>
+</div>
+
+<div class="card">
+<h2>Alucinações</h2>
+<p>
+Alucinações em IA acontecem quando o sistema produz informações que parecem confiantes, mas são falsas, sem base ou impossíveis de verificar.
+</p>
+<p>
+Exemplo: em um contexto jurídico, isso seria parecido com citar uma lei, processo ou regulamento que não existe.
+</p>
+<p class="small">
+Como eu avalio: procuro erros factuais, afirmações sem suporte e informações que exigem verificação.
+</p>
+</div>
+
+<div class="card">
+<h2>Viés e Justiça</h2>
+<p>
+O viés pode aparecer quando respostas refletem perspectivas limitadas, injustas ou desequilibradas.
+</p>
+<p>
+Exemplo: se um sistema de IA assume que apenas uma perspectiva cultural, social ou linguística é padrão, a resposta pode excluir ou representar mal alguns usuários.
+</p>
+<p class="small">
+Como eu avalio: verifico suposições, representação, tom e possível impacto.
+</p>
+</div>
+
+<div class="card">
+<h2>Aderência às Instruções</h2>
+<p>
+Uma resposta forte de IA precisa seguir a instrução do usuário. Escrever bem não é suficiente se a resposta ignora parte da tarefa.
+</p>
+<p>
+Exemplo: se o prompt pede uma resposta curta em português brasileiro e a resposta é longa, formal e escrita em português europeu, ela falha na instrução.
+</p>
+<p class="small">
+Como eu avalio: comparo a resposta diretamente com o prompt e verifico se todos os requisitos foram atendidos.
+</p>
+</div>
+
+<div class="card">
+<h2>Ranking de Respostas</h2>
+<p>
+Ranking de respostas significa comparar diferentes outputs e decidir qual atende melhor à tarefa.
+</p>
+<p>
+Isso exige julgamento. A melhor resposta nem sempre é a mais longa. É aquela que é mais precisa, útil e alinhada à necessidade do usuário.
+</p>
+<p class="small">
+Como eu avalio: comparo relevância, completude, clareza e aderência às instruções.
+</p>
+</div>
+
+<div class="card">
+<h2>Por que isso importa</h2>
+<p>
+Pequenos erros em respostas de IA podem ser repetidos em escala. Por isso, avaliação estruturada, julgamento humano e qualidade de dados são essenciais.
+</p>
+<p>
+Minha experiência em Direito e governança me ajuda a enxergar avaliação de IA como responsabilidade, não apenas como tarefa técnica.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function showEnglish() {
+  document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
+}
+
+function showPortuguese() {
+  document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.pt').forEach(el => el.style.display = 'block');
+}
+</script>
+
+</body>
+</html>
