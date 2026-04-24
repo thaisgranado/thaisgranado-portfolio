@@ -14,8 +14,54 @@ body {
   line-height: 1.6;
 }
 
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
+  background-color: #0f0f0f;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+nav a {
+  margin-left: 18px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* LANGUAGE BUTTONS */
+.lang-buttons {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.lang-buttons button {
+  margin-left: 10px;
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  cursor: pointer;
+}
+
+.lang-buttons button:hover {
+  border-color: white;
+}
+
+/* CONTENT */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 60px auto;
   padding: 20px;
 }
@@ -34,6 +80,7 @@ p {
   color: #ddd;
 }
 
+/* BOX */
 .box {
   background: #111;
   padding: 20px;
@@ -41,16 +88,71 @@ p {
   margin-top: 20px;
 }
 
+/* IMAGE */
+.doc-image {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #222;
+}
+
+/* SMALL TEXT */
 .small {
   font-size: 13px;
   color: #888;
+  margin-top: 20px;
 }
+
+/* LANGUAGE CONTROL */
+.pt { display: none; }
+
 </style>
+
+<script>
+function setLanguage(lang) {
+  localStorage.setItem("lang", lang);
+
+  if (lang === "pt") {
+    document.querySelectorAll(".en").forEach(el => el.style.display = "none");
+    document.querySelectorAll(".pt").forEach(el => el.style.display = "block");
+  } else {
+    document.querySelectorAll(".en").forEach(el => el.style.display = "block");
+    document.querySelectorAll(".pt").forEach(el => el.style.display = "none");
+  }
+}
+
+window.onload = function() {
+  const lang = localStorage.getItem("lang") || "en";
+  setLanguage(lang);
+};
+</script>
+
 </head>
 
 <body>
 
+<header>
+  <div class="logo">Thais Granado</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ai-evaluation.html">AI Evaluation & Data Quality</a>
+    <a href="learning.html">Learning</a>
+    <a href="minutes.html">Minutes</a>
+    <a href="insights.html">Insights</a>
+    <a href="how-i-learn.html">How I Build</a>
+  </nav>
+</header>
+
 <div class="container">
+
+<div class="lang-buttons">
+  <button onclick="setLanguage('en')">🇬🇧 English</button>
+  <button onclick="setLanguage('pt')">🇧🇷 Português</button>
+</div>
+
+<!-- ENGLISH -->
+<div class="en">
 
 <h1>Minutes</h1>
 
@@ -64,41 +166,30 @@ My experience in the judicial system taught me that documentation is evidence.
 What is written defines what can be verified, defended and trusted over time.
 </p>
 
-<h2>Example of a structured minute</h2>
+<h2>Example of a structured corporate minute</h2>
+
+<img src="minutes-example.jpg" class="doc-image">
 
 <div class="box">
 
-<p><strong>Company:</strong> Apex Financial Services Ltd</p>
-<p><strong>Meeting:</strong> Board Meeting</p>
-<p><strong>Date:</strong> 12 March 2026</p>
-<p><strong>Location:</strong> London, UK</p>
+<p>
+The example above reflects the structure I use to prepare corporate minutes in professional environments.
+</p>
 
-<br>
+<p>
+This approach is different from legal minutes I produced over 6 years in the judicial system,
+which followed strict procedural and legal standards.
+</p>
 
-<p><strong>Attendees:</strong></p>
-<p>John Smith (Chair)</p>
-<p>Emma Clarke (CFO)</p>
-<p>David Brown (Non-Executive Director)</p>
+<p>
+Each meeting, committee or event requires a different format, depending on its purpose,
+stakeholders and level of formality.
+</p>
 
-<br>
-
-<p><strong>Agenda Item 1 – Financial Performance</strong></p>
-<p>The CFO presented the quarterly financial results.
-Revenue increased by 8 percent compared to the previous quarter.</p>
-
-<p><strong>Decision:</strong> The Board approved the financial report.</p>
-
-<br>
-
-<p><strong>Agenda Item 2 – Risk Review</strong></p>
-<p>The Board reviewed operational risks related to data protection and compliance.</p>
-
-<p><strong>Action:</strong> Compliance team to conduct internal audit within 30 days.</p>
-
-<br>
-
-<p><strong>Closing</strong></p>
-<p>The meeting was closed by the Chair.</p>
+<p>
+However, the core principles remain the same:
+clarity, structure, accountability and accurate documentation.
+</p>
 
 </div>
 
@@ -106,6 +197,57 @@ Revenue increased by 8 percent compared to the previous quarter.</p>
 This is a fictional example created for portfolio purposes.
 It does not represent any real organisation or confidential information.
 </p>
+
+</div>
+
+<!-- PORTUGUESE -->
+<div class="pt">
+
+<h1>Atas</h1>
+
+<p>
+Em ambientes de governança, atas não são apenas anotações.
+Elas são um registro formal de decisões, discussões e responsabilidades.
+</p>
+
+<p>
+Minha experiência no sistema judiciário me ensinou que documentação é evidência.
+O que está escrito define o que pode ser verificado, defendido e confiável ao longo do tempo.
+</p>
+
+<h2>Exemplo de estrutura de ata corporativa</h2>
+
+<img src="minutes-example.jpg" class="doc-image">
+
+<div class="box">
+
+<p>
+O exemplo acima representa a estrutura que utilizo para elaborar atas em ambientes corporativos.
+</p>
+
+<p>
+Essa abordagem é diferente das atas jurídicas que produzi por 6 anos no sistema judiciário,
+que seguem padrões processuais e legais mais rígidos.
+</p>
+
+<p>
+Cada reunião, comitê ou evento exige um formato diferente,
+dependendo do objetivo, dos participantes e do nível de formalidade.
+</p>
+
+<p>
+No entanto, os princípios permanecem os mesmos:
+clareza, organização, responsabilidade e precisão na documentação.
+</p>
+
+</div>
+
+<p class="small">
+Este é um exemplo fictício criado para fins de portfólio.
+Não representa nenhuma organização real ou informação confidencial.
+</p>
+
+</div>
 
 </div>
 
