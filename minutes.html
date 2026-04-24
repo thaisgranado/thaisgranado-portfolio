@@ -21,6 +21,7 @@ header {
   padding: 20px 40px;
   border-bottom: 1px solid #222;
   background-color: #0f0f0f;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -28,8 +29,14 @@ header {
   font-weight: 300;
 }
 
+/* NAV */
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
 nav a {
-  margin-left: 18px;
   color: #aaa;
   text-decoration: none;
   font-size: 14px;
@@ -39,9 +46,9 @@ nav a:hover {
   color: white;
 }
 
-/* LANGUAGE BUTTONS */
+/* LANGUAGE */
 .lang-buttons {
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 .lang-buttons button {
@@ -51,10 +58,6 @@ nav a:hover {
   border: 1px solid #444;
   color: white;
   cursor: pointer;
-}
-
-.lang-buttons button:hover {
-  border-color: white;
 }
 
 /* CONTENT */
@@ -78,6 +81,7 @@ p {
   line-height: 1.6;
 }
 
+/* BOX */
 .box {
   background: #111;
   padding: 20px;
@@ -85,7 +89,8 @@ p {
   margin-top: 20px;
 }
 
-.button-link {
+/* BUTTON */
+.button {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 16px;
@@ -94,7 +99,7 @@ p {
   text-decoration: none;
 }
 
-.button-link:hover {
+.button:hover {
   border-color: white;
 }
 
@@ -104,20 +109,30 @@ p {
   margin-top: 10px;
 }
 
-/* LANGUAGE CONTROL */
+/* LANGUAGE */
 .pt { display: none; }
+
 </style>
 
 <script>
-function showEnglish() {
-  document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
-  document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
 }
 
-function showPortuguese() {
-  document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
-  document.querySelectorAll('.pt').forEach(el => el.style.display = 'block');
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  document.querySelectorAll('.en').forEach(el => {
+    el.style.display = lang === 'en' ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.pt').forEach(el => {
+    el.style.display = lang === 'pt' ? 'block' : 'none';
+  });
 }
+
+window.onload = applyLanguage;
 </script>
 
 </head>
@@ -130,30 +145,28 @@ function showPortuguese() {
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="ai-evaluation.html">AI Evaluation & Data Quality</a>
+    <a href="ai-evaluation.html">AI & Data</a>
     <a href="learning.html">Learning</a>
     <a href="minutes.html">Minutes</a>
     <a href="insights.html">Insights</a>
-    <a href="how-i-learn.html">How I Learn & Build</a>
+    <a href="how-i-learn.html">How I Build</a>
   </nav>
 </header>
 
 <div class="container">
 
 <div class="lang-buttons">
-  <button onclick="showEnglish()">🇬🇧 English</button>
-  <button onclick="showPortuguese()">🇧🇷 Português</button>
+  <button onclick="setLanguage('en')">🇬🇧 English</button>
+  <button onclick="setLanguage('pt')">🇧🇷 Português</button>
 </div>
 
-<!-- ================= ENGLISH ================= -->
-
+<!-- ENGLISH -->
 <div class="en">
 
 <h1>Minutes</h1>
 
 <p>
-In governance environments, minutes are not just notes.
-They are a formal record of decisions, discussions and accountability.
+In governance environments, minutes are formal records of decisions, discussions and accountability.
 </p>
 
 <p>
@@ -161,37 +174,61 @@ My experience in the judicial system taught me that documentation is evidence.
 What is written defines what can be verified, defended and trusted over time.
 </p>
 
-<h2>Example of a structured corporate minute</h2>
+<h2>Full Board Minutes (Formal Record)</h2>
 
 <div class="box">
 
 <p>
-Below is a clean example of a corporate minute structure I use in professional environments.
-This does not reflect real cases due to confidentiality.
+This document represents a complete and structured board minute,
+reflecting formal governance standards and documentation practices.
 </p>
 
-<a href="Corporate_Minutes_UK.pdf" target="_blank" class="button-link">
-View Example (PDF)
+<a href="Corporate_Minutes_UK.pdf" target="_blank" class="button">
+View Full Minutes
 </a>
 
+</div>
+
+<h2>Action & Decision Summary (Executive View)</h2>
+
+<div class="box">
+
+<p>
+This version focuses on decisions and action points,
+providing a concise and operational view for stakeholders.
+</p>
+
+<a href="Action_Summary.pdf" target="_blank" class="button">
+View Summary
+</a>
+
+</div>
+
+<h2>How I structure minutes</h2>
+
+<div class="box">
+<p><strong>1. Identification</strong> — company, meeting type, date, time and location.</p>
+<p><strong>2. Attendees</strong> — participants and roles.</p>
+<p><strong>3. Agenda</strong> — structured discussion topics.</p>
+<p><strong>4. Summary</strong> — objective and clear.</p>
+<p><strong>5. Decisions</strong> — approvals and outcomes.</p>
+<p><strong>6. Actions</strong> — owners and deadlines.</p>
+<p><strong>7. Closing</strong> — formal record of completion.</p>
+</div>
+
 <p class="small">
-This example reflects my approach to corporate minutes.
-Legal hearing records I worked on for over 6 years cannot be shared due to confidentiality.
+All examples are fictional and created for portfolio purposes.
 </p>
 
 </div>
 
-</div>
-
-<!-- ================= PORTUGUESE ================= -->
-
+<!-- PORTUGUESE -->
 <div class="pt">
 
 <h1>Minutas</h1>
 
 <p>
-Em ambientes de governança, minutas não são apenas anotações.
-Elas são um registro formal de decisões, discussões e responsabilidades.
+Em ambientes de governança, minutas são registros formais de decisões, discussões e responsabilidades.
 </p>
 
 <p>
@@ -199,25 +236,51 @@ Minha experiência no sistema judiciário me ensinou que documentação é prova
 O que está escrito define o que pode ser verificado, defendido e confiado ao longo do tempo.
 </p>
 
-<h2>Exemplo de estrutura de minuta corporativa</h2>
+<h2>Minuta Completa (Registro Formal)</h2>
 
 <div class="box">
 
 <p>
-Abaixo está um exemplo de estrutura de minuta corporativa que utilizo em ambientes profissionais.
-Não representa casos reais por questões de confidencialidade.
+Este documento representa uma minuta completa de reunião de conselho,
+seguindo padrões formais de governança.
 </p>
 
-<a href="Corporate_Minutes_UK.pdf" target="_blank" class="button-link">
-Ver exemplo (PDF)
+<a href="Corporate_Minutes_UK.pdf" target="_blank" class="button">
+Ver minuta completa
 </a>
 
-<p class="small">
-Este exemplo reflete minha abordagem para minutas corporativas.
-Minutas de audiências que produzi por mais de 6 anos não podem ser compartilhadas.
+</div>
+
+<h2>Resumo de Ações e Decisões</h2>
+
+<div class="box">
+
+<p>
+Versão executiva com foco em decisões e ações,
+facilitando acompanhamento e execução.
 </p>
 
+<a href="Action_Summary.pdf" target="_blank" class="button">
+Ver resumo
+</a>
+
 </div>
+
+<h2>Como eu estruturo minutas</h2>
+
+<div class="box">
+<p><strong>1. Identificação</strong> — empresa, tipo de reunião, data e local.</p>
+<p><strong>2. Participantes</strong> — lista e funções.</p>
+<p><strong>3. Agenda</strong> — tópicos organizados.</p>
+<p><strong>4. Resumo</strong> — objetivo e claro.</p>
+<p><strong>5. Decisões</strong> — aprovações.</p>
+<p><strong>6. Ações</strong> — responsáveis e prazos.</p>
+<p><strong>7. Encerramento</strong> — formalização final.</p>
+</div>
+
+<p class="small">
+Todos os exemplos são fictícios e criados para portfólio.
+</p>
 
 </div>
 
