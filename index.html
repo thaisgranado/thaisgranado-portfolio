@@ -9,109 +9,106 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #0b0b0b;
+  background: linear-gradient(180deg, #07111f 0%, #0b0b0b 40%);
   color: #ffffff;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  border-bottom: 1px solid #222;
-  background-color: #0f0f0f;
+  padding: 24px 44px;
+  border-bottom: 1px solid #263241;
+  background: rgba(15, 39, 66, 0.6);
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
 }
 
+/* NAV */
 nav {
   display: flex;
-  flex-wrap: wrap;
   gap: 18px;
-  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: #aaa;
+  color: #cbd5e1;
   text-decoration: none;
   font-size: 14px;
 }
 
 nav a:hover {
-  color: white;
+  color: #ffffff;
 }
 
+/* CONTENT */
 .container {
-  max-width: 1000px;
-  margin: 80px auto;
-  padding: 20px;
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 24px;
 }
 
-.lang-buttons {
-  margin-bottom: 30px;
+h1 {
+  font-size: 46px;
+  margin-bottom: 20px;
 }
 
+h2 {
+  margin-top: 40px;
+  color: #e5e7eb;
+}
+
+p {
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+/* BOX */
+.box {
+  background: rgba(17, 24, 39, 0.9);
+  padding: 26px;
+  border: 1px solid #263241;
+  margin-top: 20px;
+}
+
+/* BUTTON */
+.button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 18px;
+  border: 1px solid #1e3a5f;
+  background: #0f2742;
+  color: white;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #1e3a5f;
+}
+
+/* LANGUAGE */
 .lang-buttons button {
   margin-right: 10px;
   padding: 8px 14px;
-  background: transparent;
-  border: 1px solid #444;
+  background: #0f2742;
+  border: 1px solid #1e3a5f;
   color: white;
   cursor: pointer;
 }
 
-.lang-buttons button:hover {
-  border-color: white;
-}
-
-h1 {
-  font-size: 48px;
-  line-height: 1.1;
-  margin-bottom: 28px;
-}
-
-p {
-  color: #ccc;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.quote {
-  margin-top: 40px;
-  padding-left: 22px;
-  border-left: 3px solid white;
-  font-size: 22px;
-  line-height: 1.5;
-  color: white;
+.small {
+  font-size: 13px;
+  color: #94a3b8;
 }
 
 .pt {
   display: none;
-}
-
-@media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  nav {
-    justify-content: flex-start;
-    gap: 14px;
-  }
-
-  h1 {
-    font-size: 42px;
-  }
-
-  .container {
-    margin-top: 60px;
-  }
 }
 </style>
 
