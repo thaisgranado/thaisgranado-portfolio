@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -17,16 +16,18 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 20px 40px;
   border-bottom: 1px solid #222;
 }
 
 .logo {
   font-weight: bold;
+  font-size: 22px;
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 18px;
   color: #aaa;
   text-decoration: none;
   font-size: 14px;
@@ -36,9 +37,28 @@ nav a:hover {
   color: white;
 }
 
+.language {
+  margin-top: 12px;
+  text-align: right;
+}
+
+.language button {
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 6px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.language button:hover {
+  color: white;
+  border-color: white;
+}
+
 .hero {
   padding: 120px 40px;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .hero h1 {
@@ -50,6 +70,7 @@ nav a:hover {
   color: #ccc;
   line-height: 1.6;
   margin-bottom: 15px;
+  font-size: 18px;
 }
 
 .section {
@@ -61,6 +82,10 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
+.section p {
+  color: #ccc;
+}
+
 .footer {
   padding: 20px;
   text-align: center;
@@ -68,27 +93,35 @@ nav a:hover {
   border-top: 1px solid #111;
 }
 
+.pt {
+  display: none;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Thais Granado</div>
+  <div class="logo">Thais<br>Granado</div>
 
- <nav>
-  <a href="about.html">About</a>
-  <a href="ai-topics.html">AI Topics</a>
-  <a href="learning.html">Learning</a>
-  <a href="reflections.html">Reflections</a>
-  <a href="minutes.html">Minutes</a>
-  <a href="projects.html">Projects</a>
-</nav>
+  <div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="ai-topics.html">AI Topics</a>
+      <a href="learning.html">Learning</a>
+      <a href="minutes.html">Minutes</a>
+      <a href="insights.html">Insights</a>
+    </nav>
 
+    <div class="language">
+      <button onclick="showEnglish()">🇬🇧 English</button>
+      <button onclick="showPortuguese()">🇧🇷 Português</button>
+    </div>
+  </div>
 </header>
 
-<section class="hero">
-
+<!-- ENGLISH -->
+<section class="hero en">
   <h1>Corporate Governance · Risk · AI (Artificial Intelligence)</h1>
 
   <p>
@@ -102,24 +135,60 @@ nav a:hover {
   <p>
     This portfolio brings together my professional experience, ongoing learning and reflections on governance, data and intelligent systems.
   </p>
-
 </section>
 
-<section class="section">
+<!-- PORTUGUESE -->
+<section class="hero pt">
+  <h1>Governança Corporativa · Risco · IA (Inteligência Artificial)</h1>
 
+  <p>
+    Eu trabalho em ambientes onde estrutura, documentação e responsabilidade não são opcionais.
+  </p>
+
+  <p>
+    Minha experiência no sistema judiciário brasileiro moldou a forma como eu entendo decisões, registros e responsabilidade institucional.
+  </p>
+
+  <p>
+    Este portfólio reúne minha experiência profissional, aprendizado contínuo e reflexões sobre governança, dados e sistemas inteligentes.
+  </p>
+</section>
+
+<!-- ENGLISH -->
+<section class="section en">
   <h2>What you will find here</h2>
-
   <p>• Professional experience across judicial and corporate environments</p>
-  <p>• Notes on governance, decision-making and accountability</p>
-  <p>• AI (Artificial Intelligence) topics and evaluation thinking</p>
+  <p>• Governance and decision-making reflections</p>
+  <p>• AI (Artificial Intelligence) and data thinking</p>
   <p>• Learning journey and certifications</p>
-  <p>• Practical examples, including structured minutes</p>
+  <p>• Structured minutes and practical examples</p>
+</section>
 
+<!-- PORTUGUESE -->
+<section class="section pt">
+  <h2>O que você encontrará aqui</h2>
+  <p>• Experiência profissional em ambientes judiciais e corporativos</p>
+  <p>• Reflexões sobre governança e tomada de decisão</p>
+  <p>• IA (Inteligência Artificial) e análise de dados</p>
+  <p>• Jornada de aprendizado e certificações</p>
+  <p>• Minutas estruturadas e exemplos práticos</p>
 </section>
 
 <div class="footer">
   © Thais Granado
 </div>
+
+<script>
+function showEnglish() {
+  document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
+}
+
+function showPortuguese() {
+  document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.pt').forEach(el => el.style.display = 'block');
+}
+</script>
 
 </body>
 </html>
