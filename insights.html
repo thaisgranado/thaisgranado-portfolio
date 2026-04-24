@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insights | Thais Granado</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b0b0b;
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav a {
+  margin-left: 18px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.language {
+  margin-top: 12px;
+  text-align: right;
+}
+
+.language button {
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 6px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #ddd;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.card {
+  background: #111;
+  padding: 25px;
+  border: 1px solid #222;
+  margin-top: 25px;
+}
+
+.small {
+  color: #888;
+  font-size: 14px;
+}
+
+.pt {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Thais<br>Granado</div>
+
+  <div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ai-evaluation.html">AI Evaluation & Data Quality</a>
+      <a href="learning.html">Learning</a>
+      <a href="minutes.html">Minutes</a>
+      <a href="insights.html">Insights</a>
+    </nav>
+
+    <div class="language">
+      <button onclick="showEnglish()">🇬🇧 English</button>
+      <button onclick="showPortuguese()">🇧🇷 Português</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="en">
+
+<h1>Insights</h1>
+
+<div class="card">
+
+<p><strong>Reputation is not built in big moments. It is built in small actions.</strong></p>
+
+<p>
+One idea that changed how I see work comes from Reid Hoffman, co-founder of LinkedIn: the concept of reputation capital.
+</p>
+
+<p>
+Reputation is not something abstract. It works like an asset, similar to money in a bank. You build it, you lose it, and every action has an impact.
+</p>
+
+<p>
+Every interaction is either a deposit or a withdrawal.
+</p>
+
+<p>
+You deliver something with quality and before the deadline → deposit.  
+You take responsibility and solve a problem → deposit.  
+You fix something no one noticed → deposit.
+</p>
+
+<p>
+You disappear in a critical moment → withdrawal.  
+You deliver incomplete work without communication → withdrawal.  
+You create friction in a team → withdrawal.
+</p>
+
+<p>
+The most important part is this: reputation does not come from one big event.
+</p>
+
+<p>
+It is built in consistency — in the small daily actions, in how you communicate, how you show up when no one is watching, and how you make decisions.
+</p>
+
+<p>
+Reputation is active, not passive.
+</p>
+
+<p>
+You are building it all the time, through your choices, your behaviour and your standards.
+</p>
+
+<p>
+And most importantly: it is yours.
+</p>
+
+<p>
+Not your company’s. Not your manager’s. Yours.
+</p>
+
+<p class="small">
+This perspective strongly connects with how I see governance, accountability and decision-making in professional environments.
+</p>
+
+</div>
+
+</div>
+
+<div class="pt">
+
+<h1>Insights</h1>
+
+<div class="card">
+
+<p><strong>Reputação não é construída em grandes momentos. Ela é construída nas pequenas ações.</strong></p>
+
+<p>
+Uma ideia que mudou a forma como eu vejo o trabalho vem de Reid Hoffman, cofundador do LinkedIn: o conceito de capital de reputação.
+</p>
+
+<p>
+Reputação não é algo abstrato. Funciona como um ativo, como dinheiro no banco. Você acumula, perde e cada ação tem impacto.
+</p>
+
+<p>
+Cada interação é um depósito ou uma retirada.
+</p>
+
+<p>
+Você entrega com qualidade e antes do prazo → depósito.  
+Você assume um erro e resolve → depósito.  
+Você resolve algo que ninguém percebeu → depósito.
+</p>
+
+<p>
+Você some em um momento crítico → retirada.  
+Você entrega algo incompleto sem avisar → retirada.  
+Você cria atrito no time → retirada.
+</p>
+
+<p>
+O mais importante é: reputação não vem de um grande momento.
+</p>
+
+<p>
+Ela é construída na constância — nas pequenas ações do dia a dia, na forma como você se comunica, como você aparece quando ninguém está olhando e nas decisões que você toma.
+</p>
+
+<p>
+Reputação é ativa, não passiva.
+</p>
+
+<p>
+Você constrói o tempo todo, pelas suas escolhas, comportamento e padrão.
+</p>
+
+<p>
+E o mais importante: ela é sua.
+</p>
+
+<p>
+Não é da empresa. Não é do gestor. É sua.
+</p>
+
+<p class="small">
+Essa visão se conecta diretamente com como eu entendo governança, responsabilidade e tomada de decisão no ambiente profissional.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function showEnglish() {
+  document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
+}
+
+function showPortuguese() {
+  document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.pt').forEach(el => el.style.display = 'block');
+}
+</script>
+
+</body>
+</html>
