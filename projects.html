@@ -49,6 +49,10 @@ nav a:hover {
   padding: 24px;
 }
 
+.lang-buttons {
+  margin-bottom: 30px;
+}
+
 .lang-buttons button {
   margin-right: 10px;
   padding: 8px 14px;
@@ -58,16 +62,35 @@ nav a:hover {
   cursor: pointer;
 }
 
-.box {
-  background: rgba(17, 24, 39, 0.9);
-  padding: 26px;
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.intro {
+  color: #9ca3af;
+  margin-bottom: 40px;
+}
+
+.project {
+  margin-bottom: 60px;
+}
+
+.project img {
+  width: 100%;
+  margin: 18px 0;
   border: 1px solid #263241;
-  margin-top: 22px;
+}
+
+.meta {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 10px;
 }
 
 .button {
   display: inline-block;
-  margin-top: 16px;
+  margin-top: 15px;
   padding: 10px 18px;
   border: 1px solid #1e3a5f;
   background: #0f2742;
@@ -75,15 +98,8 @@ nav a:hover {
   text-decoration: none;
 }
 
-.small {
-  font-size: 13px;
-  color: #94a3b8;
-}
-
-img {
-  width: 100%;
-  margin-top: 15px;
-  border: 1px solid #263241;
+.button:hover {
+  background: #1e3a5f;
 }
 
 .pt { display: none; }
@@ -132,30 +148,33 @@ window.onload = applyLanguage;
 <div class="en">
 
 <h1>Projects</h1>
+<p class="intro">
+Selected work reflecting research, structured thinking and analysis in Artificial Intelligence and labour markets.
+</p>
 
-<div class="box">
-<h3>Artificial Intelligence, Employment and the Future of Skills</h3>
-<p class="small">July 2025 · Research</p>
+<div class="project">
+<h2>Artificial Intelligence, Employment and the Future of Skills</h2>
+<p class="meta">July 2025 · Research Paper</p>
 
 <img src="ai-research.jpg">
 
 <p>
-This research explores the impact of Artificial Intelligence on employment, analysing risks of job displacement and opportunities for new roles.
+This research examines how Artificial Intelligence is transforming employment structures, balancing job displacement risks with the emergence of new roles and skill requirements.
 </p>
 
 <a href="AI_Employment_Research.pdf" target="_blank" class="button">
-View Research
+View Research Paper
 </a>
 </div>
 
-<div class="box">
-<h3>Impact of Artificial Intelligence on the Job Market</h3>
-<p class="small">February 2026 · Presentation</p>
+<div class="project">
+<h2>Impact of Artificial Intelligence on the Job Market</h2>
+<p class="meta">February 2026 · Presentation</p>
 
 <img src="ai-presentation.jpg">
 
 <p>
-This project explores how Artificial Intelligence is reshaping global job markets, combining risks, opportunities and future projections.
+This project analyses global labour market transformation driven by AI, combining historical context, industry insights and future projections.
 </p>
 
 <a href="AI_Labour_Presentation.pdf" target="_blank" class="button">
@@ -169,15 +188,18 @@ View Presentation
 <div class="pt">
 
 <h1>Projetos</h1>
+<p class="intro">
+Projetos selecionados que demonstram pesquisa, pensamento estruturado e análise em Inteligência Artificial e mercado de trabalho.
+</p>
 
-<div class="box">
-<h3>Inteligência Artificial, Emprego e o Futuro das Competências</h3>
-<p class="small">Julho de 2025 · Pesquisa</p>
+<div class="project">
+<h2>Inteligência Artificial, Emprego e o Futuro das Competências</h2>
+<p class="meta">Julho de 2025 · Pesquisa</p>
 
 <img src="ai-research.jpg">
 
 <p>
-Este estudo analisa o impacto da Inteligência Artificial no emprego, explorando riscos e oportunidades.
+Este estudo analisa como a Inteligência Artificial está transformando o mercado de trabalho, equilibrando riscos e oportunidades.
 </p>
 
 <a href="AI_Employment_Research.pdf" target="_blank" class="button">
@@ -185,14 +207,14 @@ Ver pesquisa
 </a>
 </div>
 
-<div class="box">
-<h3>Impacto da Inteligência Artificial no Mercado de Trabalho</h3>
-<p class="small">Fevereiro de 2026 · Apresentação</p>
+<div class="project">
+<h2>Impacto da Inteligência Artificial no Mercado de Trabalho</h2>
+<p class="meta">Fevereiro de 2026 · Apresentação</p>
 
 <img src="ai-presentation.jpg">
 
 <p>
-Este projeto mostra como a IA está transformando o mercado de trabalho global.
+Este projeto explora a transformação global do trabalho impulsionada pela IA.
 </p>
 
 <a href="AI_Labour_Presentation.pdf" target="_blank" class="button">
