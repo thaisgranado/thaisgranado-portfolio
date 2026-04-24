@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 40px;
+  padding: 20px 40px;
   border-bottom: 1px solid #222;
   background-color: #0f0f0f;
 }
@@ -26,14 +26,13 @@ header {
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 1px;
-  white-space: nowrap;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
   gap: 18px;
+  justify-content: flex-end;
 }
 
 nav a {
@@ -46,82 +45,52 @@ nav a:hover {
   color: white;
 }
 
-.hero {
+.container {
   max-width: 1000px;
-  margin: 90px auto 60px;
+  margin: 80px auto;
   padding: 20px;
 }
 
-.label {
-  color: #999;
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 25px;
+.lang-buttons {
+  margin-bottom: 30px;
+}
+
+.lang-buttons button {
+  margin-right: 10px;
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  cursor: pointer;
+}
+
+.lang-buttons button:hover {
+  border-color: white;
 }
 
 h1 {
-  font-size: 58px;
-  line-height: 1.05;
-  margin: 0 0 30px;
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 28px;
 }
 
 p {
-  color: #d5d5d5;
-  font-size: 19px;
-  line-height: 1.7;
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .quote {
-  margin-top: 45px;
+  margin-top: 40px;
   padding-left: 22px;
   border-left: 3px solid white;
-  color: #ffffff;
   font-size: 22px;
   line-height: 1.5;
-}
-
-.cards {
-  max-width: 1000px;
-  margin: 40px auto 80px;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: #111;
-  border: 1px solid #222;
-  padding: 26px;
-}
-
-.card h2 {
-  font-size: 24px;
-  margin-top: 0;
-}
-
-.card p {
-  font-size: 16px;
-  color: #bbb;
-}
-
-.card a {
   color: white;
-  text-decoration: none;
-  font-size: 15px;
 }
 
-.cta {
-  max-width: 1000px;
-  margin: 0 auto 80px;
-  padding: 20px;
-}
-
-.cta-box {
-  background: #111;
-  border: 1px solid #222;
-  padding: 32px;
+.pt {
+  display: none;
 }
 
 @media (max-width: 700px) {
@@ -137,14 +106,35 @@ p {
   }
 
   h1 {
-    font-size: 44px;
+    font-size: 42px;
   }
 
-  .hero {
+  .container {
     margin-top: 60px;
   }
 }
 </style>
+
+<script>
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
+}
+
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  document.querySelectorAll('.en').forEach(el => {
+    el.style.display = (lang === 'en') ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.pt').forEach(el => {
+    el.style.display = (lang === 'pt') ? 'block' : 'none';
+  });
+}
+
+window.onload = applyLanguage;
+</script>
 </head>
 
 <body>
@@ -163,82 +153,58 @@ p {
   </nav>
 </header>
 
-<section class="hero">
+<div class="container">
 
-  <div class="label">Governance | Risk | Data Quality | AI Evaluation</div>
-
-  <h1>From Law to governance, data quality and human judgement.</h1>
-
-  <p>
-    My professional background is rooted in Law and the Brazilian judicial system.
-    Today, I apply the same principles of documentation, integrity and critical thinking
-    to governance, risk, data quality and AI evaluation in corporate environments.
-  </p>
-
-  <p>
-    This portfolio brings together my professional experience, structured learning,
-    practical examples and reflections on documentation, accountability and trust.
-  </p>
-
-  <div class="quote">
-    What is not properly documented and understood cannot be trusted.
+  <div class="lang-buttons">
+    <button onclick="setLanguage('en')">🇬🇧 English</button>
+    <button onclick="setLanguage('pt')">🇧🇷 Português</button>
   </div>
 
-</section>
+  <div class="en">
+    <h1>Governance · Risk · Data Quality · AI Evaluation</h1>
 
-<section class="cards">
-
-  <div class="card">
-    <h2>About</h2>
-    <p>My professional background, from Law in Brazil to corporate environments in the UK.</p>
-    <a href="about.html">View details →</a>
-  </div>
-
-  <div class="card">
-    <h2>AI & Data</h2>
-    <p>Practical notes on AI evaluation, hallucinations, bias, data quality and response ranking.</p>
-    <a href="ai-evaluation.html">View details →</a>
-  </div>
-
-  <div class="card">
-    <h2>Learning</h2>
-    <p>My learning journey in governance, data protection, AI, risk and professional development.</p>
-    <a href="learning.html">View details →</a>
-  </div>
-
-  <div class="card">
-    <h2>Insights</h2>
-    <p>Reflections on reputation, judgement, communication, mistakes and professional behaviour.</p>
-    <a href="insights.html">View details →</a>
-  </div>
-
-  <div class="card">
-    <h2>Minutes</h2>
-    <p>A structured example of professional minutes and governance documentation.</p>
-    <a href="minutes.html">View details →</a>
-  </div>
-
-  <div class="card">
-    <h2>How I Build</h2>
-    <p>A visual record of how I study, read, practise technical skills and build my thinking.</p>
-    <a href="how-i-learn.html">View details →</a>
-  </div>
-
-</section>
-
-<section class="cta">
-  <div class="cta-box">
-    <h2>Open to opportunities</h2>
     <p>
-      I am open to opportunities in governance, risk, compliance, executive support,
-      data quality and AI evaluation roles in the UK.
+      I operate in environments where structure, documentation and accountability are essential.
     </p>
+
     <p>
-      This portfolio reflects how I think, learn and work: with structure, accountability
-      and attention to detail.
+      My background in the Brazilian judicial system shaped how I understand decisions,
+      records and institutional responsibility.
     </p>
+
+    <p>
+      This portfolio brings together my professional experience, ongoing learning and reflections
+      on governance, risk, data quality and AI evaluation.
+    </p>
+
+    <div class="quote">
+      What is not properly documented and understood cannot be trusted.
+    </div>
   </div>
-</section>
+
+  <div class="pt">
+    <h1>Governança · Risco · Qualidade de Dados · Avaliação de IA</h1>
+
+    <p>
+      Eu atuo em ambientes onde estrutura, documentação e responsabilidade são essenciais.
+    </p>
+
+    <p>
+      Minha experiência no sistema judiciário brasileiro moldou a forma como eu entendo decisões,
+      registros e responsabilidade institucional.
+    </p>
+
+    <p>
+      Este portfólio reúne minha experiência profissional, aprendizado contínuo e reflexões
+      sobre governança, risco, qualidade de dados e avaliação de IA.
+    </p>
+
+    <div class="quote">
+      O que não está devidamente documentado e compreendido não pode ser confiável.
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>
