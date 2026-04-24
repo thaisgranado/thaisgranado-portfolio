@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Thais Granado | Portfolio</title>
+<title>Thais Granado | Governance, Risk & AI Evaluation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -16,18 +16,27 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 40px;
+  align-items: center;
+  padding: 22px 40px;
   border-bottom: 1px solid #222;
+  background-color: #0f0f0f;
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 18px;
 }
 
 nav a {
-  margin-left: 18px;
   color: #aaa;
   text-decoration: none;
   font-size: 14px;
@@ -37,64 +46,103 @@ nav a:hover {
   color: white;
 }
 
-.language {
-  margin-top: 12px;
-  text-align: right;
-}
-
-.language button {
-  background: transparent;
-  color: #ccc;
-  border: 1px solid #444;
-  padding: 6px 10px;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-.language button:hover {
-  color: white;
-  border-color: white;
-}
-
 .hero {
-  padding: 120px 40px;
-  max-width: 850px;
-}
-
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  color: #ccc;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.section {
-  padding: 60px 40px;
-  border-top: 1px solid #111;
-}
-
-.section h2 {
-  margin-bottom: 20px;
-}
-
-.section p {
-  color: #ccc;
-}
-
-.footer {
+  max-width: 1000px;
+  margin: 90px auto 60px;
   padding: 20px;
-  text-align: center;
-  color: #666;
-  border-top: 1px solid #111;
 }
 
-.pt {
-  display: none;
+.label {
+  color: #999;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 58px;
+  line-height: 1.05;
+  margin: 0 0 30px;
+}
+
+p {
+  color: #d5d5d5;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.quote {
+  margin-top: 45px;
+  padding-left: 22px;
+  border-left: 3px solid white;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.cards {
+  max-width: 1000px;
+  margin: 40px auto 80px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 26px;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.card p {
+  font-size: 16px;
+  color: #bbb;
+}
+
+.card a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.cta {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 20px;
+}
+
+.cta-box {
+  background: #111;
+  border: 1px solid #222;
+  padding: 32px;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  nav {
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  .hero {
+    margin-top: 60px;
+  }
 }
 </style>
 </head>
@@ -102,94 +150,95 @@ nav a:hover {
 <body>
 
 <header>
-  <div class="logo">Thais<br>Granado</div>
+  <div class="logo">Thais Granado</div>
 
-  <div>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="ai-evaluation.html">AI Evaluation & Data Quality</a>
-      <a href="learning.html">Learning</a>
-      <a href="minutes.html">Minutes</a>
-      <a href="insights.html">Insights</a>
-      <a href="how-i-learn.html">How I Learn & Build</a>
-    </nav>
-
-    <div class="language">
-      <button onclick="showEnglish()">🇬🇧 English</button>
-      <button onclick="showPortuguese()">🇧🇷 Português</button>
-    </div>
-  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ai-evaluation.html">AI & Data</a>
+    <a href="learning.html">Learning</a>
+    <a href="insights.html">Insights</a>
+    <a href="minutes.html">Minutes</a>
+    <a href="how-i-learn.html">How I Build</a>
+  </nav>
 </header>
 
-<!-- ENGLISH -->
-<section class="hero en">
-  <h1>Corporate Governance · Risk · AI (Artificial Intelligence)</h1>
+<section class="hero">
+
+  <div class="label">Governance | Risk | Data Quality | AI Evaluation</div>
+
+  <h1>From Law to governance, data quality and human judgement.</h1>
 
   <p>
-    I work in environments where structure, documentation and accountability are not optional.
+    My professional background is rooted in Law and the Brazilian judicial system.
+    Today, I apply the same principles of documentation, integrity and critical thinking
+    to governance, risk, data quality and AI evaluation in corporate environments.
   </p>
 
   <p>
-    My background in the Brazilian judicial system shaped how I understand decisions, records and institutional responsibility.
+    This portfolio brings together my professional experience, structured learning,
+    practical examples and reflections on documentation, accountability and trust.
   </p>
 
-  <p>
-    This portfolio brings together my professional experience, ongoing learning and reflections on governance, data and intelligent systems.
-  </p>
+  <div class="quote">
+    What is not properly documented and understood cannot be trusted.
+  </div>
+
 </section>
 
-<!-- PORTUGUESE -->
-<section class="hero pt">
-  <h1>Governança Corporativa · Risco · IA (Inteligência Artificial)</h1>
+<section class="cards">
 
-  <p>
-    Eu trabalho em ambientes onde estrutura, documentação e responsabilidade não são opcionais.
-  </p>
+  <div class="card">
+    <h2>About</h2>
+    <p>My professional background, from Law in Brazil to corporate environments in the UK.</p>
+    <a href="about.html">View details →</a>
+  </div>
 
-  <p>
-    Minha experiência no sistema judiciário brasileiro moldou a forma como eu entendo decisões, registros e responsabilidade institucional.
-  </p>
+  <div class="card">
+    <h2>AI & Data</h2>
+    <p>Practical notes on AI evaluation, hallucinations, bias, data quality and response ranking.</p>
+    <a href="ai-evaluation.html">View details →</a>
+  </div>
 
-  <p>
-    Este portfólio reúne minha experiência profissional, aprendizado contínuo e reflexões sobre governança, dados e sistemas inteligentes.
-  </p>
+  <div class="card">
+    <h2>Learning</h2>
+    <p>My learning journey in governance, data protection, AI, risk and professional development.</p>
+    <a href="learning.html">View details →</a>
+  </div>
+
+  <div class="card">
+    <h2>Insights</h2>
+    <p>Reflections on reputation, judgement, communication, mistakes and professional behaviour.</p>
+    <a href="insights.html">View details →</a>
+  </div>
+
+  <div class="card">
+    <h2>Minutes</h2>
+    <p>A structured example of professional minutes and governance documentation.</p>
+    <a href="minutes.html">View details →</a>
+  </div>
+
+  <div class="card">
+    <h2>How I Build</h2>
+    <p>A visual record of how I study, read, practise technical skills and build my thinking.</p>
+    <a href="how-i-learn.html">View details →</a>
+  </div>
+
 </section>
 
-<!-- ENGLISH -->
-<section class="section en">
-  <h2>What you will find here</h2>
-  <p>• Professional experience across judicial and corporate environments</p>
-  <p>• Governance and decision-making reflections</p>
-  <p>• AI (Artificial Intelligence) and data thinking</p>
-  <p>• Learning journey and certifications</p>
-  <p>• Structured minutes and practical examples</p>
+<section class="cta">
+  <div class="cta-box">
+    <h2>Open to opportunities</h2>
+    <p>
+      I am open to opportunities in governance, risk, compliance, executive support,
+      data quality and AI evaluation roles in the UK.
+    </p>
+    <p>
+      This portfolio reflects how I think, learn and work: with structure, accountability
+      and attention to detail.
+    </p>
+  </div>
 </section>
-
-<!-- PORTUGUESE -->
-<section class="section pt">
-  <h2>O que você encontrará aqui</h2>
-  <p>• Experiência profissional em ambientes judiciais e corporativos</p>
-  <p>• Reflexões sobre governança e tomada de decisão</p>
-  <p>• IA (Inteligência Artificial) e análise de dados</p>
-  <p>• Jornada de aprendizado e certificações</p>
-  <p>• Minutas estruturadas e exemplos práticos</p>
-</section>
-
-<div class="footer">
-  © Thais Granado
-</div>
-
-<script>
-function showEnglish() {
-  document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
-  document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
-}
-
-function showPortuguese() {
-  document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
-  document.querySelectorAll('.pt').forEach(el => el.style.display = 'block');
-}
-</script>
 
 </body>
 </html>
