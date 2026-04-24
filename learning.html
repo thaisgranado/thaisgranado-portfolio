@@ -4,150 +4,110 @@
 <meta charset="UTF-8">
 <title>Learning | Thais Granado</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0b0b0b;
-  color: #ffffff;
-}
-
-.container {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  margin-top: 40px;
-  color: #ccc;
-}
-
-p {
-  color: #ddd;
-  line-height: 1.6;
-}
-
-.card {
-  background: #111;
-  padding: 20px;
-  border: 1px solid #222;
-  margin-top: 20px;
-}
-
-img {
-  width: 100%;
-  margin-top: 20px;
-  border: 1px solid #222;
-}
-
-.small {
-  font-size: 13px;
-  color: #888;
-}
+body{margin:0;font-family:Arial,sans-serif;background:#0b0b0b;color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #222;background:#0f0f0f;flex-wrap:wrap}
+.logo{font-size:18px;font-weight:300}
+nav{display:flex;flex-wrap:wrap;gap:18px}
+nav a{color:#aaa;text-decoration:none;font-size:14px}
+nav a:hover{color:white}
+.container{max-width:900px;margin:60px auto;padding:20px}
+.lang-buttons{margin-bottom:30px}
+.lang-buttons button{margin-right:10px;padding:8px 14px;background:transparent;border:1px solid #444;color:white;cursor:pointer}
+h1{font-size:40px}
+h2{margin-top:40px;color:#ccc}
+p{color:#ddd;line-height:1.6;font-size:18px}
+.card{background:#111;padding:20px;border:1px solid #222;margin-top:20px}
+img{width:100%;margin-top:20px;border:1px solid #222}
+.small{font-size:13px;color:#888}
+.pt{display:none}
 </style>
+<script>
+function setLanguage(lang){localStorage.setItem('lang',lang);applyLanguage();}
+function applyLanguage(){const lang=localStorage.getItem('lang')||'en';document.querySelectorAll('.en').forEach(el=>el.style.display=lang==='en'?'block':'none');document.querySelectorAll('.pt').forEach(el=>el.style.display=lang==='pt'?'block':'none');}
+window.onload=applyLanguage;
+</script>
 </head>
-
 <body>
+
+<header>
+<div class="logo">Thais Granado</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="ai-evaluation.html">AI & Data</a>
+<a href="learning.html">Learning</a>
+<a href="insights.html">Insights</a>
+<a href="minutes.html">Minutes</a>
+<a href="how-i-learn.html">How I Build</a>
+</nav>
+</header>
 
 <div class="container">
 
+<div class="lang-buttons">
+<button onclick="setLanguage('en')">🇬🇧 English</button>
+<button onclick="setLanguage('pt')">🇧🇷 Português</button>
+</div>
+
+<div class="en">
 <h1>Learning</h1>
 
-<p>
-For me, learning has never been about collecting certificates.
-It is about building clarity, improving how I think and how I make decisions.
-</p>
+<p>For me, learning has never been about collecting certificates. It is about building clarity, improving how I think and how I make decisions.</p>
 
-<p>
-As someone building a career in a new country, I take learning seriously.
-I want to understand the environment I am part of, the standards, the expectations and how things work in practice.
-</p>
+<p>As someone building a career in a new country, I take learning seriously. I want to understand the environment I am part of, the standards, the expectations and how things work in practice.</p>
 
-<p>
-Each course represents more than completion.
-It represents a shift in perspective, a new layer of understanding and a step towards being fully prepared to operate in complex and regulated environments.
-</p>
+<p>Each course represents more than completion. It represents a shift in perspective, a new layer of understanding and a step towards being fully prepared to operate in complex and regulated environments.</p>
 
 <h2>My learning environment</h2>
-
-<p>
-This is a visual representation of consistency.
-Behind each certificate, there is time, discipline and reflection.
-</p>
-
+<p>This is a visual representation of consistency. Behind each certificate, there is time, discipline and reflection.</p>
 <img src="Certificates.jpg" alt="Certificates wall">
-
-<p class="small">
-This is my personal learning space. Each certificate represents a stage of development, not an end point.
-</p>
+<p class="small">This is my personal learning space. Each certificate represents a stage of development, not an end point.</p>
 
 <h2>Selected Learning</h2>
 
-<div class="card">
-<h3>Law Degree (LL.B.) – Brazil</h3>
-<p>
-This is where I built my foundation. Law taught me structure, responsibility and the real impact of decisions on people's lives.
-</p>
-</div>
-
-<div class="card">
-<h3>Business Administration – UK</h3>
-<p>
-Expanded my perspective into organisational environments, operations and how decisions are implemented beyond theory.
-</p>
-</div>
-
-<div class="card">
-<h3>Corporate Governance Essentials</h3>
-<p>
-Reinforced my understanding that governance is not abstract. It is about accountability, documentation and trust.
-</p>
-</div>
-
-<div class="card">
-<h3>Data Protection and Privacy</h3>
-<p>
-Strengthened my view that data is directly linked to people, rights and risk. Privacy is a governance responsibility.
-</p>
-</div>
-
-<div class="card">
-<h3>UK Financial Regulations</h3>
-<p>
-Developed understanding of regulated environments, compliance structures and financial systems in the UK.
-</p>
-</div>
-
-<div class="card">
-<h3>AI and Data</h3>
-<p>
-Focused on how data quality, bias and decision-making affect AI systems and real-world outcomes.
-</p>
-</div>
+<div class="card"><h3>Law Degree (LL.B.) – Brazil</h3><p>This is where I built my foundation. Law taught me structure, responsibility and the real impact of decisions on people's lives.</p></div>
+<div class="card"><h3>Business Administration – UK</h3><p>Expanded my perspective into organisational environments, operations and how decisions are implemented beyond theory.</p></div>
+<div class="card"><h3>Corporate Governance Essentials</h3><p>Reinforced my understanding that governance is not abstract. It is about accountability, documentation and trust.</p></div>
+<div class="card"><h3>Data Protection and Privacy</h3><p>Strengthened my view that data is directly linked to people, rights and risk. Privacy is a governance responsibility.</p></div>
+<div class="card"><h3>UK Financial Regulations</h3><p>Developed understanding of regulated environments, compliance structures and financial systems in the UK.</p></div>
+<div class="card"><h3>AI and Data</h3><p>Focused on how data quality, bias and decision-making affect AI systems and real-world outcomes.</p></div>
 
 <h2>Reflection</h2>
-
-<p>
-I do not see learning as accumulation.
-I see it as preparation.
-</p>
-
-<p>
-The more I understand, the more confident I become in how I think, how I work and how I contribute.
-</p>
-
-<p>
-For me, this is not about certificates.
-It is about building the level of clarity and responsibility required to operate in environments where decisions matter.
-</p>
-
+<p>I do not see learning as accumulation. I see it as preparation.</p>
+<p>The more I understand, the more confident I become in how I think, how I work and how I contribute.</p>
+<p>For me, this is not about certificates. It is about building the level of clarity and responsibility required to operate in environments where decisions matter.</p>
 </div>
 
+<div class="pt">
+<h1>Aprendizado</h1>
+
+<p>Para mim, aprender nunca foi sobre acumular certificados. É sobre construir clareza, melhorar a forma como eu penso e como tomo decisões.</p>
+
+<p>Como alguém construindo carreira em um novo país, eu levo o aprendizado a sério. Quero entender o ambiente do qual faço parte, os padrões, as expectativas e como as coisas funcionam na prática.</p>
+
+<p>Cada curso representa mais do que uma conclusão. Representa uma mudança de perspectiva, uma nova camada de entendimento e um passo para atuar com mais preparo em ambientes complexos e regulados.</p>
+
+<h2>Meu ambiente de aprendizado</h2>
+<p>Esta é uma representação visual de consistência. Por trás de cada certificado, existe tempo, disciplina e reflexão.</p>
+<img src="Certificates.jpg" alt="Parede de certificados">
+<p class="small">Este é meu espaço pessoal de aprendizado. Cada certificado representa uma etapa de desenvolvimento, não um ponto final.</p>
+
+<h2>Aprendizados selecionados</h2>
+
+<div class="card"><h3>Direito (LL.B.) – Brasil</h3><p>Foi aqui que construí minha base. O Direito me ensinou estrutura, responsabilidade e o impacto real das decisões na vida das pessoas.</p></div>
+<div class="card"><h3>Administração de Empresas – Reino Unido</h3><p>Ampliou minha visão sobre ambientes organizacionais, operações e como decisões são aplicadas além da teoria.</p></div>
+<div class="card"><h3>Corporate Governance Essentials</h3><p>Reforçou minha compreensão de que governança não é algo abstrato. É sobre responsabilidade, documentação e confiança.</p></div>
+<div class="card"><h3>Proteção de Dados e Privacidade</h3><p>Fortaleceu minha visão de que dados estão diretamente ligados a pessoas, direitos e risco. Privacidade é uma responsabilidade de governança.</p></div>
+<div class="card"><h3>Regulação Financeira no Reino Unido</h3><p>Desenvolvi entendimento sobre ambientes regulados, estruturas de compliance e sistemas financeiros no Reino Unido.</p></div>
+<div class="card"><h3>IA e Dados</h3><p>Foco em como qualidade de dados, vieses e tomada de decisão afetam sistemas de IA e resultados reais.</p></div>
+
+<h2>Reflexão</h2>
+<p>Eu não vejo aprendizado como acúmulo. Eu vejo como preparação.</p>
+<p>Quanto mais eu entendo, mais confiança desenvolvo na forma como penso, trabalho e contribuo.</p>
+<p>Para mim, não se trata de certificados. Trata-se de construir o nível de clareza e responsabilidade necessário para atuar em ambientes onde decisões importam.</p>
+</div>
+
+</div>
 </body>
 </html>
