@@ -11,7 +11,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #0b0b0b;
   color: #ffffff;
-  line-height: 1.6;
 }
 
 /* HEADER */
@@ -42,12 +41,11 @@ nav a:hover {
 
 /* LANGUAGE BUTTONS */
 .lang-buttons {
-  text-align: right;
-  margin-top: 20px;
+  margin: 30px 0;
 }
 
 .lang-buttons button {
-  margin-left: 10px;
+  margin-right: 10px;
   padding: 8px 14px;
   background: transparent;
   border: 1px solid #444;
@@ -67,8 +65,7 @@ nav a:hover {
 }
 
 h1 {
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 42px;
 }
 
 h2 {
@@ -78,9 +75,9 @@ h2 {
 
 p {
   color: #ddd;
+  line-height: 1.6;
 }
 
-/* BOX */
 .box {
   background: #111;
   padding: 20px;
@@ -88,42 +85,39 @@ p {
   margin-top: 20px;
 }
 
-/* IMAGE */
-.doc-image {
-  width: 100%;
-  margin-top: 20px;
-  border: 1px solid #222;
+.button-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: 1px solid #444;
+  color: white;
+  text-decoration: none;
 }
 
-/* SMALL TEXT */
+.button-link:hover {
+  border-color: white;
+}
+
 .small {
   font-size: 13px;
   color: #888;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* LANGUAGE CONTROL */
 .pt { display: none; }
-
 </style>
 
 <script>
-function setLanguage(lang) {
-  localStorage.setItem("lang", lang);
-
-  if (lang === "pt") {
-    document.querySelectorAll(".en").forEach(el => el.style.display = "none");
-    document.querySelectorAll(".pt").forEach(el => el.style.display = "block");
-  } else {
-    document.querySelectorAll(".en").forEach(el => el.style.display = "block");
-    document.querySelectorAll(".pt").forEach(el => el.style.display = "none");
-  }
+function showEnglish() {
+  document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
 }
 
-window.onload = function() {
-  const lang = localStorage.getItem("lang") || "en";
-  setLanguage(lang);
-};
+function showPortuguese() {
+  document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.pt').forEach(el => el.style.display = 'block');
+}
 </script>
 
 </head>
@@ -140,18 +134,19 @@ window.onload = function() {
     <a href="learning.html">Learning</a>
     <a href="minutes.html">Minutes</a>
     <a href="insights.html">Insights</a>
-    <a href="how-i-learn.html">How I Build</a>
+    <a href="how-i-learn.html">How I Learn & Build</a>
   </nav>
 </header>
 
 <div class="container">
 
 <div class="lang-buttons">
-  <button onclick="setLanguage('en')">🇬🇧 English</button>
-  <button onclick="setLanguage('pt')">🇧🇷 Português</button>
+  <button onclick="showEnglish()">🇬🇧 English</button>
+  <button onclick="showPortuguese()">🇧🇷 Português</button>
 </div>
 
-<!-- ENGLISH -->
+<!-- ================= ENGLISH ================= -->
+
 <div class="en">
 
 <h1>Minutes</h1>
@@ -168,84 +163,61 @@ What is written defines what can be verified, defended and trusted over time.
 
 <h2>Example of a structured corporate minute</h2>
 
-<img src="minutes-example.jpg" class="doc-image">
-
 <div class="box">
 
 <p>
-The example above reflects the structure I use to prepare corporate minutes in professional environments.
+Below is a clean example of a corporate minute structure I use in professional environments.
+This does not reflect real cases due to confidentiality.
 </p>
 
-<p>
-This approach is different from legal minutes I produced over 6 years in the judicial system,
-which followed strict procedural and legal standards.
-</p>
-
-<p>
-Each meeting, committee or event requires a different format, depending on its purpose,
-stakeholders and level of formality.
-</p>
-
-<p>
-However, the core principles remain the same:
-clarity, structure, accountability and accurate documentation.
-</p>
-
-</div>
+<a href="Corporate_Minutes_UK.pdf" target="_blank" class="button-link">
+View Example (PDF)
+</a>
 
 <p class="small">
-This is a fictional example created for portfolio purposes.
-It does not represent any real organisation or confidential information.
+This example reflects my approach to corporate minutes.
+Legal hearing records I worked on for over 6 years cannot be shared due to confidentiality.
 </p>
 
 </div>
 
-<!-- PORTUGUESE -->
+</div>
+
+<!-- ================= PORTUGUESE ================= -->
+
 <div class="pt">
 
-<h1>Atas</h1>
+<h1>Minutas</h1>
 
 <p>
-Em ambientes de governança, atas não são apenas anotações.
+Em ambientes de governança, minutas não são apenas anotações.
 Elas são um registro formal de decisões, discussões e responsabilidades.
 </p>
 
 <p>
-Minha experiência no sistema judiciário me ensinou que documentação é evidência.
-O que está escrito define o que pode ser verificado, defendido e confiável ao longo do tempo.
+Minha experiência no sistema judiciário me ensinou que documentação é prova.
+O que está escrito define o que pode ser verificado, defendido e confiado ao longo do tempo.
 </p>
 
-<h2>Exemplo de estrutura de ata corporativa</h2>
-
-<img src="minutes-example.jpg" class="doc-image">
+<h2>Exemplo de estrutura de minuta corporativa</h2>
 
 <div class="box">
 
 <p>
-O exemplo acima representa a estrutura que utilizo para elaborar atas em ambientes corporativos.
+Abaixo está um exemplo de estrutura de minuta corporativa que utilizo em ambientes profissionais.
+Não representa casos reais por questões de confidencialidade.
 </p>
 
-<p>
-Essa abordagem é diferente das atas jurídicas que produzi por 6 anos no sistema judiciário,
-que seguem padrões processuais e legais mais rígidos.
-</p>
+<a href="Corporate_Minutes_UK.pdf" target="_blank" class="button-link">
+Ver exemplo (PDF)
+</a>
 
-<p>
-Cada reunião, comitê ou evento exige um formato diferente,
-dependendo do objetivo, dos participantes e do nível de formalidade.
-</p>
-
-<p>
-No entanto, os princípios permanecem os mesmos:
-clareza, organização, responsabilidade e precisão na documentação.
+<p class="small">
+Este exemplo reflete minha abordagem para minutas corporativas.
+Minutas de audiências que produzi por mais de 6 anos não podem ser compartilhadas.
 </p>
 
 </div>
-
-<p class="small">
-Este é um exemplo fictício criado para fins de portfólio.
-Não representa nenhuma organização real ou informação confidencial.
-</p>
 
 </div>
 
