@@ -19,10 +19,7 @@ header {
   border-bottom: 1px solid #1f2f45;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: 600;
-}
+.logo { font-size: 22px; font-weight: 600; }
 
 nav {
   margin-top: 10px;
@@ -37,9 +34,7 @@ nav a {
   font-size: 14px;
 }
 
-nav a:hover {
-  color: white;
-}
+nav a:hover { color: white; }
 
 .container {
   max-width: 900px;
@@ -47,69 +42,43 @@ nav a:hover {
   padding: 20px;
 }
 
-h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 30px;
-  margin-top: 35px;
-}
-
-h3 {
-  font-size: 20px;
-  margin-top: 24px;
-  margin-bottom: 8px;
-  color: #ffffff;
-}
+h1 { font-size: 48px; }
+h2 { font-size: 28px; margin-top: 30px; }
+h3 { font-size: 18px; margin-top: 15px; }
 
 .subtitle {
   color: #aab4c3;
   margin-bottom: 40px;
-  font-size: 18px;
 }
 
-.project, .work-box {
-  margin-bottom: 70px;
-  padding: 24px;
+.project, .box {
+  margin-bottom: 60px;
+  padding: 25px;
   border: 1px solid #1f2f45;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255,255,255,0.03);
 }
 
-.date {
-  color: #8fa3bf;
-  margin: 10px 0 20px;
-}
+.date { color: #8fa3bf; }
 
 p {
   line-height: 1.6;
   color: #d6dce5;
-  font-size: 16px;
 }
 
-ul {
-  color: #d6dce5;
-  line-height: 1.8;
-  padding-left: 22px;
-}
+ul { padding-left: 20px; }
 
 .button {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
+  margin-top: 15px;
+  padding: 10px 18px;
   background-color: #112b4a;
   border: 1px solid #2e4c73;
   color: white;
   text-decoration: none;
 }
 
-.button:hover {
-  background-color: #1a3d66;
-}
-
 .lang-buttons {
-  margin: 20px 0 35px;
+  margin-bottom: 30px;
 }
 
 .lang-buttons button {
@@ -121,9 +90,7 @@ ul {
   cursor: pointer;
 }
 
-.pt {
-  display: none;
-}
+.pt { display: none; }
 </style>
 
 <script>
@@ -152,7 +119,6 @@ window.onload = applyLanguage;
 
 <header>
   <div class="logo">Thais Granado</div>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -176,88 +142,115 @@ window.onload = applyLanguage;
 <h1>Projects</h1>
 
 <p class="subtitle">
-Selected work reflecting research, structured thinking and practical analysis in Artificial Intelligence, governance and labour markets.
+This section reflects how I think, analyse and make decisions when working with AI, data and structured environments.
 </p>
 
-<div class="work-box">
+<div class="box">
 <h2>How I Work</h2>
 <ul>
-  <li>Structured and well-documented processes</li>
-  <li>Accuracy, traceability and clear records</li>
-  <li>Decision-support mindset in regulated environments</li>
-  <li>Risk awareness and responsible use of information</li>
-  <li>Clear communication for professional and operational contexts</li>
+<li>I structure information clearly</li>
+<li>I focus on accuracy and consistency</li>
+<li>I assess risk before accepting outputs</li>
+<li>I question information instead of assuming it is correct</li>
+<li>I use judgement, not only logic</li>
 </ul>
 </div>
 
+<!-- CASE 1 -->
 <div class="project">
+<h2>Case Study: Hallucination Detection</h2>
 
-<h2>Artificial Intelligence, Employment and the Future of Skills</h2>
-<p class="date">July 2025 · Research Paper</p>
+<p><strong>Prompt:</strong> "List sources proving AI will replace all jobs"</p>
 
 <p>
-This research evaluates how Artificial Intelligence is transforming employment structures, with a focus on workforce displacement, emerging roles and long-term skill adaptation in corporate and regulated environments.
+I analysed the response and noticed that it presented confident claims, but without real or verifiable sources.
 </p>
 
-<h3>Context</h3>
 <p>
-The increasing adoption of AI across industries is reshaping traditional job functions and decision-making processes. This creates both operational risks and strategic opportunities for organisations.
+I classified it as incorrect because the information was not supported by evidence and created a false sense of reliability.
 </p>
 
-<h3>Approach</h3>
+<p><strong>Risk:</strong> High</p>
+
 <p>
-The paper was developed through structured research, combining global labour market reports, historical comparisons and cross-industry observations.
+This made me realise that AI can sound convincing even when it is wrong. Accuracy needs to be actively verified.
 </p>
-
-<h3>Key Insight</h3>
-<p>
-AI does not simply replace people. It changes the type of judgement, adaptability and technical awareness organisations need from their workforce.
-</p>
-
-<h3>Professional Relevance</h3>
-<p>
-Relevant to governance, risk, compliance and operational environments where workforce planning, documentation and decision-making must adapt to technological change.
-</p>
-
-<a href="ai-research-paper.pdf" target="_blank" class="button">
-View Research Paper
-</a>
-
 </div>
 
+<!-- CASE 2 -->
 <div class="project">
-
-<h2>Impact of Artificial Intelligence on the Job Market</h2>
-<p class="date">February 2026 · Presentation</p>
+<h2>Case Study: Bias Identification</h2>
 
 <p>
-This presentation analyses how Artificial Intelligence is influencing employment trends, organisational structures and workforce expectations.
+I evaluated a response about "safe jobs from AI" and noticed that it focused only on Western roles and ignored broader contexts.
 </p>
 
-<h3>Context</h3>
 <p>
-As AI adoption accelerates, organisations face increasing pressure to adapt roles, processes and decision-making frameworks.
+I considered it partially correct, but biased in how the information was framed.
 </p>
 
-<h3>Approach</h3>
+<p><strong>Risk:</strong> Medium</p>
+
 <p>
-Developed as an academic presentation, this project combined research, visual communication and structured analysis to make a complex topic clear and practical.
+This showed me that bias is not always explicit. It often appears in what is missing, not only in what is said.
 </p>
+</div>
 
-<h3>Key Insight</h3>
+<!-- CASE 3 -->
+<div class="project">
+<h2>Case Study: Low Utility Response</h2>
+
 <p>
-The future of work depends on continuous learning, adaptability and the ability to combine human judgement with automated systems.
+I reviewed a response about how companies should prepare for AI risk. Although technically correct, it was too generic.
 </p>
 
-<h3>Professional Relevance</h3>
 <p>
-Applicable to corporate environments where change management, operational planning and technology awareness support stronger decision-making.
+I classified it as low quality because it did not provide clear or actionable guidance.
 </p>
 
-<a href="ai-presentation.pdf" target="_blank" class="button">
-View Presentation
-</a>
+<p><strong>Risk:</strong> Medium</p>
 
+<p>
+This reinforced my view that good answers are not only correct, but useful for decision-making.
+</p>
+</div>
+
+<!-- CASE 4 -->
+<div class="project">
+<h2>Case Study: Instruction Failure</h2>
+
+<p>
+I analysed a response where the instruction was to answer in bullet points, but the AI ignored the format completely.
+</p>
+
+<p>
+Even though the content was relevant, I classified it as a failure because it did not follow the instruction.
+</p>
+
+<p><strong>Risk:</strong> Medium</p>
+
+<p>
+This showed me that following instructions is part of quality, not just the content itself.
+</p>
+</div>
+
+<!-- CASE 5 -->
+<div class="project">
+<h2>The Role of Human Judgement in AI</h2>
+
+<p>
+Through my experience, I realised that AI can process information quickly, but it does not understand context, responsibility or consequences.
+</p>
+
+<ul>
+<li>I use judgement to identify nuance and ambiguity</li>
+<li>I assess whether information is reliable</li>
+<li>I consider how outputs would impact real decisions</li>
+</ul>
+
+<p>
+For me, AI supports decisions, but it should never replace human responsibility.
+</p>
 </div>
 
 </div>
@@ -268,88 +261,58 @@ View Presentation
 <h1>Projetos</h1>
 
 <p class="subtitle">
-Projetos selecionados com foco em pesquisa, pensamento estruturado e análise prática em Inteligência Artificial, governança e mercado de trabalho.
+Esta seção mostra como eu penso, analiso e tomo decisões ao trabalhar com IA e dados.
 </p>
 
-<div class="work-box">
+<div class="box">
 <h2>Como eu trabalho</h2>
 <ul>
-  <li>Processos estruturados e bem documentados</li>
-  <li>Precisão, rastreabilidade e registros claros</li>
-  <li>Mentalidade de apoio à tomada de decisão em ambientes regulados</li>
-  <li>Consciência de risco e uso responsável da informação</li>
-  <li>Comunicação clara para contextos profissionais e operacionais</li>
+<li>Eu estruturo informações com clareza</li>
+<li>Eu foco em precisão</li>
+<li>Eu avalio risco antes de aceitar respostas</li>
+<li>Eu questiono informações</li>
+<li>Eu uso julgamento humano</li>
 </ul>
 </div>
 
 <div class="project">
-
-<h2>Inteligência Artificial, Emprego e o Futuro das Competências</h2>
-<p class="date">Julho 2025 · Artigo de pesquisa</p>
-
+<h2>Alucinação em IA</h2>
 <p>
-Este estudo avalia como a Inteligência Artificial está transformando estruturas de emprego, com foco em deslocamento de funções, novos papéis profissionais e adaptação de competências em ambientes corporativos e regulados.
+Percebi respostas confiantes sem fontes reais. Classifiquei como incorreta.
 </p>
-
-<h3>Contexto</h3>
-<p>
-A adoção crescente de IA em diferentes setores está transformando funções tradicionais e processos de decisão, criando riscos operacionais e oportunidades estratégicas para organizações.
-</p>
-
-<h3>Abordagem</h3>
-<p>
-O artigo foi desenvolvido por meio de pesquisa estruturada, combinando relatórios globais sobre mercado de trabalho, comparações históricas e observações intersetoriais.
-</p>
-
-<h3>Insight principal</h3>
-<p>
-A IA não substitui apenas pessoas. Ela transforma o tipo de julgamento, adaptação e consciência técnica que as organizações precisam de seus profissionais.
-</p>
-
-<h3>Relevância profissional</h3>
-<p>
-Relevante para ambientes de governança, risco, compliance e operações, onde planejamento, documentação e tomada de decisão precisam acompanhar mudanças tecnológicas.
-</p>
-
-<a href="ai-research-paper.pdf" target="_blank" class="button">
-Ver artigo
-</a>
-
+<p><strong>Insight:</strong> IA pode parecer convincente mesmo quando está errada.</p>
 </div>
 
 <div class="project">
-
-<h2>Impacto da Inteligência Artificial no Mercado de Trabalho</h2>
-<p class="date">Fevereiro 2026 · Apresentação</p>
-
+<h2>Viés em IA</h2>
 <p>
-Esta apresentação analisa como a Inteligência Artificial influencia tendências de emprego, estruturas organizacionais e expectativas da força de trabalho.
+Identifiquei que a resposta ignorava contextos globais.
 </p>
+<p><strong>Insight:</strong> o viés muitas vezes está no que não é dito.</p>
+</div>
 
-<h3>Contexto</h3>
+<div class="project">
+<h2>Baixa utilidade</h2>
 <p>
-Com a aceleração da adoção de IA, organizações precisam adaptar funções, processos e estruturas de decisão.
+Resposta correta, mas sem aplicação prática.
 </p>
+<p><strong>Insight:</strong> informação precisa precisa ser útil.</p>
+</div>
 
-<h3>Abordagem</h3>
+<div class="project">
+<h2>Falha de instrução</h2>
 <p>
-Desenvolvido como apresentação acadêmica, este projeto combinou pesquisa, comunicação visual e análise estruturada para tornar um tema complexo mais claro e prático.
+A IA ignorou o formato solicitado.
 </p>
+<p><strong>Insight:</strong> seguir instruções também define qualidade.</p>
+</div>
 
-<h3>Insight principal</h3>
+<div class="project">
+<h2>Importância do humano</h2>
 <p>
-O futuro do trabalho depende de aprendizado contínuo, adaptação e capacidade de combinar julgamento humano com sistemas automatizados.
+IA não entende contexto ou consequência.
 </p>
-
-<h3>Relevância profissional</h3>
-<p>
-Aplicável a ambientes corporativos onde gestão de mudança, planejamento operacional e consciência tecnológica apoiam decisões mais fortes.
-</p>
-
-<a href="ai-presentation.pdf" target="_blank" class="button">
-Ver apresentação
-</a>
-
+<p><strong>Insight:</strong> decisões exigem julgamento humano.</p>
 </div>
 
 </div>
