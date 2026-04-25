@@ -1,191 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Thais Granado | Governance, Risk & AI Evaluation</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thais Granado | Governance, Risk & AI Evaluation</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #07111f 0%, #0b0b0b 45%);
-  color: #ffffff;
-}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 44px;
-  border-bottom: 1px solid #263241;
-  background: rgba(15, 39, 66, 0.85);
-  flex-wrap: wrap;
-}
+    :root {
+      --navy:      #0d1b2e;
+      --navy-mid:  #122040;
+      --navy-card: #1a2d4a;
+      --teal:      #02c39a;
+      --ice:       #cadbfc;
+      --white:     #ffffff;
+      --grey:      #8fa3be;
+      --amber:     #f59e0b;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-}
+    html { scroll-behavior: smooth; }
 
-nav {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-nav a {
-  color: #cbd5e1;
-  text-decoration: none;
-  font-size: 14px;
-}
+    /* ── NAV ──────────────────────────────────────────────────── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13, 27, 46, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(202,219,252,0.08);
+      padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+      flex-wrap: wrap;
+    }
 
-nav a:hover {
-  color: #ffffff;
-}
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      text-decoration: none;
+    }
 
-/* CONTENT */
-.container {
-  max-width: 960px;
-  margin: 70px auto;
-  padding: 24px;
-}
+    nav {
+      display: flex; gap: 1.4rem; flex-wrap: wrap;
+    }
 
-.lang-buttons {
-  margin-bottom: 50px;
-}
+    nav a {
+      color: var(--grey);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
 
-.lang-buttons button {
-  margin-right: 10px;
-  padding: 9px 16px;
-  background: #0f2742;
-  border: 1px solid #1e3a5f;
-  color: white;
-  cursor: pointer;
-}
+    nav a:hover { color: var(--teal); }
 
-h1 {
-  font-size: 54px;
-  line-height: 1.1;
-  margin-bottom: 28px;
-}
+    .lang-buttons {
+      display: flex; gap: 0.4rem;
+    }
 
-h2 {
-  margin-top: 50px;
-  color: #e5e7eb;
-  font-size: 28px;
-}
+    .lang-buttons button {
+      background: var(--navy-card);
+      border: 1px solid rgba(202,219,252,0.15);
+      color: var(--grey);
+      font-size: 0.74rem;
+      font-family: 'DM Sans', Arial, sans-serif;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
 
-p {
-  color: #d1d5db;
-  line-height: 1.8;
-  font-size: 18px;
-}
+    .lang-buttons button:hover,
+    .lang-buttons button.active {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
 
-.quote {
-  margin-top: 36px;
-  padding-left: 20px;
-  border-left: 4px solid #1e3a5f;
-  color: #ffffff;
-  font-size: 22px;
-  line-height: 1.5;
-}
+    /* ── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      padding: 110px 6% 70px;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-  margin-top: 35px;
-}
+    /* Decorative ring */
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -60px; top: 50%;
+      transform: translateY(-50%);
+      width: 500px; height: 500px;
+      border: 1px solid rgba(2,195,154,0.1);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 40px; top: 50%;
+      transform: translateY(-50%);
+      width: 340px; height: 340px;
+      border: 1px solid rgba(2,195,154,0.06);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-.card {
-  background: rgba(17, 24, 39, 0.9);
-  padding: 26px;
-  border: 1px solid #263241;
-}
+    .hero-left { position: relative; z-index: 2; }
 
-.card h3 {
-  margin-top: 0;
-  color: #ffffff;
-  font-size: 22px;
-}
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(2,195,154,0.08);
+      border: 1px solid rgba(2,195,154,0.22);
+      color: var(--teal);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.5s ease both;
+    }
 
-.card p {
-  font-size: 15px;
-  color: #cbd5e1;
-}
+    .hero-eyebrow::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
 
-.button {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 11px 18px;
-  border: 1px solid #1e3a5f;
-  background: #0f2742;
-  color: white;
-  text-decoration: none;
-}
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.5s 0.08s ease both;
+    }
 
-.button:hover {
-  background: #1e3a5f;
-}
+    .hero-title em {
+      font-style: italic;
+      color: var(--teal);
+    }
 
-.footer-note {
-  margin-top: 60px;
-  font-size: 14px;
-  color: #94a3b8;
-}
+    .hero-desc {
+      color: var(--grey);
+      font-size: 0.97rem;
+      max-width: 500px;
+      margin-bottom: 1.2rem;
+      animation: fadeUp 0.5s 0.16s ease both;
+      line-height: 1.75;
+    }
 
-.pt {
-  display: none;
-}
+    .hero-desc strong { color: var(--ice); font-weight: 500; }
 
-@media (max-width: 700px) {
-  header {
-    padding: 22px 28px;
-  }
+    .hero-quote {
+      border-left: 3px solid var(--teal);
+      padding-left: 1rem;
+      color: var(--ice);
+      font-size: 0.92rem;
+      font-style: italic;
+      margin: 1.6rem 0 2.2rem;
+      animation: fadeUp 0.5s 0.22s ease both;
+    }
 
-  h1 {
-    font-size: 42px;
-  }
+    .hero-cta {
+      display: flex; gap: 0.9rem; flex-wrap: wrap;
+      animation: fadeUp 0.5s 0.28s ease both;
+    }
 
-  p {
-    font-size: 17px;
-  }
-}
-</style>
+    .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.83rem;
+      letter-spacing: 0.04em;
+      padding: 0.72rem 1.7rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none; cursor: pointer;
+    }
 
-<script>
-function setLanguage(lang) {
-  localStorage.setItem('lang', lang);
-  applyLanguage();
-}
+    .btn-primary:hover { background: #01a882; transform: translateY(-1px); }
 
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
+    .btn-outline {
+      background: transparent;
+      color: var(--ice);
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-weight: 500;
+      font-size: 0.83rem;
+      letter-spacing: 0.04em;
+      padding: 0.72rem 1.7rem;
+      border-radius: 6px;
+      border: 1px solid rgba(202,219,252,0.22);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
 
-  document.querySelectorAll('.en').forEach(el => {
-    el.style.display = (lang === 'en') ? 'block' : 'none';
-  });
+    .btn-outline:hover {
+      border-color: var(--ice);
+      background: rgba(202,219,252,0.05);
+    }
 
-  document.querySelectorAll('.pt').forEach(el => {
-    el.style.display = (lang === 'pt') ? 'block' : 'none';
-  });
-}
+    /* Hero right — pillars */
+    .hero-right {
+      display: flex; flex-direction: column; gap: 1rem;
+      position: relative; z-index: 2;
+      animation: fadeUp 0.5s 0.32s ease both;
+    }
 
-window.onload = applyLanguage;
-</script>
+    .pillar {
+      background: var(--navy-card);
+      border: 1px solid rgba(202,219,252,0.07);
+      border-left: 3px solid var(--teal);
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      transition: transform 0.2s;
+    }
+
+    .pillar:nth-child(2) { border-left-color: var(--ice); margin-left: 1.2rem; }
+    .pillar:nth-child(3) { border-left-color: var(--amber); margin-left: 2.4rem; }
+    .pillar:hover { transform: translateX(4px); }
+
+    .pillar-icon { font-size: 1.2rem; min-width: 1.8rem; margin-top: 0.1rem; }
+
+    .pillar-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.2rem;
+    }
+
+    .pillar:nth-child(2) .pillar-label { color: var(--ice); }
+    .pillar:nth-child(3) .pillar-label { color: var(--amber); }
+
+    .pillar-text { font-size: 0.85rem; color: var(--grey); line-height: 1.5; }
+
+    /* ── DIVIDER STRIP ────────────────────────────────────────── */
+    .strip {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(202,219,252,0.06);
+      border-bottom: 1px solid rgba(202,219,252,0.06);
+      padding: 3rem 6%;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .strip-quote {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--ice);
+      line-height: 1.55;
+      border-left: 3px solid var(--teal);
+      padding-left: 1.1rem;
+    }
+
+    .strip-body { color: var(--grey); font-size: 0.93rem; }
+    .strip-body p + p { margin-top: 0.85rem; }
+    .strip-body strong { color: var(--white); font-weight: 500; }
+
+    /* ── SECTIONS ─────────────────────────────────────────────── */
+    .section { padding: 5rem 6%; }
+    .section-alt { background: var(--navy-mid); padding: 5rem 6%; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      color: var(--grey);
+      font-size: 0.92rem;
+      margin-bottom: 2.8rem;
+      max-width: 540px;
+    }
+
+    /* ── CARDS ────────────────────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--navy-card);
+      border: 1px solid rgba(202,219,252,0.07);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      position: relative; overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--teal);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .card:hover::before { transform: scaleX(1); }
+    .card:hover {
+      border-color: rgba(2,195,154,0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.3);
+    }
+
+    .card.ice::before { background: var(--ice); }
+    .card.ice .card-tag, .card.ice .card-arrow { color: var(--ice); }
+    .card.ice:hover { border-color: rgba(202,219,252,0.2); }
+
+    .card.amber::before { background: var(--amber); }
+    .card.amber .card-tag, .card.amber .card-arrow { color: var(--amber); }
+    .card.amber:hover { border-color: rgba(245,158,11,0.2); }
+
+    .card-tag {
+      font-size: 0.67rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem; color: var(--white); line-height: 1.3;
+    }
+
+    .card-desc {
+      color: var(--grey); font-size: 0.84rem; line-height: 1.6; flex: 1;
+    }
+
+    .card-arrow {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      color: var(--teal); font-size: 0.78rem; font-weight: 500;
+      margin-top: 0.3rem;
+    }
+
+    /* ── CREDENTIALS ──────────────────────────────────────────── */
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+
+    .cred {
+      background: var(--navy-card);
+      border: 1px solid rgba(202,219,252,0.07);
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
+      display: flex; gap: 0.85rem; align-items: flex-start;
+    }
+
+    .cred-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--teal); margin-top: 0.45rem; flex-shrink: 0;
+    }
+
+    .cred-name { font-size: 0.86rem; font-weight: 500; color: var(--white); margin-bottom: 0.12rem; }
+    .cred-org  { font-size: 0.74rem; color: var(--grey); }
+
+    /* ── CONTACT ──────────────────────────────────────────────── */
+    .contact { text-align: center; padding: 5rem 6%; border-top: 1px solid rgba(202,219,252,0.06); }
+    .contact .section-label, .contact .section-sub { text-align: center; margin-left: auto; margin-right: auto; }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: #07111f;
+      padding: 1.4rem 6%;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(202,219,252,0.05);
+      flex-wrap: wrap; gap: 0.8rem;
+    }
+
+    footer p { font-size: 0.76rem; color: var(--grey); }
+
+    /* ── ANIMATIONS ───────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 90px 5% 60px;
+        gap: 2.5rem;
+      }
+      .hero::before, .hero::after { display: none; }
+      .pillar:nth-child(2), .pillar:nth-child(3) { margin-left: 0; }
+      .strip { grid-template-columns: 1fr; gap: 2rem; }
+      header { height: auto; padding: 1rem 1.2rem; gap: 0.8rem; }
+      nav { display: none; }
+      .hero-desc { max-width: 100%; }
+    }
+
+    /* Language show/hide */
+    .pt { display: none; }
+  </style>
+
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      applyLanguage();
+    }
+
+    function applyLanguage() {
+      const lang = localStorage.getItem('lang') || 'en';
+
+      document.querySelectorAll('.en').forEach(el => {
+        el.style.display = '';
+        el.style.display = (lang === 'en') ? '' : 'none';
+      });
+      document.querySelectorAll('.pt').forEach(el => {
+        el.style.display = (lang === 'pt') ? '' : 'none';
+      });
+
+      document.querySelectorAll('.lang-buttons button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      const active = document.querySelector(`.lang-buttons button[data-lang="${lang}"]`);
+      if (active) active.classList.add('active');
+    }
+
+    window.onload = applyLanguage;
+  </script>
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header>
-  <div class="logo">Thais Granado</div>
+  <a class="logo" href="index.html">Thais Granado</a>
 
   <nav>
-    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="ai-evaluation.html">AI & Data</a>
     <a href="learning.html">Learning</a>
@@ -194,138 +480,227 @@ window.onload = applyLanguage;
     <a href="projects.html">Projects</a>
     <a href="how-i-learn.html">How I Build</a>
   </nav>
+
+  <div class="lang-buttons">
+    <button data-lang="en" onclick="setLanguage('en')">🇬🇧 EN</button>
+    <button data-lang="pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
+  </div>
 </header>
 
-<div class="container">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
 
-<div class="lang-buttons">
-  <button onclick="setLanguage('en')">🇬🇧 English</button>
-  <button onclick="setLanguage('pt')">🇧🇷 Português</button>
-</div>
+    <!-- EN -->
+    <div class="en">
+      <div class="hero-eyebrow">Portfolio · London, UK</div>
+      <h1 class="hero-title">
+        Governance.<br><em>Risk.</em><br>AI Evaluation.
+      </h1>
+      <p class="hero-desc">
+        I operate in environments where <strong>structure, documentation and accountability</strong> are essential.
+      </p>
+      <p class="hero-desc">
+        My background in the Brazilian judicial system shaped how I understand decisions, records and institutional responsibility.
+      </p>
+      <blockquote class="hero-quote">
+        "What is not properly documented and understood cannot be trusted."
+      </blockquote>
+      <div class="hero-cta">
+        <a class="btn-primary" href="projects.html">View Projects</a>
+        <a class="btn-outline" href="about.html">About Me</a>
+      </div>
+    </div>
 
-<!-- ENGLISH -->
-<div class="en">
+    <!-- PT -->
+    <div class="pt">
+      <div class="hero-eyebrow">Portfólio · Londres, Reino Unido</div>
+      <h1 class="hero-title">
+        Governança.<br><em>Risco.</em><br>Avaliação de IA.
+      </h1>
+      <p class="hero-desc">
+        Atuo em ambientes onde <strong>estrutura, documentação e responsabilidade</strong> são essenciais.
+      </p>
+      <p class="hero-desc">
+        Minha experiência no sistema judiciário brasileiro moldou a forma como entendo decisões, registros e responsabilidade institucional.
+      </p>
+      <blockquote class="hero-quote">
+        "O que não está devidamente documentado e compreendido não pode ser confiável."
+      </blockquote>
+      <div class="hero-cta">
+        <a class="btn-primary" href="projects.html">Ver Projetos</a>
+        <a class="btn-outline" href="about.html">Sobre Mim</a>
+      </div>
+    </div>
 
-<h1>Governance · Risk · Data Quality · AI Evaluation</h1>
-
-<p>
-I operate in environments where structure, documentation and accountability are essential.
-</p>
-
-<p>
-My background in the Brazilian judicial system shaped how I understand decisions, records and institutional responsibility.
-</p>
-
-<p>
-This portfolio brings together my professional experience, ongoing learning, research and reflections on governance, risk, data quality and AI evaluation.
-</p>
-
-<div class="quote">
-What is not properly documented and understood cannot be trusted.
-</div>
-
-<h2>Portfolio Focus</h2>
-
-<div class="cards">
-
-  <div class="card">
-    <h3>Projects</h3>
-    <p>Research and practical work on Artificial Intelligence, employment, decision-making and the role of human judgement.</p>
-    <a href="projects.html" class="button">View Projects</a>
   </div>
 
-  <div class="card">
-    <h3>AI & Data</h3>
-    <p>Notes and examples focused on AI evaluation, data quality, bias, hallucinations, reliability and structured judgement.</p>
-    <a href="ai-evaluation.html" class="button">Explore AI & Data</a>
+  <!-- Pillars (right column) -->
+  <div class="hero-right">
+    <div class="pillar">
+      <div class="pillar-icon">⚖️</div>
+      <div>
+        <div class="pillar-label en">Governance & Risk</div>
+        <div class="pillar-label pt">Governança & Risco</div>
+        <div class="pillar-text en">Six years in the Brazilian Court of Justice, certified mediator, and EA/PA experience in regulated environments.</div>
+        <div class="pillar-text pt">Seis anos no Tribunal de Justiça, mediadora certificada e experiência como EA/PA em ambientes regulados.</div>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🤖</div>
+      <div>
+        <div class="pillar-label en">AI Data & Evaluation</div>
+        <div class="pillar-label pt">Dados & Avaliação de IA</div>
+        <div class="pillar-text en">AWS Generative AI certifications, AI governance training, and trilingual annotation in EN, PT-BR and ES.</div>
+        <div class="pillar-text pt">Certificações AWS em IA Generativa, formação em governança de IA e anotação trilíngue em inglês, português e espanhol.</div>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🌍</div>
+      <div>
+        <div class="pillar-label en">Trilingual Professional</div>
+        <div class="pillar-label pt">Profissional Trilíngue</div>
+        <div class="pillar-text en">English · Portuguese · Spanish — working across cultures and jurisdictions with precision and adaptability.</div>
+        <div class="pillar-text pt">Inglês · Português · Espanhol — atuando em diferentes culturas e jurisdições com precisão e adaptabilidade.</div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h3>Minutes</h3>
-    <p>Examples of structured governance documentation, including formal minutes and decision/action summaries.</p>
-    <a href="minutes.html" class="button">View Minutes</a>
+<!-- STRIP -->
+<div class="strip">
+  <p class="strip-quote en">"This portfolio brings together my professional experience, ongoing learning and reflections on governance, risk, data quality and AI evaluation."</p>
+  <p class="strip-quote pt">"Este portfólio reúne minha experiência profissional, aprendizado contínuo e reflexões sobre governança, risco, qualidade de dados e avaliação de IA."</p>
+
+  <div class="strip-body">
+    <p class="en">I believe that strong governance is not a constraint — it is the foundation for <strong>trust, quality and responsible decision-making</strong> in any organisation.</p>
+    <p class="pt">Acredito que uma governança sólida não é uma restrição — é a base para <strong>confiança, qualidade e tomada de decisão responsável</strong> em qualquer organização.</p>
+    <p class="en" style="margin-top:0.85rem">This work spans the Brazilian judicial system, executive support at companies including Network Rail and CBRE, and ongoing specialisation in AI governance and data quality.</p>
+    <p class="pt" style="margin-top:0.85rem">Este trabalho abrange o sistema judiciário brasileiro, suporte executivo em empresas como Network Rail e CBRE, e especialização contínua em governança de IA e qualidade de dados.</p>
   </div>
-
 </div>
 
-<h2>Professional Direction</h2>
+<!-- PROJECTS -->
+<section class="section">
+  <div class="section-label en">Selected Work</div>
+  <div class="section-label pt">Trabalhos Selecionados</div>
+  <h2 class="section-title en">Projects & Research</h2>
+  <h2 class="section-title pt">Projetos & Pesquisa</h2>
+  <p class="section-sub en">Structured thinking and analysis in Artificial Intelligence, governance and labour markets.</p>
+  <p class="section-sub pt">Pensamento estruturado e análise sobre Inteligência Artificial, governança e mercados de trabalho.</p>
 
-<p>
-I am building a career focused on governance, compliance, operational risk, executive support and AI-related data quality in regulated environments.
-</p>
+  <div class="card-grid">
+    <a class="card" href="projects.html">
+      <span class="card-tag en">Research Paper · 2026</span>
+      <span class="card-tag pt">Artigo de Pesquisa · 2026</span>
+      <div class="card-title en">AI, Employment and the Future of Skills</div>
+      <div class="card-title pt">IA, Emprego e o Futuro das Competências</div>
+      <p class="card-desc en">How AI is reshaping employment structures — balancing displacement risks with the emergence of new roles and skill requirements.</p>
+      <p class="card-desc pt">Como a IA está transformando estruturas de emprego — equilibrando riscos de deslocamento com o surgimento de novas funções e competências.</p>
+      <span class="card-arrow en">Read paper →</span>
+      <span class="card-arrow pt">Ler artigo →</span>
+    </a>
 
-<p>
-My work is guided by accuracy, discretion, clear documentation and responsible decision-making.
-</p>
+    <a class="card ice" href="ai-evaluation.html">
+      <span class="card-tag en">AI & Data</span>
+      <span class="card-tag pt">IA & Dados</span>
+      <div class="card-title en">AI Evaluation & Data Quality</div>
+      <div class="card-title pt">Avaliação de IA & Qualidade de Dados</div>
+      <p class="card-desc en">Frameworks, notes and practical reflections on responsible AI, data annotation and quality assurance in AI systems.</p>
+      <p class="card-desc pt">Frameworks, notas e reflexões práticas sobre IA responsável, anotação de dados e garantia de qualidade em sistemas de IA.</p>
+      <span class="card-arrow en">Explore →</span>
+      <span class="card-arrow pt">Explorar →</span>
+    </a>
 
-<p class="footer-note">
-Portfolio developed by Thais Granado using HTML as part of a continuous learning and professional development project.
-</p>
-
-</div>
-
-<!-- PORTUGUESE -->
-<div class="pt">
-
-<h1>Governança · Risco · Qualidade de Dados · Avaliação de IA</h1>
-
-<p>
-Atuo em ambientes onde estrutura, documentação e responsabilidade são essenciais.
-</p>
-
-<p>
-Minha experiência no sistema judiciário brasileiro moldou a forma como entendo decisões, registros e responsabilidade institucional.
-</p>
-
-<p>
-Este portfólio reúne minha experiência profissional, aprendizado contínuo, pesquisas e reflexões sobre governança, risco, qualidade de dados e avaliação de IA.
-</p>
-
-<div class="quote">
-O que não está devidamente documentado e compreendido não pode ser confiável.
-</div>
-
-<h2>Foco do Portfólio</h2>
-
-<div class="cards">
-
-  <div class="card">
-    <h3>Projetos</h3>
-    <p>Pesquisas e trabalhos práticos sobre Inteligência Artificial, emprego, tomada de decisão e o papel do julgamento humano.</p>
-    <a href="projects.html" class="button">Ver Projetos</a>
+    <a class="card amber" href="insights.html">
+      <span class="card-tag en">Insights</span>
+      <span class="card-tag pt">Insights</span>
+      <div class="card-title en">Governance & Professional Reflections</div>
+      <div class="card-title pt">Reflexões sobre Governança & Carreira</div>
+      <p class="card-desc en">Personal perspectives on compliance, institutional responsibility, and building a career across law, governance and AI.</p>
+      <p class="card-desc pt">Perspectivas pessoais sobre compliance, responsabilidade institucional e como construir uma carreira entre direito, governança e IA.</p>
+      <span class="card-arrow en">Read →</span>
+      <span class="card-arrow pt">Ler →</span>
+    </a>
   </div>
+</section>
 
-  <div class="card">
-    <h3>IA & Dados</h3>
-    <p>Notas e exemplos sobre avaliação de IA, qualidade de dados, viés, alucinações, confiabilidade e julgamento estruturado.</p>
-    <a href="ai-evaluation.html" class="button">Explorar IA & Dados</a>
+<!-- CREDENTIALS -->
+<section class="section-alt">
+  <div class="section-label en">Credentials</div>
+  <div class="section-label pt">Credenciais</div>
+  <h2 class="section-title en">Certifications & Learning</h2>
+  <h2 class="section-title pt">Certificações & Aprendizado</h2>
+  <p class="section-sub en">Continuous learning across AI governance, data protection, cybersecurity and responsible technology.</p>
+  <p class="section-sub pt">Aprendizado contínuo em governança de IA, proteção de dados, cibersegurança e tecnologia responsável.</p>
+
+  <div class="creds-grid">
+    <div class="cred">
+      <div class="cred-dot"></div>
+      <div><div class="cred-name">AWS Generative AI</div><div class="cred-org">Amazon Web Services · 2026</div></div>
+    </div>
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--ice)"></div>
+      <div><div class="cred-name">Responsible AI Practices</div><div class="cred-org">AWS Skill Builder · 2026</div></div>
+    </div>
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--amber)"></div>
+      <div><div class="cred-name">AI Governance</div><div class="cred-org">Certification · 2025</div></div>
+    </div>
+    <div class="cred">
+      <div class="cred-dot"></div>
+      <div><div class="cred-name">Data Protection & GDPR</div><div class="cred-org">Certification · 2025</div></div>
+    </div>
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--ice)"></div>
+      <div><div class="cred-name">Cybersecurity GRC</div><div class="cred-org">Certification · 2025</div></div>
+    </div>
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--amber)"></div>
+      <div>
+        <div class="cred-name en">Legal Digital Advertising</div>
+        <div class="cred-name pt">Publicidade Digital Legal</div>
+        <div class="cred-org">Santander Open Academy · 10/10</div>
+      </div>
+    </div>
+    <div class="cred">
+      <div class="cred-dot"></div>
+      <div><div class="cred-name">Certified Mediator</div><div class="cred-org">Court of Justice · Rio de Janeiro</div></div>
+    </div>
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--ice)"></div>
+      <div>
+        <div class="cred-name en">Law Degree</div>
+        <div class="cred-name pt">Graduação em Direito</div>
+        <div class="cred-org">Brazil</div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h3>Minutas</h3>
-    <p>Exemplos de documentação estruturada de governança, incluindo minutas formais e resumos de decisões e ações.</p>
-    <a href="minutes.html" class="button">Ver Minutas</a>
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label en">Get in Touch</div>
+  <div class="section-label pt">Contato</div>
+  <h2 class="section-title en">Open to Opportunities</h2>
+  <h2 class="section-title pt">Aberta a Oportunidades</h2>
+  <p class="section-sub en">EA/PA and governance roles in financial services, AI and regulated environments — London and the UK.</p>
+  <p class="section-sub pt">Funções de EA/PA e governança em serviços financeiros, IA e ambientes regulados — Londres e Reino Unido.</p>
+  <div class="contact-links">
+    <a class="btn-primary" href="about.html">
+      <span class="en">View Full Profile</span>
+      <span class="pt">Ver Perfil Completo</span>
+    </a>
+    <a class="btn-outline" href="https://www.linkedin.com/in/thaisgranado" target="_blank" rel="noopener">LinkedIn →</a>
   </div>
+</section>
 
-</div>
-
-<h2>Direção Profissional</h2>
-
-<p>
-Estou construindo uma carreira focada em governança, compliance, risco operacional, suporte executivo e qualidade de dados em IA em ambientes regulados.
-</p>
-
-<p>
-Meu trabalho é guiado por precisão, discrição, documentação clara e tomada de decisão responsável.
-</p>
-
-<p class="footer-note">
-Portfólio desenvolvido por Thais Granado usando HTML como parte de um projeto contínuo de aprendizado e desenvolvimento profissional.
-</p>
-
-</div>
-
-</div>
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Thais Granado · London, UK</p>
+  <p class="en">Governance · Risk · AI Evaluation</p>
+  <p class="pt">Governança · Risco · Avaliação de IA</p>
+</footer>
 
 </body>
 </html>
