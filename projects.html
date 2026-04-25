@@ -13,7 +13,6 @@ body {
   color: #ffffff;
 }
 
-/* HEADER */
 header {
   padding: 20px 40px;
   background-color: #0b1a2b;
@@ -25,7 +24,6 @@ header {
   font-weight: 600;
 }
 
-/* NAV */
 nav {
   margin-top: 10px;
   display: flex;
@@ -43,7 +41,6 @@ nav a:hover {
   color: white;
 }
 
-/* CONTENT */
 .container {
   max-width: 900px;
   margin: 60px auto;
@@ -55,18 +52,29 @@ h1 {
   margin-bottom: 10px;
 }
 
+h2 {
+  font-size: 30px;
+  margin-top: 35px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
 .subtitle {
   color: #aab4c3;
   margin-bottom: 40px;
+  font-size: 18px;
 }
 
-/* PROJECT */
-.project {
-  margin-bottom: 80px;
-}
-
-.project h2 {
-  font-size: 30px;
+.project, .work-box {
+  margin-bottom: 70px;
+  padding: 24px;
+  border: 1px solid #1f2f45;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .date {
@@ -77,9 +85,15 @@ h1 {
 p {
   line-height: 1.6;
   color: #d6dce5;
+  font-size: 16px;
 }
 
-/* BUTTON */
+ul {
+  color: #d6dce5;
+  line-height: 1.8;
+  padding-left: 22px;
+}
+
 .button {
   display: inline-block;
   margin-top: 20px;
@@ -94,9 +108,8 @@ p {
   background-color: #1a3d66;
 }
 
-/* LANGUAGE BUTTONS */
 .lang-buttons {
-  margin: 20px 0;
+  margin: 20px 0 35px;
 }
 
 .lang-buttons button {
@@ -133,7 +146,6 @@ function applyLanguage() {
 
 window.onload = applyLanguage;
 </script>
-
 </head>
 
 <body>
@@ -164,8 +176,19 @@ window.onload = applyLanguage;
 <h1>Projects</h1>
 
 <p class="subtitle">
-Selected work reflecting research, structured thinking and analysis in Artificial Intelligence and labour markets.
+Selected work reflecting research, structured thinking and practical analysis in Artificial Intelligence, governance and labour markets.
 </p>
+
+<div class="work-box">
+<h2>How I Work</h2>
+<ul>
+  <li>Structured and well-documented processes</li>
+  <li>Accuracy, traceability and clear records</li>
+  <li>Decision-support mindset in regulated environments</li>
+  <li>Risk awareness and responsible use of information</li>
+  <li>Clear communication for professional and operational contexts</li>
+</ul>
+</div>
 
 <div class="project">
 
@@ -173,7 +196,27 @@ Selected work reflecting research, structured thinking and analysis in Artificia
 <p class="date">July 2025 · Research Paper</p>
 
 <p>
-This research examines how Artificial Intelligence is transforming employment structures, balancing job displacement risks with the emergence of new roles and skill requirements.
+This research evaluates how Artificial Intelligence is transforming employment structures, with a focus on workforce displacement, emerging roles and long-term skill adaptation in corporate and regulated environments.
+</p>
+
+<h3>Context</h3>
+<p>
+The increasing adoption of AI across industries is reshaping traditional job functions and decision-making processes. This creates both operational risks and strategic opportunities for organisations.
+</p>
+
+<h3>Approach</h3>
+<p>
+The paper was developed through structured research, combining global labour market reports, historical comparisons and cross-industry observations.
+</p>
+
+<h3>Key Insight</h3>
+<p>
+AI does not simply replace people. It changes the type of judgement, adaptability and technical awareness organisations need from their workforce.
+</p>
+
+<h3>Professional Relevance</h3>
+<p>
+Relevant to governance, risk, compliance and operational environments where workforce planning, documentation and decision-making must adapt to technological change.
 </p>
 
 <a href="ai-research-paper.pdf" target="_blank" class="button">
@@ -188,7 +231,27 @@ View Research Paper
 <p class="date">February 2026 · Presentation</p>
 
 <p>
-This project analyses global labour market transformation driven by AI, combining historical context, industry insights and future projections.
+This presentation analyses how Artificial Intelligence is influencing employment trends, organisational structures and workforce expectations.
+</p>
+
+<h3>Context</h3>
+<p>
+As AI adoption accelerates, organisations face increasing pressure to adapt roles, processes and decision-making frameworks.
+</p>
+
+<h3>Approach</h3>
+<p>
+Developed as an academic presentation, this project combined research, visual communication and structured analysis to make a complex topic clear and practical.
+</p>
+
+<h3>Key Insight</h3>
+<p>
+The future of work depends on continuous learning, adaptability and the ability to combine human judgement with automated systems.
+</p>
+
+<h3>Professional Relevance</h3>
+<p>
+Applicable to corporate environments where change management, operational planning and technology awareness support stronger decision-making.
 </p>
 
 <a href="ai-presentation.pdf" target="_blank" class="button">
@@ -205,16 +268,47 @@ View Presentation
 <h1>Projetos</h1>
 
 <p class="subtitle">
-Projetos selecionados com foco em pesquisa, análise e pensamento estruturado.
+Projetos selecionados com foco em pesquisa, pensamento estruturado e análise prática em Inteligência Artificial, governança e mercado de trabalho.
 </p>
+
+<div class="work-box">
+<h2>Como eu trabalho</h2>
+<ul>
+  <li>Processos estruturados e bem documentados</li>
+  <li>Precisão, rastreabilidade e registros claros</li>
+  <li>Mentalidade de apoio à tomada de decisão em ambientes regulados</li>
+  <li>Consciência de risco e uso responsável da informação</li>
+  <li>Comunicação clara para contextos profissionais e operacionais</li>
+</ul>
+</div>
 
 <div class="project">
 
 <h2>Inteligência Artificial, Emprego e o Futuro das Competências</h2>
-<p class="date">Julho 2025 · Artigo</p>
+<p class="date">Julho 2025 · Artigo de pesquisa</p>
 
 <p>
-Este estudo analisa como a Inteligência Artificial está transformando o mercado de trabalho, explorando riscos e oportunidades.
+Este estudo avalia como a Inteligência Artificial está transformando estruturas de emprego, com foco em deslocamento de funções, novos papéis profissionais e adaptação de competências em ambientes corporativos e regulados.
+</p>
+
+<h3>Contexto</h3>
+<p>
+A adoção crescente de IA em diferentes setores está transformando funções tradicionais e processos de decisão, criando riscos operacionais e oportunidades estratégicas para organizações.
+</p>
+
+<h3>Abordagem</h3>
+<p>
+O artigo foi desenvolvido por meio de pesquisa estruturada, combinando relatórios globais sobre mercado de trabalho, comparações históricas e observações intersetoriais.
+</p>
+
+<h3>Insight principal</h3>
+<p>
+A IA não substitui apenas pessoas. Ela transforma o tipo de julgamento, adaptação e consciência técnica que as organizações precisam de seus profissionais.
+</p>
+
+<h3>Relevância profissional</h3>
+<p>
+Relevante para ambientes de governança, risco, compliance e operações, onde planejamento, documentação e tomada de decisão precisam acompanhar mudanças tecnológicas.
 </p>
 
 <a href="ai-research-paper.pdf" target="_blank" class="button">
@@ -229,7 +323,27 @@ Ver artigo
 <p class="date">Fevereiro 2026 · Apresentação</p>
 
 <p>
-Projeto académico focado na transformação do trabalho impulsionada pela Inteligência Artificial.
+Esta apresentação analisa como a Inteligência Artificial influencia tendências de emprego, estruturas organizacionais e expectativas da força de trabalho.
+</p>
+
+<h3>Contexto</h3>
+<p>
+Com a aceleração da adoção de IA, organizações precisam adaptar funções, processos e estruturas de decisão.
+</p>
+
+<h3>Abordagem</h3>
+<p>
+Desenvolvido como apresentação acadêmica, este projeto combinou pesquisa, comunicação visual e análise estruturada para tornar um tema complexo mais claro e prático.
+</p>
+
+<h3>Insight principal</h3>
+<p>
+O futuro do trabalho depende de aprendizado contínuo, adaptação e capacidade de combinar julgamento humano com sistemas automatizados.
+</p>
+
+<h3>Relevância profissional</h3>
+<p>
+Aplicável a ambientes corporativos onde gestão de mudança, planejamento operacional e consciência tecnológica apoiam decisões mais fortes.
 </p>
 
 <a href="ai-presentation.pdf" target="_blank" class="button">
