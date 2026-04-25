@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #07111f 0%, #0b0b0b 40%);
+  background: linear-gradient(180deg, #07111f 0%, #0b0b0b 45%);
   color: #ffffff;
 }
 
@@ -20,21 +20,21 @@ header {
   align-items: center;
   padding: 24px 44px;
   border-bottom: 1px solid #263241;
-  background: rgba(15, 39, 66, 0.6);
+  background: rgba(15, 39, 66, 0.85);
   flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 600;
   letter-spacing: 0.8px;
 }
 
-/* NAV */
 nav {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 nav a {
@@ -49,39 +49,79 @@ nav a:hover {
 
 /* CONTENT */
 .container {
-  max-width: 900px;
+  max-width: 960px;
   margin: 70px auto;
   padding: 24px;
 }
 
+.lang-buttons {
+  margin-bottom: 50px;
+}
+
+.lang-buttons button {
+  margin-right: 10px;
+  padding: 9px 16px;
+  background: #0f2742;
+  border: 1px solid #1e3a5f;
+  color: white;
+  cursor: pointer;
+}
+
 h1 {
-  font-size: 46px;
-  margin-bottom: 20px;
+  font-size: 54px;
+  line-height: 1.1;
+  margin-bottom: 28px;
 }
 
 h2 {
-  margin-top: 40px;
+  margin-top: 50px;
   color: #e5e7eb;
+  font-size: 28px;
 }
 
 p {
   color: #d1d5db;
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 18px;
 }
 
-/* BOX */
-.box {
+.quote {
+  margin-top: 36px;
+  padding-left: 20px;
+  border-left: 4px solid #1e3a5f;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
+
+.card {
   background: rgba(17, 24, 39, 0.9);
   padding: 26px;
   border: 1px solid #263241;
-  margin-top: 20px;
 }
 
-/* BUTTON */
+.card h3 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #cbd5e1;
+}
+
 .button {
   display: inline-block;
-  margin-top: 16px;
-  padding: 10px 18px;
+  margin-top: 18px;
+  padding: 11px 18px;
   border: 1px solid #1e3a5f;
   background: #0f2742;
   color: white;
@@ -92,23 +132,28 @@ p {
   background: #1e3a5f;
 }
 
-/* LANGUAGE */
-.lang-buttons button {
-  margin-right: 10px;
-  padding: 8px 14px;
-  background: #0f2742;
-  border: 1px solid #1e3a5f;
-  color: white;
-  cursor: pointer;
-}
-
-.small {
-  font-size: 13px;
+.footer-note {
+  margin-top: 60px;
+  font-size: 14px;
   color: #94a3b8;
 }
 
 .pt {
   display: none;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 22px 28px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  p {
+    font-size: 17px;
+  }
 }
 </style>
 
@@ -153,54 +198,132 @@ window.onload = applyLanguage;
 
 <div class="container">
 
-  <div class="lang-buttons">
-    <button onclick="setLanguage('en')">🇬🇧 English</button>
-    <button onclick="setLanguage('pt')">🇧🇷 Português</button>
+<div class="lang-buttons">
+  <button onclick="setLanguage('en')">🇬🇧 English</button>
+  <button onclick="setLanguage('pt')">🇧🇷 Português</button>
+</div>
+
+<!-- ENGLISH -->
+<div class="en">
+
+<h1>Governance · Risk · Data Quality · AI Evaluation</h1>
+
+<p>
+I operate in environments where structure, documentation and accountability are essential.
+</p>
+
+<p>
+My background in the Brazilian judicial system shaped how I understand decisions, records and institutional responsibility.
+</p>
+
+<p>
+This portfolio brings together my professional experience, ongoing learning, research and reflections on governance, risk, data quality and AI evaluation.
+</p>
+
+<div class="quote">
+What is not properly documented and understood cannot be trusted.
+</div>
+
+<h2>Portfolio Focus</h2>
+
+<div class="cards">
+
+  <div class="card">
+    <h3>Projects</h3>
+    <p>Research and practical work on Artificial Intelligence, employment, decision-making and the role of human judgement.</p>
+    <a href="projects.html" class="button">View Projects</a>
   </div>
 
-  <div class="en">
-    <h1>Governance · Risk · Data Quality · AI Evaluation</h1>
-
-    <p>
-      I operate in environments where structure, documentation and accountability are essential.
-    </p>
-
-    <p>
-      My background in the Brazilian judicial system shaped how I understand decisions,
-      records and institutional responsibility.
-    </p>
-
-    <p>
-      This portfolio brings together my professional experience, ongoing learning and reflections
-      on governance, risk, data quality and AI evaluation.
-    </p>
-
-    <div class="quote">
-      What is not properly documented and understood cannot be trusted.
-    </div>
+  <div class="card">
+    <h3>AI & Data</h3>
+    <p>Notes and examples focused on AI evaluation, data quality, bias, hallucinations, reliability and structured judgement.</p>
+    <a href="ai-evaluation.html" class="button">Explore AI & Data</a>
   </div>
 
-  <div class="pt">
-    <h1>Governança · Risco · Qualidade de Dados · Avaliação de IA</h1>
-
-    <p>
-      Eu atuo em ambientes onde estrutura, documentação e responsabilidade são essenciais.
-    </p>
-
-    <p>
-      Minha experiência no sistema judiciário brasileiro moldou a forma como eu entendo decisões,
-      registros e responsabilidade institucional.
-    </p>
-
-    <p>
-      Este portfólio reúne minha experiência profissional, aprendizado contínuo e reflexões
-      sobre governança, risco, qualidade de dados e avaliação de IA.
-    </p>
-
-    <div class="quote">
-      O que não está devidamente documentado e compreendido não pode ser confiável.
-    </div>
+  <div class="card">
+    <h3>Minutes</h3>
+    <p>Examples of structured governance documentation, including formal minutes and decision/action summaries.</p>
+    <a href="minutes.html" class="button">View Minutes</a>
   </div>
+
+</div>
+
+<h2>Professional Direction</h2>
+
+<p>
+I am building a career focused on governance, compliance, operational risk, executive support and AI-related data quality in regulated environments.
+</p>
+
+<p>
+My work is guided by accuracy, discretion, clear documentation and responsible decision-making.
+</p>
+
+<p class="footer-note">
+Portfolio developed by Thais Granado using HTML as part of a continuous learning and professional development project.
+</p>
+
+</div>
+
+<!-- PORTUGUESE -->
+<div class="pt">
+
+<h1>Governança · Risco · Qualidade de Dados · Avaliação de IA</h1>
+
+<p>
+Atuo em ambientes onde estrutura, documentação e responsabilidade são essenciais.
+</p>
+
+<p>
+Minha experiência no sistema judiciário brasileiro moldou a forma como entendo decisões, registros e responsabilidade institucional.
+</p>
+
+<p>
+Este portfólio reúne minha experiência profissional, aprendizado contínuo, pesquisas e reflexões sobre governança, risco, qualidade de dados e avaliação de IA.
+</p>
+
+<div class="quote">
+O que não está devidamente documentado e compreendido não pode ser confiável.
+</div>
+
+<h2>Foco do Portfólio</h2>
+
+<div class="cards">
+
+  <div class="card">
+    <h3>Projetos</h3>
+    <p>Pesquisas e trabalhos práticos sobre Inteligência Artificial, emprego, tomada de decisão e o papel do julgamento humano.</p>
+    <a href="projects.html" class="button">Ver Projetos</a>
+  </div>
+
+  <div class="card">
+    <h3>IA & Dados</h3>
+    <p>Notas e exemplos sobre avaliação de IA, qualidade de dados, viés, alucinações, confiabilidade e julgamento estruturado.</p>
+    <a href="ai-evaluation.html" class="button">Explorar IA & Dados</a>
+  </div>
+
+  <div class="card">
+    <h3>Minutas</h3>
+    <p>Exemplos de documentação estruturada de governança, incluindo minutas formais e resumos de decisões e ações.</p>
+    <a href="minutes.html" class="button">Ver Minutas</a>
+  </div>
+
+</div>
+
+<h2>Direção Profissional</h2>
+
+<p>
+Estou construindo uma carreira focada em governança, compliance, risco operacional, suporte executivo e qualidade de dados em IA em ambientes regulados.
+</p>
+
+<p>
+Meu trabalho é guiado por precisão, discrição, documentação clara e tomada de decisão responsável.
+</p>
+
+<p class="footer-note">
+Portfólio desenvolvido por Thais Granado usando HTML como parte de um projeto contínuo de aprendizado e desenvolvimento profissional.
+</p>
+
+</div>
 
 </div>
 
