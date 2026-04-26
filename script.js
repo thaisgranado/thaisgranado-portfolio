@@ -1,17 +1,18 @@
 function setLanguage(lang) {
-  localStorage.setItem("lang", lang);
+  localStorage.setItem('lang', lang);
   applyLanguage();
 }
 
 function applyLanguage() {
-  const lang = localStorage.getItem("lang") || "en";
+  const lang = localStorage.getItem('lang') || 'en';
 
-  document.body.classList.remove("lang-en", "lang-pt");
-  document.body.classList.add("lang-" + lang);
+  document.querySelectorAll('.en, .pt').forEach(el => {
+    el.classList.remove('active');
+  });
 
-  document.querySelectorAll("[data-l]").forEach(function(button) {
-    button.classList.toggle("active", button.getAttribute("data-l") === lang);
+  document.querySelectorAll('.' + lang).forEach(el => {
+    el.classList.add('active');
   });
 }
 
-window.addEventListener("DOMContentLoaded", applyLanguage);
+window.onload = applyLanguage;
