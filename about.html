@@ -5,207 +5,160 @@
 <title>About | Thais Granado</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-:root {
-  --bg-main: #6f6f6c;
-  --bg-dark: #0d1b2e;
-  --text-main: #f5f5f5;
-  --text-soft: #d1d1cf;
-  --accent: #d4bfa3;
-}
-
-/* RESET */
-body {
-  margin: 0;
-  font-family: 'DM Sans', Arial, sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-main);
-}
-
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  background-color: var(--bg-dark);
-}
-
-.logo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 20px;
-  letter-spacing: 0.03em;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-nav a {
-  color: var(--text-soft);
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-/* CONTAINER */
-.container {
-  max-width: 900px;
-  margin: 100px auto;
-  padding: 20px;
-}
-
-/* LANGUAGE BUTTONS */
-.lang-buttons {
-  margin-bottom: 30px;
-}
-
-.lang-buttons button {
-  margin-right: 10px;
-  padding: 8px 14px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--text-main);
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.lang-buttons button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* TEXT */
-h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 42px;
-  margin-bottom: 25px;
-}
-
-p {
-  color: var(--text-soft);
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-
-/* LANGUAGE SYSTEM */
-.pt { display: none; }
-
-</style>
-
-<script>
-function setLanguage(lang) {
-  localStorage.setItem('lang', lang);
-  applyLanguage();
-}
-
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
-
-  document.querySelectorAll('.en').forEach(el => {
-    el.style.display = (lang === 'en') ? 'block' : 'none';
-  });
-
-  document.querySelectorAll('.pt').forEach(el => {
-    el.style.display = (lang === 'pt') ? 'block' : 'none';
-  });
-}
-
-window.onload = applyLanguage;
-</script>
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Thais Granado</div>
+<header class="site-header">
+  <a class="logo" href="index.html">Thais Granado</a>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ai-evaluation.html">AI & Data</a>
-    <a href="learning.html">Learning</a>
-    <a href="insights.html">Insights</a>
-    <a href="minutes.html">Minutes</a>
-    <a href="how-i-learn.html">How I Build</a>
-  </nav>
+  <div class="nav-wrap">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ai-evaluation.html">AI & Data</a>
+      <a href="learning.html">Learning</a>
+      <a href="minutes.html">Minutes</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="how-i-learn.html">How I Build</a>
+    </nav>
+
+    <div class="lang-buttons">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('pt')">PT</button>
+    </div>
+  </div>
 </header>
 
-<div class="container">
+<main>
 
-<div class="lang-buttons">
-  <button onclick="setLanguage('en')">🇬🇧 English</button>
-  <button onclick="setLanguage('pt')">🇧🇷 Português</button>
-</div>
+<section class="container grid-2">
 
-<!-- ENGLISH -->
-<div class="en">
+  <div>
+    <div class="en">
+      <h1>About</h1>
+      <div class="section-line"></div>
 
-<h1>About</h1>
+      <p>
+        My professional background is rooted in Law and the Brazilian judicial system,
+        where I developed a strong foundation in documentation, procedural accuracy and responsibility.
+      </p>
 
-<p>
-My professional background is rooted in Law and the Brazilian judicial system,
-where I developed a strong foundation in documentation, procedural accuracy and responsibility.
-</p>
+      <p>
+        Working in structured and sensitive environments required attention to detail,
+        clarity in communication and the ability to manage complex information.
+      </p>
 
-<p>
-Working in structured and sensitive environments required attention to detail,
-clarity in communication and the ability to manage complex information.
-</p>
+      <p>
+        Today, I bring this same mindset into corporate environments in the UK,
+        focusing on governance, risk, data quality and AI evaluation.
+      </p>
 
-<p>
-Today, I bring this same mindset into corporate environments in the UK,
-focusing on governance, risk, data quality and AI evaluation.
-</p>
+      <p>
+        My approach is based on structure, accountability and critical thinking,
+        with a strong emphasis on how decisions are documented, understood and trusted.
+      </p>
+    </div>
 
-<p>
-My approach is based on structure, accountability and critical thinking,
-with a strong emphasis on how decisions are documented, understood and trusted.
-</p>
+    <div class="pt">
+      <h1>Sobre</h1>
+      <div class="section-line"></div>
 
-</div>
+      <p>
+        Minha trajetória profissional tem origem no Direito e no sistema judiciário brasileiro,
+        onde desenvolvi uma base sólida em documentação, precisão processual e responsabilidade.
+      </p>
 
-<!-- PORTUGUESE -->
-<div class="pt">
+      <p>
+        Atuar em ambientes estruturados e sensíveis exigiu atenção aos detalhes,
+        clareza na comunicação e capacidade de lidar com informações complexas.
+      </p>
 
-<h1>Sobre</h1>
+      <p>
+        Hoje, levo essa mesma mentalidade para ambientes corporativos no Reino Unido,
+        com foco em governança, risco, qualidade de dados e avaliação de IA.
+      </p>
 
-<p>
-Minha trajetória profissional tem origem no Direito e no sistema judiciário brasileiro,
-onde desenvolvi uma base sólida em documentação, precisão processual e responsabilidade.
-</p>
+      <p>
+        Minha abordagem é baseada em estrutura, responsabilidade e pensamento crítico,
+        com forte ênfase em como decisões são documentadas, compreendidas e confiáveis.
+      </p>
+    </div>
+  </div>
 
-<p>
-Atuar em ambientes estruturados e sensíveis exigiu atenção aos detalhes,
-clareza na comunicação e capacidade de lidar com informações complexas.
-</p>
+  <div>
+    <img src="profile.jpg.heic" alt="Thais Granado in a corporate setting" class="profile-image">
+  </div>
 
-<p>
-Hoje, levo essa mesma mentalidade para ambientes corporativos no Reino Unido,
-com foco em governança, risco, qualidade de dados e avaliação de IA.
-</p>
+</section>
 
-<p>
-Minha abordagem é baseada em estrutura, responsabilidade e pensamento crítico,
-com forte ênfase em como decisões são documentadas, compreendidas e confiáveis.
-</p>
+<section class="container" style="padding-top: 40px;">
 
-</div>
+  <div class="en">
+    <h2>What I Bring</h2>
+    <div class="section-line"></div>
+  </div>
 
-</div>
+  <div class="pt">
+    <h2>O Que Eu Trago</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid-4">
+
+    <div class="card">
+      <h3>
+        <span class="en">Legal & Compliance</span>
+        <span class="pt">Direito & Compliance</span>
+      </h3>
+      <p>
+        <span class="en">Strong foundation in law, risk and regulation.</span>
+        <span class="pt">Base sólida em direito, risco e regulação.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>
+        <span class="en">Analytical Thinking</span>
+        <span class="pt">Pensamento Analítico</span>
+      </h3>
+      <p>
+        <span class="en">I analyse context, identify risk and ask the right questions.</span>
+        <span class="pt">Analiso contexto, identifico riscos e faço as perguntas certas.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>
+        <span class="en">AI & Data Skills</span>
+        <span class="pt">IA & Dados</span>
+      </h3>
+      <p>
+        <span class="en">Evaluation, data quality, bias detection and response analysis.</span>
+        <span class="pt">Avaliação, qualidade de dados, identificação de viés e análise de respostas.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>
+        <span class="en">Governance Mindset</span>
+        <span class="pt">Mentalidade de Governança</span>
+      </h3>
+      <p>
+        <span class="en">I focus on transparency, accountability and structured processes.</span>
+        <span class="pt">Foco em transparência, responsabilidade e processos estruturados.</span>
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
 
 </body>
 </html>
