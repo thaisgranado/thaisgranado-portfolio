@@ -6,13 +6,17 @@ function setLanguage(lang) {
 function applyLanguage() {
   const lang = localStorage.getItem('lang') || 'en';
 
-  document.querySelectorAll('.en, .pt').forEach(el => {
+  document.querySelectorAll('.en, .pt').forEach(function(el) {
     el.classList.remove('active');
   });
 
-  document.querySelectorAll('.' + lang).forEach(el => {
+  document.querySelectorAll('.' + lang).forEach(function(el) {
     el.classList.add('active');
+  });
+
+  document.querySelectorAll('[data-l]').forEach(function(btn) {
+    btn.classList.toggle('active-btn', btn.getAttribute('data-l') === lang);
   });
 }
 
-window.onload = applyLanguage;
+window.addEventListener('DOMContentLoaded', applyLanguage);
