@@ -6,399 +6,135 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #f4f1ec;
-  --bg-alt: #e9e4dc;
-  --panel-dark: #747471;
-  --card: #ffffff;
-  --text: #1f1f1d;
-  --muted: #5f625f;
-  --gold: #d9c59d;
-  --border: rgba(0,0,0,0.09);
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'DM Sans', Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
-
-header {
-  padding: 22px 40px;
-  background: rgba(244,241,236,0.96);
-  border-bottom: 1px solid var(--border);
-}
-
-.logo {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 24px;
-  color: var(--text);
-}
-
-nav {
-  margin-top: 12px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-nav a:hover { color: var(--text); }
-
-.container {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 20px;
-}
-
-h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(46px, 8vw, 78px);
-  line-height: 1;
-  margin-bottom: 22px;
-}
-
-h2 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 30px;
-  margin-top: 0;
-}
-
-h3 {
-  font-size: 18px;
-  margin-top: 15px;
-}
-
-.subtitle {
-  color: var(--muted);
-  margin-bottom: 40px;
-  font-size: 18px;
-}
-
-.project, .box {
-  margin-bottom: 34px;
-  padding: 30px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-}
-
-.date {
-  color: var(--panel-dark);
-  font-size: 15px;
-  border-left: 3px solid var(--gold);
-  padding-left: 12px;
-}
-
-p {
-  line-height: 1.75;
-  color: var(--muted);
-  font-size: 18px;
-}
-
-ul {
-  padding-left: 20px;
-  color: var(--muted);
-}
-
-li {
-  margin-bottom: 8px;
-  font-size: 17px;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 10px 18px;
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-.button:hover {
-  border-color: var(--gold);
-}
-
-.lang-buttons {
-  margin-bottom: 30px;
-}
-
-.lang-buttons button {
-  margin-right: 10px;
-  padding: 8px 14px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  cursor: pointer;
-  border-radius: 6px;
-  font-family: 'DM Sans', Arial, sans-serif;
-}
-
-.lang-buttons button:hover {
-  border-color: var(--panel-dark);
-  color: var(--text);
-}
-
-.pt { display: none; }
-
-@media (max-width: 768px) {
-  header { padding: 20px 24px; }
-  .container { margin: 55px auto; padding: 20px; }
-  .project, .box { padding: 24px; }
-}
-</style>
-
-<script>
-function setLanguage(lang) {
-  localStorage.setItem('lang', lang);
-  applyLanguage();
-}
-
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
-
-  document.querySelectorAll('.en').forEach(el => {
-    el.style.display = lang === 'en' ? 'block' : 'none';
-  });
-
-  document.querySelectorAll('.pt').forEach(el => {
-    el.style.display = lang === 'pt' ? 'block' : 'none';
-  });
-}
-
-window.onload = applyLanguage;
-</script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Thais Granado</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ai-evaluation.html">AI & Data</a>
-    <a href="learning.html">Learning</a>
-    <a href="minutes.html">Minutes</a>
-    <a href="projects.html">Projects</a>
-  </nav>
+<header class="site-header">
+  <a class="logo" href="index.html">Thais Granado</a>
+
+  <div class="nav-wrap">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ai-evaluation.html">AI & Data</a>
+      <a href="learning.html">Learning</a>
+      <a href="minutes.html">Minutes</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="how-i-learn.html">How I Build</a>
+    </nav>
+
+    <div class="lang-buttons">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('pt')">PT</button>
+    </div>
+  </div>
 </header>
 
-<div class="container">
+<main>
 
-<div class="lang-buttons">
-  <button onclick="setLanguage('en')">🇬🇧 English</button>
-  <button onclick="setLanguage('pt')">🇧🇷 Português</button>
-</div>
+<section class="container">
 
-<!-- ENGLISH -->
-<div class="en">
+  <!-- ENGLISH -->
+  <div class="en">
+    <h1>Projects</h1>
+    <div class="section-line"></div>
 
-<h1>Projects</h1>
+    <p>
+      These projects reflect how I apply governance, structured thinking and data analysis in practical scenarios.
+    </p>
 
-<p class="subtitle">
-This section reflects how I think, analyse and make decisions when working with AI, data and structured environments.
-</p>
+    <div class="card">
+      <h3>AI Evaluation Framework</h3>
+      <p>
+        A structured approach to evaluate AI outputs focusing on accuracy, bias detection and reliability.
+      </p>
+      <p>
+        Demonstrates how human judgment and governance principles improve data quality and decision-making.
+      </p>
+    </div>
 
-<div class="box">
-<h2>How I Work</h2>
-<ul>
-<li>I structure information clearly</li>
-<li>I focus on accuracy and consistency</li>
-<li>I assess risk before accepting outputs</li>
-<li>I question information instead of assuming it is correct</li>
-<li>I use judgement, not only logic</li>
-</ul>
-</div>
+    <div class="card">
+      <h3>Governance Documentation Model</h3>
+      <p>
+        A model for structuring formal documentation, including minutes, records and decision logs.
+      </p>
+      <p>
+        Built from judicial experience and adapted to corporate governance environments.
+      </p>
+    </div>
 
-<div class="project">
-<h2>Artificial Intelligence, Employment and the Future of Skills</h2>
-<p class="date">July 2025 · Research Report</p>
-<p>
-This research explores how Artificial Intelligence is transforming employment structures, with a focus on decision-making, governance and workforce adaptation.
-</p>
-<a href="ai-research-paper.pdf" target="_blank" class="button">
-View Research Report
-</a>
-</div>
+    <div class="card">
+      <h3>Risk & Decision Analysis</h3>
+      <p>
+        A practical framework to analyse decisions, identify risks and support structured outcomes.
+      </p>
+      <p>
+        Focused on clarity, accountability and consistency.
+      </p>
+    </div>
 
-<div class="project">
-<h2>Impact of Artificial Intelligence on Work and Decision-Making</h2>
-<p class="date">February 2026 · Presentation</p>
-<p>
-This presentation analyses how AI is reshaping work, skills and organisational structures, highlighting the importance of human judgement in AI-supported environments.
-</p>
-<a href="ai-presentation.pdf" target="_blank" class="button">
-View Presentation
-</a>
-</div>
+    <p class="small">
+      More projects will be added as part of continuous development.
+    </p>
 
-<div class="project">
-<h2>Case Study: Hallucination Detection</h2>
-<p><strong>Prompt:</strong> "List sources proving AI will replace all jobs"</p>
-<p>
-I analysed the response and noticed that it presented confident claims, but without real or verifiable sources.
-</p>
-<p>
-I classified it as incorrect because the information was not supported by evidence and created a false sense of reliability.
-</p>
-<p><strong>Risk:</strong> High</p>
-<p>
-This made me realise that AI can sound convincing even when it is wrong. Accuracy needs to be actively verified.
-</p>
-</div>
+  </div>
 
-<div class="project">
-<h2>Case Study: Bias Identification</h2>
-<p>
-I evaluated a response about "safe jobs from AI" and noticed that it focused only on Western roles and ignored broader contexts.
-</p>
-<p>
-I considered it partially correct, but biased in how the information was framed.
-</p>
-<p><strong>Risk:</strong> Medium</p>
-<p>
-This showed me that bias is not always explicit. It often appears in what is missing, not only in what is said.
-</p>
-</div>
+  <!-- PORTUGUÊS -->
+  <div class="pt">
+    <h1>Projetos</h1>
+    <div class="section-line"></div>
 
-<div class="project">
-<h2>Case Study: Low Utility Response</h2>
-<p>
-I reviewed a response about how companies should prepare for AI risk. Although technically correct, it was too generic.
-</p>
-<p>
-I classified it as low quality because it did not provide clear or actionable guidance.
-</p>
-<p><strong>Risk:</strong> Medium</p>
-<p>
-This reinforced my view that good answers are not only correct, but useful for decision-making.
-</p>
-</div>
+    <p>
+      Estes projetos refletem como aplico governança, pensamento estruturado e análise de dados em cenários práticos.
+    </p>
 
-<div class="project">
-<h2>Case Study: Instruction Failure</h2>
-<p>
-I analysed a response where the instruction was to answer in bullet points, but the AI ignored the format completely.
-</p>
-<p>
-Even though the content was relevant, I classified it as a failure because it did not follow the instruction.
-</p>
-<p><strong>Risk:</strong> Medium</p>
-<p>
-This showed me that following instructions is part of quality, not just the content itself.
-</p>
-</div>
+    <div class="card">
+      <h3>Framework de Avaliação de IA</h3>
+      <p>
+        Uma abordagem estruturada para avaliar respostas de IA com foco em precisão, identificação de vieses e confiabilidade.
+      </p>
+      <p>
+        Demonstra como o julgamento humano e princípios de governança melhoram a qualidade dos dados.
+      </p>
+    </div>
 
-<div class="project">
-<h2>The Role of Human Judgement in AI</h2>
-<p>
-Through my experience, I realised that AI can process information quickly, but it does not understand context, responsibility or consequences.
-</p>
-<ul>
-<li>I use judgement to identify nuance and ambiguity</li>
-<li>I assess whether information is reliable</li>
-<li>I consider how outputs would impact real decisions</li>
-</ul>
-<p>
-For me, AI supports decisions, but it should never replace human responsibility.
-</p>
-</div>
+    <div class="card">
+      <h3>Modelo de Documentação de Governança</h3>
+      <p>
+        Um modelo para estruturar documentos formais, incluindo atas, registros e decisões.
+      </p>
+      <p>
+        Baseado na experiência jurídica e adaptado para ambientes corporativos.
+      </p>
+    </div>
 
-</div>
+    <div class="card">
+      <h3>Análise de Risco e Decisão</h3>
+      <p>
+        Um framework prático para analisar decisões, identificar riscos e apoiar resultados estruturados.
+      </p>
+      <p>
+        Focado em clareza, responsabilidade e consistência.
+      </p>
+    </div>
 
-<!-- PORTUGUESE -->
-<div class="pt">
+    <p class="small">
+      Novos projetos serão adicionados conforme evolução contínua.
+    </p>
 
-<h1>Projetos</h1>
+  </div>
 
-<p class="subtitle">
-Esta seção mostra como eu penso, analiso e tomo decisões ao trabalhar com IA e dados.
-</p>
+</section>
 
-<div class="box">
-<h2>Como eu trabalho</h2>
-<ul>
-<li>Eu estruturo informações com clareza</li>
-<li>Eu foco em precisão</li>
-<li>Eu avalio risco antes de aceitar respostas</li>
-<li>Eu questiono informações</li>
-<li>Eu uso julgamento humano</li>
-</ul>
-</div>
+</main>
 
-<div class="project">
-<h2>Inteligência Artificial, Emprego e o Futuro das Competências</h2>
-<p class="date">Julho 2025 · Relatório</p>
-<p>
-Este estudo analisa como a IA está transformando o trabalho, com foco em decisão, governança e adaptação profissional.
-</p>
-<a href="ai-research-paper.pdf" target="_blank" class="button">
-Ver relatório
-</a>
-</div>
-
-<div class="project">
-<h2>Impacto da Inteligência Artificial no Trabalho e na Tomada de Decisão</h2>
-<p class="date">Fevereiro 2026 · Apresentação</p>
-<p>
-Esta apresentação analisa como a IA está transformando o trabalho, as competências e as estruturas organizacionais, destacando a importância do julgamento humano.
-</p>
-<a href="ai-presentation.pdf" target="_blank" class="button">
-Ver apresentação
-</a>
-</div>
-
-<div class="project">
-<h2>Alucinação em IA</h2>
-<p>Percebi respostas confiantes sem fontes reais. Classifiquei como incorreta.</p>
-<p><strong>Insight:</strong> IA pode parecer convincente mesmo quando está errada.</p>
-</div>
-
-<div class="project">
-<h2>Viés em IA</h2>
-<p>Identifiquei que a resposta ignorava contextos globais.</p>
-<p><strong>Insight:</strong> o viés muitas vezes está no que não é dito.</p>
-</div>
-
-<div class="project">
-<h2>Baixa utilidade</h2>
-<p>Resposta correta, mas sem aplicação prática.</p>
-<p><strong>Insight:</strong> informação precisa ser útil.</p>
-</div>
-
-<div class="project">
-<h2>Falha de instrução</h2>
-<p>A IA ignorou o formato solicitado.</p>
-<p><strong>Insight:</strong> seguir instruções também define qualidade.</p>
-</div>
-
-<div class="project">
-<h2>Importância do humano</h2>
-<p>IA não entende contexto ou consequência.</p>
-<p><strong>Insight:</strong> decisões exigem julgamento humano.</p>
-</div>
-
-</div>
-
-</div>
+<footer class="footer">
+  <p>© 2026 Thais Granado · London, UK</p>
+</footer>
 
 </body>
 </html>
