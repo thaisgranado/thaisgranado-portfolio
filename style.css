@@ -153,6 +153,11 @@ p{
   text-decoration:none;
   color:inherit;
   box-shadow:0 8px 24px rgba(0,0,0,.035);
+  transition:all .2s ease;
+}
+
+.card{
+  cursor:pointer;
 }
 
 .card p,.card-link p{
@@ -254,6 +259,25 @@ p{
 .en.active,.pt.active{display:block}
 span.en.active,span.pt.active{display:inline}
 
+/* 🔥 NOVO — CARDS INTERATIVOS */
+.card-hidden{
+  display:none;
+  margin-top:12px;
+  border-top:1px solid var(--border);
+  padding-top:14px;
+}
+
+.card.active .card-hidden{
+  display:block;
+}
+
+.card-hidden p{
+  font-size:13px;
+  line-height:1.6;
+  margin-bottom:11px;
+}
+
+/* RESPONSIVE */
 @media(max-width:768px){
   .site-header{
     flex-direction:column;
