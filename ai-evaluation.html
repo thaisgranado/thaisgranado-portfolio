@@ -41,19 +41,13 @@
   <div class="en">
     <h1>AI & Data</h1>
     <div class="section-line"></div>
-
-    <p>
-      I evaluate AI outputs with a focus on accuracy, context, data quality and responsible decision-making.
-    </p>
+    <p>I evaluate AI outputs with a focus on accuracy, context, data quality and responsible decision-making.</p>
   </div>
 
   <div class="pt">
     <h1>IA & Dados</h1>
     <div class="section-line"></div>
-
-    <p>
-      Avalio outputs de IA com foco em precisão, contexto, qualidade de dados e tomada de decisão responsável.
-    </p>
+    <p>Avalio outputs de IA com foco em precisão, contexto, qualidade de dados e tomada de decisão responsável.</p>
   </div>
 
 </section>
@@ -63,47 +57,39 @@
   <div class="grid-4">
 
     <div class="card">
-      <h3>
-        <span class="en">Human Evaluation</span>
-        <span class="pt">Avaliação Humana</span>
-      </h3>
-      <p>
-        <span class="en">I review AI outputs using judgement, context and responsibility.</span>
-        <span class="pt">Avalio respostas de IA usando julgamento, contexto e responsabilidade.</span>
-      </p>
+      <h3><span class="en">Human Evaluation</span><span class="pt">Avaliação Humana</span></h3>
+      <p><span class="en">I review AI outputs using judgement, context and responsibility.</span><span class="pt">Avalio respostas de IA usando julgamento, contexto e responsabilidade.</span></p>
     </div>
 
     <div class="card">
-      <h3>
-        <span class="en">Data Quality</span>
-        <span class="pt">Qualidade de Dados</span>
-      </h3>
-      <p>
-        <span class="en">I assess consistency, completeness and potential data issues.</span>
-        <span class="pt">Avalio consistência, completude e possíveis falhas nos dados.</span>
-      </p>
+      <h3><span class="en">Data Quality</span><span class="pt">Qualidade de Dados</span></h3>
+      <p><span class="en">I assess consistency, completeness and potential data issues.</span><span class="pt">Avalio consistência, completude e possíveis falhas nos dados.</span></p>
     </div>
 
     <div class="card">
-      <h3>
-        <span class="en">Bias & Fairness</span>
-        <span class="pt">Viés & Justiça</span>
-      </h3>
-      <p>
-        <span class="en">I identify bias, assumptions and representation gaps.</span>
-        <span class="pt">Identifico vieses, suposições e lacunas de representação.</span>
-      </p>
+      <h3><span class="en">Bias & Fairness</span><span class="pt">Viés & Justiça</span></h3>
+      <p><span class="en">I identify bias, assumptions and representation gaps.</span><span class="pt">Identifico vieses, suposições e lacunas de representação.</span></p>
     </div>
 
-    <div class="card">
-      <h3>
-        <span class="en">Hallucinations</span>
-        <span class="pt">Alucinações</span>
-      </h3>
-      <p>
-        <span class="en">I detect unsupported claims and factual inaccuracies.</span>
-        <span class="pt">Identifico afirmações sem suporte e erros factuais.</span>
-      </p>
+    <div class="card" onclick="toggleCard(this)">
+      <h3><span class="en">AI Hallucinations</span><span class="pt">Alucinações em IA</span></h3>
+      <p><span class="en">I detect unsupported claims and factual inaccuracies.</span><span class="pt">Identifico informações incorretas e não suportadas por fatos.</span></p>
+
+      <div class="card-hidden">
+        <div class="en">
+          <p>AI hallucinations occur when a model generates outputs that are incorrect, fabricated or not supported by verifiable information. These responses may appear coherent and well structured, which makes this type of error difficult to identify without careful validation.</p>
+          <p>In practice, evaluators check whether the output is aligned with known facts and with the context of the prompt. In ambiguous scenarios, this requires distinguishing between plausible responses and factually incorrect responses, even when both have a similar linguistic structure.</p>
+          <p>When hallucinations are not identified, they may be incorporated into datasets and reinforced during training. This affects downstream tasks such as evaluation, ranking and response generation, reducing system reliability and increasing the risk of spreading incorrect information.</p>
+          <p>For this reason, hallucination mitigation depends on consistent factual validation, clear guidelines and continuous review. This process improves output accuracy and ensures stronger alignment with verifiable information.</p>
+        </div>
+
+        <div class="pt">
+          <p>Alucinações em sistemas de inteligência artificial ocorrem quando o modelo gera outputs incorretos, inventados ou não suportados por informações verificáveis. Essas respostas podem parecer coerentes e bem estruturadas, o que torna esse tipo de erro difícil de identificar sem validação cuidadosa.</p>
+          <p>Na prática, avaliadores verificam se o output está alinhado com fatos conhecidos e com o contexto do prompt. Em cenários ambíguos, esse processo exige distinguir entre respostas plausíveis e respostas factualmente incorretas, mesmo quando ambas apresentam estrutura linguística semelhante.</p>
+          <p>Quando alucinações não são identificadas, elas podem ser incorporadas ao dataset e reforçadas durante o treinamento. Isso impacta tarefas downstream como avaliação, ranqueamento e geração de respostas, reduzindo a confiabilidade do sistema e aumentando o risco de disseminação de informações incorretas.</p>
+          <p>Por isso, a mitigação de alucinações depende de validação factual consistente, aplicação de diretrizes claras e revisão contínua. Esse processo melhora a precisão dos outputs e garante maior alinhamento com informações verificáveis.</p>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -115,47 +101,23 @@
   <div class="grid-4">
 
     <div class="card">
-      <h3>
-        <span class="en">Instruction Following</span>
-        <span class="pt">Seguimento de Instruções</span>
-      </h3>
-      <p>
-        <span class="en">I check whether the response follows the request correctly.</span>
-        <span class="pt">Verifico se a resposta segue corretamente a instrução.</span>
-      </p>
+      <h3><span class="en">Instruction Following</span><span class="pt">Seguimento de Instruções</span></h3>
+      <p><span class="en">I check whether the response follows the request correctly.</span><span class="pt">Verifico se a resposta segue corretamente a instrução.</span></p>
     </div>
 
     <div class="card">
-      <h3>
-        <span class="en">Response Ranking</span>
-        <span class="pt">Classificação de Respostas</span>
-      </h3>
-      <p>
-        <span class="en">I compare outputs and select the most accurate and useful.</span>
-        <span class="pt">Comparo respostas e seleciono a mais precisa e útil.</span>
-      </p>
+      <h3><span class="en">Response Ranking</span><span class="pt">Classificação de Respostas</span></h3>
+      <p><span class="en">I compare outputs and select the most accurate and useful.</span><span class="pt">Comparo respostas e seleciono a mais precisa e útil.</span></p>
     </div>
 
     <div class="card">
-      <h3>
-        <span class="en">Language & Localisation</span>
-        <span class="pt">Idioma & Localização</span>
-      </h3>
-      <p>
-        <span class="en">I evaluate tone, clarity and cultural context.</span>
-        <span class="pt">Avalio tom, clareza e contexto cultural.</span>
-      </p>
+      <h3><span class="en">Language & Localisation</span><span class="pt">Idioma & Localização</span></h3>
+      <p><span class="en">I evaluate tone, clarity and cultural context.</span><span class="pt">Avalio tom, clareza e contexto cultural.</span></p>
     </div>
 
     <div class="card">
-      <h3>
-        <span class="en">Why It Matters</span>
-        <span class="pt">Por Que Importa</span>
-      </h3>
-      <p>
-        <span class="en">Good evaluation reduces risk and supports better decisions.</span>
-        <span class="pt">Uma boa avaliação reduz riscos e melhora decisões.</span>
-      </p>
+      <h3><span class="en">Why It Matters</span><span class="pt">Por Que Importa</span></h3>
+      <p><span class="en">Good evaluation reduces risk and supports better decisions.</span><span class="pt">Uma boa avaliação reduz riscos e melhora decisões.</span></p>
     </div>
 
   </div>
@@ -166,15 +128,8 @@
 
   <div class="card">
     <p>
-      <span class="en">
-        AI can process information fast, but it does not understand context or consequences.
-        Human judgement ensures reliability.
-      </span>
-
-      <span class="pt">
-        A IA processa informação rapidamente, mas não entende contexto ou consequência.
-        O julgamento humano garante confiabilidade.
-      </span>
+      <span class="en">AI can process information fast, but it does not understand context or consequences. Human judgement ensures reliability.</span>
+      <span class="pt">A IA processa informação rapidamente, mas não entende contexto ou consequência. O julgamento humano garante confiabilidade.</span>
     </p>
   </div>
 
