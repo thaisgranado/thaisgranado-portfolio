@@ -4,565 +4,195 @@
 <meta charset="UTF-8">
 <title>Insights | Thais Granado</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #f4f1ec;
-  --bg-alt: #e9e4dc;
-  --panel: #858582;
-  --panel-dark: #747471;
-  --card: #ffffff;
-  --text: #1f1f1d;
-  --muted: #5f625f;
-  --soft: #f7f5f1;
-  --white: #ffffff;
-  --gold: #d9c59d;
-  --navy: #1c2a39;
-  --border: rgba(0,0,0,0.09);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'DM Sans', Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 22px 40px;
-  background: rgba(244,241,236,0.96);
-  border-bottom: 1px solid var(--border);
-}
-
-.logo {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 24px;
-  line-height: 1.05;
-  color: var(--text);
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: flex-end;
-}
-
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: var(--text);
-}
-
-.language {
-  margin-top: 14px;
-  text-align: right;
-}
-
-.language button {
-  background: var(--card);
-  color: var(--muted);
-  border: 1px solid var(--border);
-  padding: 8px 14px;
-  margin-left: 6px;
-  cursor: pointer;
-  border-radius: 6px;
-  font-family: 'DM Sans', Arial, sans-serif;
-}
-
-.language button:hover {
-  border-color: var(--panel-dark);
-  color: var(--text);
-}
-
-.container {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 20px;
-}
-
-h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(46px, 8vw, 78px);
-  line-height: 1;
-  margin-bottom: 32px;
-  color: var(--text);
-}
-
-p {
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: 18px;
-}
-
-.card {
-  background: var(--card);
-  padding: 34px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  margin-top: 28px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-}
-
-.card p strong {
-  color: var(--text);
-  font-size: 1.1rem;
-}
-
-.small {
-  color: var(--panel-dark);
-  font-size: 15px;
-  border-left: 3px solid var(--gold);
-  padding-left: 14px;
-  margin-top: 22px;
-}
-
-.pt {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  header {
-    padding: 20px 24px;
-    flex-direction: column;
-  }
-
-  nav {
-    justify-content: flex-start;
-  }
-
-  .language {
-    text-align: left;
-  }
-
-  .container {
-    margin: 55px auto;
-    padding: 20px;
-  }
-
-  .card {
-    padding: 26px;
-  }
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Thais<br>Granado</div>
+<header class="site-header">
+  <a class="logo" href="index.html">Thais Granado</a>
 
-  <div>
+  <div class="nav-wrap">
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="ai-evaluation.html">AI Evaluation & Data Quality</a>
+      <a href="ai-evaluation.html">AI & Data</a>
       <a href="learning.html">Learning</a>
       <a href="minutes.html">Minutes</a>
       <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="how-i-learn.html">How I Build</a>
     </nav>
 
-    <div class="language">
-      <button onclick="showEnglish()">🇬🇧 English</button>
-      <button onclick="showPortuguese()">🇧🇷 Português</button>
+    <div class="lang-buttons">
+      <button data-l="en" onclick="setLanguage('en')">EN</button>
+      <button data-l="pt" onclick="setLanguage('pt')">PT</button>
     </div>
   </div>
 </header>
 
-<div class="container">
-
-<div class="en">
+<main>
 
-<h1>Insights</h1>
-
-<div class="card">
-<p><strong>Reputation is not built in big moments. It is built in small actions.</strong></p>
+<section class="container">
 
-<p>
-A concept that changed how I see the workplace is reputation capital, introduced by Reid Hoffman, co-founder of LinkedIn.
-</p>
+  <div class="en">
+    <h1>Insights</h1>
+    <div class="section-line"></div>
 
-<p>
-Reputation works like an asset, like money in a bank. You build it or lose it over time through small daily actions.
-</p>
+    <div class="card">
+      <p><strong>Reputation is not built in big moments. It is built in small actions.</strong></p>
 
-<p>
-You deliver work with quality and on time → deposit.<br>
-You take responsibility and bring a solution → deposit.<br>
-You fix something no one noticed → deposit.
-</p>
+      <p>A concept that changed how I see the workplace is reputation capital, introduced by Reid Hoffman, co-founder of LinkedIn.</p>
 
-<p>
-But the opposite also happens.
-</p>
+      <p>Reputation works like an asset, like money in a bank. You build it or lose it over time through small daily actions.</p>
 
-<p>
-You deliver incomplete work and do not communicate → withdrawal.<br>
-You disappear in an important moment → withdrawal.<br>
-You create unnecessary friction in a team → withdrawal.
-</p>
+      <p>You deliver work with quality and on time → deposit.<br>
+      You take responsibility and bring a solution → deposit.<br>
+      You fix something no one noticed → deposit.</p>
 
-<p>
-What changed my perspective is understanding that reputation does not come from one big moment.
-</p>
+      <p>But the opposite also happens.</p>
 
-<p>
-It is built through consistency. In how you work every day, how you communicate and how you act when no one is watching.
-</p>
-
-<p>
-And in the end, it is not your company’s. It is not your manager’s.
-</p>
-
-<p>
-It is yours.
-</p>
-
-<p class="small">
-This connects directly with how I see governance, accountability and decision-making in professional environments.
-</p>
-</div>
-
-<div class="card">
-<p><strong>Confidence and competence are not the same thing.</strong></p>
-
-<p>
-One concept that changed how I see meetings and professional environments is the Dunning-Kruger effect.
-</p>
-
-<p>
-In simple terms, people who know less can sometimes sound more confident because they do not fully understand what they do not know.
-</p>
-
-<p>
-And people who have more knowledge can question themselves more, because they see complexity, risks and nuances.
-</p>
-
-<p>
-This creates a common situation at work.
-</p>
-
-<p>
-Sometimes, the person who speaks the most is not the most prepared.<br>
-And the person who says less may be the one thinking more deeply.
-</p>
-
-<p>
-What changed for me is how I react to this.
-</p>
+      <p>You deliver incomplete work and do not communicate → withdrawal.<br>
+      You disappear in an important moment → withdrawal.<br>
+      You create unnecessary friction in a team → withdrawal.</p>
 
-<p>
-Instead of focusing on who speaks louder, I focus on the quality of the argument.
-</p>
+      <p>What changed my perspective is understanding that reputation does not come from one big moment.</p>
 
-<p>
-And if I realise I have something valuable to add, I see it as a responsibility to contribute, not just an option.
-</p>
+      <p>It is built through consistency, in how you work every day, how you communicate and how you act when no one is watching.</p>
 
-<p>
-Another important shift is using questions.
-</p>
+      <p>And in the end, it is not your company’s. It is not your manager’s.</p>
 
-<p>
-Instead of confronting someone directly, a simple question like “How did you reach that conclusion?” can bring clarity without creating unnecessary friction.
-</p>
+      <p><strong>It is yours.</strong></p>
 
-<p>
-Good questions often reveal more than strong opinions.
-</p>
+      <p class="small">This connects directly with how I see governance, accountability and decision-making in professional environments.</p>
+    </div>
 
-<p class="small">
-This shapes how I approach communication, critical thinking and collaboration in structured environments.
-</p>
-</div>
-
-<div class="card">
-<p><strong>You are not your mistake. How you respond to it defines your credibility.</strong></p>
-
-<p>
-One of the most uncomfortable moments at work is the time between realising you made a mistake and understanding its impact.
-</p>
-
-<p>
-It is that moment where your mind starts racing and the first instinct is often to explain yourself.
-</p>
-
-<p>
-But what I have learned is that this moment can also build credibility.
-</p>
-
-<p>
-The first step is to pause.
-</p>
-
-<p>
-Before reacting, before explaining, before trying to justify anything, you need to slow down and think clearly.
-</p>
-
-<p>
-Then comes the most important shift: focus on the problem before the emotions.
-</p>
-
-<p>
-What exactly happened?<br>
-What needs to be fixed?<br>
-Who is impacted?<br>
-Is this escalating or can it be contained?
-</p>
+    <div class="card">
+      <p><strong>Confidence and competence are not the same thing.</strong></p>
 
-<p>
-Credibility in that moment does not come from justification. It comes from action.
-</p>
+      <p>One concept that changed how I see meetings and professional environments is the Dunning-Kruger effect.</p>
 
-<p>
-Sometimes the situation cannot be reversed. But often, there is still something that can be done.
-</p>
+      <p>In simple terms, people who know less can sometimes sound more confident because they do not fully understand what they do not know.</p>
 
-<p>
-Taking responsibility is not about blaming yourself. It is about showing that you are reliable, even when something goes wrong.
-</p>
+      <p>And people who have more knowledge can question themselves more, because they see complexity, risks and nuances.</p>
 
-<p>
-The most important part is not only fixing the mistake, but understanding what allowed it to happen and how to prevent it in the future.
-</p>
+      <p>This creates a common situation at work.</p>
 
-<p>
-Mistakes are part of any professional environment.
-</p>
+      <p>Sometimes, the person who speaks the most is not the most prepared. And the person who says less may be the one thinking more deeply.</p>
 
-<p>
-What defines you is not the mistake itself, but how you respond, how you communicate and how you move forward.
-</p>
+      <p>What changed for me is how I react to this.</p>
 
-<p>
-You are not your mistake. You are the way you handle it.
-</p>
+      <p>Instead of focusing on who speaks louder, I focus on the quality of the argument.</p>
 
-<p class="small">
-This is how I approach accountability, problem-solving and resilience in professional environments.
-</p>
-</div>
-
-</div>
-
-<div class="pt">
-
-<h1>Insights</h1>
-
-<div class="card">
-<p><strong>Reputação não é construída em grandes momentos. Ela é construída nas pequenas ações.</strong></p>
-
-<p>
-Um conceito que mudou a forma como eu vejo o ambiente de trabalho é o capital de reputação, apresentado por Reid Hoffman, cofundador do LinkedIn.
-</p>
-
-<p>
-A reputação funciona como um ativo, como dinheiro no banco. Você constrói ou perde ao longo do tempo, nas pequenas ações do dia a dia.
-</p>
-
-<p>
-Você entrega um trabalho com qualidade e dentro do prazo → depósito.<br>
-Você assume um erro e já traz uma solução → depósito.<br>
-Você resolve algo que ninguém percebeu → depósito.
-</p>
+      <p>And if I realise I have something valuable to add, I see it as a responsibility to contribute, not just an option.</p>
 
-<p>
-Mas o contrário também acontece.
-</p>
+      <p>Another important shift is using questions.</p>
 
-<p>
-Você entrega algo incompleto e não comunica → retirada.<br>
-Você some em um momento importante → retirada.<br>
-Você cria atrito desnecessário com o time → retirada.
-</p>
-
-<p>
-O que mais mudou minha forma de pensar foi entender que reputação não vem de um grande momento.
-</p>
-
-<p>
-Ela é construída na constância. Na forma como você trabalha todos os dias, como você se comunica e como você age quando ninguém está olhando.
-</p>
-
-<p>
-E no final, ela não é da empresa. Não é do gestor.
-</p>
-
-<p>
-Ela é sua.
-</p>
-
-<p class="small">
-Essa visão se conecta diretamente com como eu enxergo governança, responsabilidade e tomada de decisão no ambiente profissional.
-</p>
-</div>
-
-<div class="card">
-<p><strong>Confiança e competência não são a mesma coisa.</strong></p>
-
-<p>
-Um conceito que mudou a forma como eu vejo reuniões e ambientes profissionais é o efeito Dunning-Kruger.
-</p>
-
-<p>
-De forma simples, pessoas que sabem menos às vezes parecem mais confiantes, porque não conseguem perceber completamente o quanto não sabem.
-</p>
-
-<p>
-E pessoas que têm mais conhecimento podem questionar mais a si mesmas, porque enxergam complexidade, riscos e nuances.
-</p>
-
-<p>
-Isso cria uma situação comum no trabalho.
-</p>
-
-<p>
-Às vezes, quem mais fala não é quem está mais preparado.<br>
-E quem fala menos pode ser quem está pensando com mais profundidade.
-</p>
-
-<p>
-O que mudou para mim foi como eu reajo a isso.
-</p>
-
-<p>
-Em vez de focar em quem fala mais alto, eu foco na qualidade do argumento.
-</p>
-
-<p>
-E se eu percebo que tenho algo relevante para contribuir, eu vejo isso como uma responsabilidade, não apenas uma opção.
-</p>
-
-<p>
-Outra mudança importante foi usar perguntas.
-</p>
-
-<p>
-Em vez de confrontar alguém diretamente, uma pergunta simples como “Como você chegou nessa conclusão?” pode trazer clareza sem criar atrito desnecessário.
-</p>
-
-<p>
-Boas perguntas muitas vezes revelam mais do que opiniões fortes.
-</p>
-
-<p class="small">
-Essa perspectiva influencia como eu me comunico, analiso situações e colaboro em ambientes estruturados.
-</p>
-</div>
-
-<div class="card">
-<p><strong>Você não é o seu erro. A forma como você reage a ele define a sua credibilidade.</strong></p>
-
-<p>
-Um dos momentos mais desconfortáveis no trabalho é o período entre perceber que você cometeu um erro e entender o impacto dele.
-</p>
-
-<p>
-É aquele momento em que a cabeça dispara e a primeira reação normalmente é tentar se explicar.
-</p>
-
-<p>
-Mas o que eu aprendi é que esse momento também pode construir credibilidade.
-</p>
-
-<p>
-O primeiro passo é pausar.
-</p>
-
-<p>
-Antes de reagir, antes de explicar, antes de tentar se justificar, você precisa desacelerar e pensar com clareza.
-</p>
-
-<p>
-Depois vem a mudança mais importante: focar no problema antes das emoções.
-</p>
-
-<p>
-O que exatamente aconteceu?<br>
-O que precisa ser corrigido?<br>
-Quem foi impactado?<br>
-Isso está piorando ou dá para controlar?
-</p>
-
-<p>
-A credibilidade nesse momento não vem da justificativa. Vem da ação.
-</p>
-
-<p>
-Nem sempre dá para reverter o que aconteceu. Mas muitas vezes ainda existe algo que pode ser feito.
-</p>
-
-<p>
-Assumir responsabilidade não é se culpar. É mostrar que você é confiável, mesmo quando algo dá errado.
-</p>
-
-<p>
-A parte mais importante não é apenas corrigir o erro, mas entender o que permitiu que ele acontecesse e como evitar no futuro.
-</p>
-
-<p>
-Erros fazem parte de qualquer ambiente profissional.
-</p>
-
-<p>
-O que te define não é o erro em si, mas como você reage, como você se comunica e como você segue em frente.
-</p>
-
-<p>
-Você não é o seu erro. Você é a forma como lida com ele.
-</p>
-
-<p class="small">
-É assim que eu enxergo responsabilidade, resolução de problemas e maturidade profissional no dia a dia.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<script>
-function showEnglish() {
-  document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
-  document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
-  localStorage.setItem('lang', 'en');
-}
-
-function showPortuguese() {
-  document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
-  document.querySelectorAll('.pt').forEach(el => el.style.display = 'block');
-  localStorage.setItem('lang', 'pt');
-}
-
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
-  if (lang === 'pt') {
-    showPortuguese();
-  } else {
-    showEnglish();
-  }
-}
-
-window.onload = applyLanguage;
-</script>
-
-</body>
-</html>
+      <p>Instead of confronting someone directly, a simple question like “How did you reach that conclusion?” can bring clarity without creating unnecessary friction.</p>
+
+      <p class="small">This is how I connect judgement, communication and professional maturity.</p>
+    </div>
+
+    <div class="card">
+      <p><strong>Accountability is shown most clearly when something goes wrong.</strong></p>
+
+      <p>In professional environments, mistakes can happen. What matters is not only the mistake itself, but how quickly and responsibly you respond.</p>
+
+      <p>The first question should not be “How do I protect myself?”</p>
+
+      <p>The first questions should be:</p>
+
+      <p>What happened?<br>
+      What is the impact?<br>
+      Who is impacted?<br>
+      Is this escalating or can it be contained?</p>
+
+      <p>Credibility in that moment does not come from justification. It comes from action.</p>
+
+      <p>Sometimes the situation cannot be reversed. But often, there is still something that can be done.</p>
+
+      <p>Taking responsibility is not about blaming yourself. It is about showing that you are reliable, even when something goes wrong.</p>
+
+      <p>The most important part is not only fixing the mistake, but understanding what allowed it to happen and how to prevent it in the future.</p>
+
+      <p>Mistakes are part of any professional environment.</p>
+
+      <p>What defines you is not the mistake itself, but how you respond, how you communicate and how you move forward.</p>
+
+      <p><strong>You are not your mistake. You are the way you handle it.</strong></p>
+
+      <p class="small">This is how I approach accountability, problem-solving and resilience in professional environments.</p>
+    </div>
+  </div>
+
+  <div class="pt">
+    <h1>Reflexões</h1>
+    <div class="section-line"></div>
+
+    <div class="card">
+      <p><strong>Reputação não é construída em grandes momentos. Ela é construída nas pequenas ações.</strong></p>
+
+      <p>Um conceito que mudou a forma como eu vejo o ambiente de trabalho é o capital de reputação, apresentado por Reid Hoffman, cofundador do LinkedIn.</p>
+
+      <p>A reputação funciona como um ativo, como dinheiro no banco. Você constrói ou perde ao longo do tempo, por meio de pequenas ações diárias.</p>
+
+      <p>Você entrega trabalho com qualidade e no prazo → depósito.<br>
+      Você assume responsabilidade e traz uma solução → depósito.<br>
+      Você corrige algo que ninguém percebeu → depósito.</p>
+
+      <p>Mas o contrário também acontece.</p>
+
+      <p>Você entrega algo incompleto e não comunica → retirada.<br>
+      Você desaparece em um momento importante → retirada.<br>
+      Você cria atrito desnecessário em uma equipe → retirada.</p>
+
+      <p>O que mudou minha perspectiva foi entender que reputação não vem de um único grande momento.</p>
+
+      <p>Ela é construída pela consistência: pela forma como você trabalha todos os dias, como se comunica e como age quando ninguém está observando.</p>
+
+      <p>No fim, a reputação não pertence à empresa. Não pertence ao seu gestor.</p>
+
+      <p><strong>Ela é sua.</strong></p>
+
+      <p class="small">Isso se conecta diretamente com a forma como vejo governança, responsabilidade e tomada de decisão em ambientes profissionais.</p>
+    </div>
+
+    <div class="card">
+      <p><strong>Confiança e competência não são a mesma coisa.</strong></p>
+
+      <p>Um conceito que mudou a forma como vejo reuniões e ambientes profissionais é o efeito Dunning-Kruger.</p>
+
+      <p>De forma simples, pessoas que sabem menos podem parecer mais confiantes porque não compreendem totalmente o que ainda não sabem.</p>
+
+      <p>E pessoas com mais conhecimento podem se questionar mais, porque enxergam complexidade, riscos e nuances.</p>
+
+      <p>Isso cria uma situação comum no trabalho.</p>
+
+      <p>Às vezes, quem mais fala não é quem está mais preparado. E quem fala menos pode ser quem está pensando com mais profundidade.</p>
+
+      <p>O que mudou para mim foi como eu reajo a isso.</p>
+
+      <p>Em vez de focar em quem fala mais alto, eu foco na qualidade do argumento.</p>
+
+      <p>E, quando percebo que tenho algo útil a acrescentar, vejo isso como uma responsabilidade de contribuir, não apenas como uma opção.</p>
+
+      <p>Outra mudança importante é o uso de perguntas.</p>
+
+      <p>Em vez de confrontar alguém diretamente, uma pergunta simples como “Como você chegou a essa conclusão?” pode trazer clareza sem criar atrito desnecessário.</p>
+
+      <p class="small">É assim que conecto julgamento, comunicação e maturidade profissional.</p>
+    </div>
+
+    <div class="card">
+      <p><strong>A responsabilidade aparece com mais clareza quando algo dá errado.</strong></p>
+
+      <p>Em ambientes profissionais, erros podem acontecer. O que importa não é apenas o erro em si, mas a forma rápida e responsável como você responde.</p>
+
+      <p>A primeira pergunta não deve ser “Como eu me protejo?”</p>
+
+      <p>As primeiras perguntas devem ser:</p>
+
+      <p>O que aconteceu?<br>
+      Qual é o impacto?<br>
