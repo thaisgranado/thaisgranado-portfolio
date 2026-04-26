@@ -1,387 +1,682 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thais Granado | Governance, Risk & AI Evaluation</title>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:      #0d1b2e;
-      --navy-mid:  #122040;
-      --navy-card: #1a2d4a;
-      --accent:    #7a9bb5;
-      --accent2:   #b0c4d8;
-      --ice:       #cadbfc;
-      --white:     #ffffff;
-      --grey:      #8fa3be;
-      --warm:      #c4b49a;
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #f4f1ec;
+      --bg-alt: #e9e4dc;
+      --panel: #858582;
+      --panel-dark: #747471;
+      --card: #ffffff;
+      --text: #1f1f1d;
+      --muted: #5f625f;
+      --soft: #f7f5f1;
+      --white: #ffffff;
+      --gold: #d9c59d;
+      --navy: #1c2a39;
+      --border: rgba(0,0,0,0.09);
+      --shadow: rgba(0,0,0,0.10);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      background: var(--navy);
-      color: var(--white);
+      background: var(--bg);
+      color: var(--text);
       font-family: 'DM Sans', Arial, sans-serif;
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* ── NAV ──────────────────────────────────────────────────── */
     header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(13,27,46,0.96);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(244, 241, 236, 0.96);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(202,219,252,0.08);
+      border-bottom: 1px solid var(--border);
       padding: 0 2.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 62px; flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      flex-wrap: wrap;
     }
 
     .logo {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.05rem; letter-spacing: 0.02em;
-      color: var(--white); text-decoration: none;
+      font-size: 1.18rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+      white-space: nowrap;
     }
 
-    nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+    nav {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
     nav a {
-      color: var(--grey); text-decoration: none;
-      font-size: 0.78rem; font-weight: 400;
-      letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       transition: color 0.2s;
     }
-    nav a:hover { color: var(--accent2); }
 
-    .lang-buttons { display: flex; gap: 0.4rem; }
-    .lang-buttons button {
-      background: var(--navy-card);
-      border: 1px solid rgba(202,219,252,0.15);
-      color: var(--grey); font-size: 0.74rem;
-      font-family: 'DM Sans', Arial, sans-serif;
-      padding: 0.28rem 0.7rem; border-radius: 4px;
-      cursor: pointer; transition: all 0.2s;
+    nav a:hover {
+      color: var(--text);
     }
+
+    .lang-buttons {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+    }
+
+    .lang-buttons button {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-family: 'DM Sans', Arial, sans-serif;
+      padding: 0.34rem 0.72rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
     .lang-buttons button:hover,
     .lang-buttons button.active {
-      border-color: var(--accent2);
-      color: var(--accent2);
+      border-color: var(--panel-dark);
+      color: var(--text);
+      background: var(--soft);
     }
 
-    /* ── HERO ──────────────────────────────────────────────────── */
     .hero {
       min-height: 100vh;
-      background: var(--navy);
+      background: linear-gradient(145deg, var(--panel), var(--panel-dark));
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      padding: 110px 6% 70px;
+      padding: 120px 6% 78px;
       gap: 4rem;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
     }
 
     .hero::before {
       content: '';
-      position: absolute; right: -60px; top: 50%;
+      position: absolute;
+      right: -70px;
+      top: 50%;
       transform: translateY(-50%);
-      width: 500px; height: 500px;
-      border: 1px solid rgba(122,155,181,0.1);
-      border-radius: 50%; pointer-events: none;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 50%;
+      pointer-events: none;
     }
+
     .hero::after {
       content: '';
-      position: absolute; right: 40px; top: 50%;
+      position: absolute;
+      right: 40px;
+      top: 50%;
       transform: translateY(-50%);
-      width: 340px; height: 340px;
-      border: 1px solid rgba(122,155,181,0.06);
-      border-radius: 50%; pointer-events: none;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
-    .hero-left { position: relative; z-index: 2; }
+    .hero-left {
+      position: relative;
+      z-index: 2;
+    }
 
     .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(122,155,181,0.1);
-      border: 1px solid rgba(122,155,181,0.25);
-      color: var(--accent2);
-      font-size: 0.72rem; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.3rem 0.9rem; border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.36rem 0.95rem;
+      border-radius: 50px;
       margin-bottom: 1.8rem;
       animation: fadeUp 0.5s ease both;
     }
+
     .hero-eyebrow::before {
       content: '';
-      width: 5px; height: 5px;
-      background: var(--accent); border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
     }
 
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.6rem, 4.5vw, 4rem);
-      line-height: 1.12; margin-bottom: 1.5rem;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
       color: var(--white);
       animation: fadeUp 0.5s 0.08s ease both;
+      letter-spacing: -0.02em;
     }
-    /* "Risk" / "Risco" in accent blue — clearly readable on dark bg */
+
     .hero-title em {
       font-style: italic;
-      color: var(--accent2);
+      color: var(--gold);
     }
 
     .hero-tagline {
-      color: var(--ice);
-      font-size: 1rem; font-style: italic;
+      color: var(--soft);
+      font-size: 1.02rem;
+      font-style: italic;
       margin-bottom: 0.8rem;
       animation: fadeUp 0.5s 0.15s ease both;
     }
 
     .hero-desc {
-      color: var(--grey); font-size: 0.96rem;
-      max-width: 500px; margin-bottom: 0.9rem;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.96rem;
+      max-width: 540px;
+      margin-bottom: 0.9rem;
       animation: fadeUp 0.5s 0.2s ease both;
       line-height: 1.75;
     }
-    .hero-desc strong { color: var(--ice); font-weight: 500; }
+
+    .hero-desc strong {
+      color: var(--white);
+      font-weight: 500;
+    }
 
     .hero-quote {
-      border-left: 3px solid var(--accent);
+      border-left: 3px solid var(--gold);
       padding-left: 1rem;
-      color: var(--ice); font-size: 0.92rem;
-      font-style: italic; margin: 1.6rem 0 2.2rem;
+      color: var(--soft);
+      font-size: 0.92rem;
+      font-style: italic;
+      margin: 1.6rem 0 2.2rem;
       animation: fadeUp 0.5s 0.25s ease both;
     }
 
     .hero-cta {
-      display: flex; gap: 0.9rem; flex-wrap: wrap;
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
       animation: fadeUp 0.5s 0.3s ease both;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: var(--navy);
+      background: var(--white);
+      color: var(--text);
       font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 600; font-size: 0.83rem;
+      font-weight: 600;
+      font-size: 0.83rem;
       letter-spacing: 0.04em;
-      padding: 0.72rem 1.7rem; border-radius: 6px;
-      text-decoration: none; border: none; cursor: pointer;
+      padding: 0.76rem 1.7rem;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.55);
+      cursor: pointer;
       transition: all 0.2s;
     }
-    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+
+    .btn-primary:hover {
+      background: var(--gold);
+      transform: translateY(-1px);
+    }
 
     .btn-outline {
-      background: transparent; color: var(--ice);
+      background: transparent;
+      color: var(--white);
       font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 500; font-size: 0.83rem;
+      font-weight: 500;
+      font-size: 0.83rem;
       letter-spacing: 0.04em;
-      padding: 0.72rem 1.7rem; border-radius: 6px;
-      border: 1px solid rgba(202,219,252,0.25);
-      text-decoration: none; transition: all 0.2s;
-    }
-    .btn-outline:hover {
-      border-color: var(--accent2);
-      background: rgba(122,155,181,0.08);
+      padding: 0.76rem 1.7rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.42);
+      text-decoration: none;
+      transition: all 0.2s;
     }
 
-    /* ── PILLARS ──────────────────────────────────────────────── */
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.12);
+    }
+
     .hero-right {
-      display: flex; flex-direction: column; gap: 1rem;
-      position: relative; z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
       animation: fadeUp 0.5s 0.35s ease both;
     }
 
     .pillar {
-      background: var(--navy-card);
-      border: 1px solid rgba(202,219,252,0.07);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.50);
+      border-left: 3px solid var(--gold);
+      border-radius: 10px;
       padding: 1.1rem 1.3rem;
-      display: flex; align-items: flex-start; gap: 0.9rem;
-      transition: transform 0.2s;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      color: var(--text);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
     }
-    .pillar:nth-child(2) { border-left-color: var(--accent2); margin-left: 1.2rem; }
-    .pillar:nth-child(3) { border-left-color: var(--warm); margin-left: 2.4rem; }
-    .pillar:hover { transform: translateX(4px); }
 
-    .pillar-icon { font-size: 1.2rem; min-width: 1.8rem; margin-top: 0.1rem; }
+    .pillar:nth-child(2) {
+      border-left-color: var(--navy);
+      margin-left: 1.2rem;
+    }
+
+    .pillar:nth-child(3) {
+      border-left-color: var(--panel-dark);
+      margin-left: 2.4rem;
+    }
+
+    .pillar:hover {
+      transform: translateX(4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+    }
+
+    .pillar-icon {
+      font-size: 1.2rem;
+      min-width: 1.8rem;
+      margin-top: 0.1rem;
+    }
+
     .pillar-label {
-      font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent2); margin-bottom: 0.2rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--panel-dark);
+      margin-bottom: 0.2rem;
     }
-    .pillar:nth-child(3) .pillar-label { color: var(--warm); }
-    .pillar-text { font-size: 0.85rem; color: var(--grey); line-height: 1.5; }
 
-    /* ── STRIP ────────────────────────────────────────────────── */
+    .pillar:nth-child(3) .pillar-label {
+      color: var(--gold);
+    }
+
+    .pillar-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
     .strip {
-      background: var(--navy-mid);
-      border-top: 1px solid rgba(202,219,252,0.06);
-      border-bottom: 1px solid rgba(202,219,252,0.06);
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       padding: 3rem 6%;
       display: grid;
       grid-template-columns: 1fr 2fr;
-      gap: 4rem; align-items: center;
+      gap: 4rem;
+      align-items: center;
     }
+
     .strip-quote {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem; font-style: italic;
-      color: var(--ice); line-height: 1.55;
-      border-left: 3px solid var(--accent);
+      font-size: 1.22rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.55;
+      border-left: 3px solid var(--gold);
       padding-left: 1.1rem;
     }
-    .strip-body { color: var(--grey); font-size: 0.93rem; }
-    .strip-body p + p { margin-top: 0.85rem; }
-    .strip-body strong { color: var(--white); font-weight: 500; }
 
-    /* ── SECTIONS ─────────────────────────────────────────────── */
-    .section     { padding: 5rem 6%; background: var(--navy); }
-    .section-alt { padding: 5rem 6%; background: var(--navy-mid); }
+    .strip-body {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .strip-body p + p {
+      margin-top: 0.85rem;
+    }
+
+    .strip-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 5rem 6%;
+      background: var(--bg);
+    }
+
+    .section-alt {
+      padding: 5rem 6%;
+      background: var(--bg-alt);
+    }
 
     .section-label {
-      font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--accent2); margin-bottom: 0.5rem;
-    }
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.7rem, 2.8vw, 2.3rem);
-      margin-bottom: 0.5rem; line-height: 1.2;
-      color: var(--white);
-    }
-    .section-sub {
-      color: var(--grey); font-size: 0.92rem;
-      margin-bottom: 2.8rem; max-width: 540px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--panel-dark);
+      margin-bottom: 0.5rem;
     }
 
-    /* ── CARDS ────────────────────────────────────────────────── */
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 2.8rem;
+      max-width: 540px;
+    }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       gap: 1.2rem;
     }
+
     .card {
-      background: var(--navy-card);
-      border: 1px solid rgba(202,219,252,0.07);
-      border-radius: 10px; padding: 1.5rem;
-      text-decoration: none; color: inherit;
-      display: flex; flex-direction: column; gap: 0.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
     }
+
     .card::before {
       content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 3px; background: var(--accent);
-      transform: scaleX(0); transform-origin: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--panel-dark);
+      transform: scaleX(0);
+      transform-origin: left;
       transition: transform 0.3s;
     }
-    .card:hover::before { transform: scaleX(1); }
-    .card:hover {
-      border-color: rgba(122,155,181,0.28);
-      transform: translateY(-3px);
-      box-shadow: 0 14px 32px rgba(0,0,0,0.35);
+
+    .card:hover::before {
+      transform: scaleX(1);
     }
-    .card.v2::before { background: var(--accent2); }
-    .card.v2:hover   { border-color: rgba(176,196,216,0.28); }
-    .card.v2 .card-tag, .card.v2 .card-arrow { color: var(--accent2); }
-    .card.v3::before { background: var(--warm); }
-    .card.v3:hover   { border-color: rgba(196,180,154,0.28); }
-    .card.v3 .card-tag, .card.v3 .card-arrow { color: var(--warm); }
+
+    .card:hover {
+      border-color: rgba(0,0,0,0.18);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.10);
+    }
+
+    .card.v2::before {
+      background: var(--navy);
+    }
+
+    .card.v3::before {
+      background: var(--gold);
+    }
 
     .card-tag {
-      font-size: 0.67rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent2);
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--panel-dark);
     }
+
+    .card.v2 .card-tag,
+    .card.v2 .card-arrow {
+      color: var(--navy);
+    }
+
+    .card.v3 .card-tag,
+    .card.v3 .card-arrow {
+      color: #9b875f;
+    }
+
     .card-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.12rem; color: var(--white); line-height: 1.3;
+      font-size: 1.16rem;
+      color: var(--text);
+      line-height: 1.3;
     }
-    .card-desc { color: var(--grey); font-size: 0.84rem; line-height: 1.6; flex: 1; }
+
+    .card-desc {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+
     .card-arrow {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      color: var(--accent2); font-size: 0.78rem; font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--panel-dark);
+      font-size: 0.78rem;
+      font-weight: 600;
       margin-top: 0.3rem;
     }
 
-    /* ── CREDENTIALS ──────────────────────────────────────────── */
     .creds-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
       gap: 1rem;
     }
+
     .cred {
-      background: var(--navy-card);
-      border: 1px solid rgba(202,219,252,0.07);
-      border-radius: 8px; padding: 1.1rem 1.3rem;
-      display: flex; gap: 0.85rem; align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.3rem;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
     }
+
     .cred-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--accent); margin-top: 0.45rem; flex-shrink: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--panel-dark);
+      margin-top: 0.45rem;
+      flex-shrink: 0;
     }
-    .cred-name { font-size: 0.86rem; font-weight: 500; color: var(--white); margin-bottom: 0.12rem; }
-    .cred-org  { font-size: 0.74rem; color: var(--grey); }
 
-    /* ── CONTACT ──────────────────────────────────────────────── */
+    .cred-name {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.12rem;
+    }
+
+    .cred-org {
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
     .contact {
-      text-align: center; padding: 5rem 6%;
+      text-align: center;
+      padding: 5rem 6%;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .contact .btn-primary {
+      background: var(--text);
+      color: var(--white);
+      border-color: var(--text);
+    }
+
+    .contact .btn-primary:hover {
       background: var(--navy);
-      border-top: 1px solid rgba(202,219,252,0.06);
     }
-    .contact .section-sub { margin-left: auto; margin-right: auto; }
-    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
 
-    /* ── FOOTER ───────────────────────────────────────────────── */
+    .contact .btn-outline {
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .contact .btn-outline:hover {
+      background: var(--bg-alt);
+      border-color: var(--panel-dark);
+    }
+
     footer {
-      background: #07111f; padding: 1.4rem 6%;
-      display: flex; justify-content: space-between; align-items: center;
-      border-top: 1px solid rgba(202,219,252,0.05);
-      flex-wrap: wrap; gap: 0.8rem;
+      background: var(--bg-alt);
+      padding: 1.4rem 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 0.8rem;
     }
-    footer p { font-size: 0.76rem; color: var(--grey); }
 
-    /* ── ANIMATIONS ───────────────────────────────────────────── */
+    footer p {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* ── RESPONSIVE ───────────────────────────────────────────── */
     @media (max-width: 768px) {
+      header {
+        height: auto;
+        padding: 1rem 1.2rem;
+        gap: 0.8rem;
+      }
+
+      nav {
+        display: none;
+      }
+
       .hero {
         grid-template-columns: 1fr;
-        padding: 90px 5% 60px; gap: 2.5rem;
+        padding: 100px 5% 60px;
+        gap: 2.5rem;
       }
-      .hero::before, .hero::after { display: none; }
-      .pillar:nth-child(2), .pillar:nth-child(3) { margin-left: 0; }
-      .strip { grid-template-columns: 1fr; gap: 2rem; }
-      header { height: auto; padding: 1rem 1.2rem; gap: 0.8rem; }
-      nav { display: none; }
-      .hero-desc { max-width: 100%; }
+
+      .hero::before,
+      .hero::after {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: clamp(2.6rem, 12vw, 4rem);
+      }
+
+      .hero-desc {
+        max-width: 100%;
+      }
+
+      .pillar:nth-child(2),
+      .pillar:nth-child(3) {
+        margin-left: 0;
+      }
+
+      .strip {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
     }
 
-    /* ── LANGUAGE SYSTEM ──────────────────────────────────────── */
-    .lang-en, .lang-pt { display: none; }
-    .lang-en.show, .lang-pt.show { display: block; }
-    /* inline elements */
-    span.lang-en, span.lang-pt { display: none; }
-    span.lang-en.show, span.lang-pt.show { display: inline; }
+    .lang-en,
+    .lang-pt {
+      display: none;
+    }
+
+    .lang-en.show,
+    .lang-pt.show {
+      display: block;
+    }
+
+    span.lang-en,
+    span.lang-pt {
+      display: none;
+    }
+
+    span.lang-en.show,
+    span.lang-pt.show {
+      display: inline;
+    }
   </style>
-
 </head>
-<body>
 
-<!-- HEADER -->
+<body>
 
 <header>
   <a class="logo" href="index.html">Thais Granado</a>
+
   <nav>
     <a href="about.html">About</a>
     <a href="ai-evaluation.html">AI & Data</a>
@@ -391,63 +686,62 @@
     <a href="projects.html">Projects</a>
     <a href="how-i-learn.html">How I Build</a>
   </nav>
+
   <div class="lang-buttons">
     <button data-l="en" onclick="setLanguage('en')">🇬🇧 English</button>
     <button data-l="pt" onclick="setLanguage('pt')">🇧🇷 Português</button>
   </div>
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
   <div class="hero-left">
 
-```
-<div class="hero-eyebrow">
-  <span class="lang-en">Portfolio · London, UK</span>
-  <span class="lang-pt">Portfólio · Londres, Reino Unido</span>
-</div>
+    <div class="hero-eyebrow">
+      <span class="lang-en">Portfolio · London, UK</span>
+      <span class="lang-pt">Portfólio · Londres, Reino Unido</span>
+    </div>
 
-<h1 class="hero-title">
-  <span class="lang-en">Governance.<br><em>Risk.</em><br>AI Evaluation.</span>
-  <span class="lang-pt">Governança.<br><em>Risco.</em><br>Avaliação de IA.</span>
-</h1>
+    <h1 class="hero-title">
+      <span class="lang-en">Governance.<br><em>Risk.</em><br>AI Evaluation.</span>
+      <span class="lang-pt">Governança.<br><em>Risco.</em><br>Avaliação de IA.</span>
+    </h1>
 
-<p class="hero-tagline">
-  <span class="lang-en">My work is based on structure, accuracy and judgement.</span>
-  <span class="lang-pt">O meu trabalho é baseado em estrutura, precisão e julgamento.</span>
-</p>
+    <p class="hero-tagline">
+      <span class="lang-en">My work is based on structure, accuracy and judgement.</span>
+      <span class="lang-pt">O meu trabalho é baseado em estrutura, precisão e julgamento.</span>
+    </p>
 
-<p class="hero-desc">
-  <span class="lang-en">I focus on how information is organised, interpreted and used in decision-making environments.</span>
-  <span class="lang-pt">Foco em como a informação é organizada, interpretada e utilizada em ambientes de tomada de decisão.</span>
-</p>
+    <p class="hero-desc">
+      <span class="lang-en">I focus on how information is organised, interpreted and used in decision-making environments.</span>
+      <span class="lang-pt">Foco em como a informação é organizada, interpretada e utilizada em ambientes de tomada de decisão.</span>
+    </p>
 
-<p class="hero-desc">
-  <span class="lang-en">My background in the Brazilian judicial system shaped how I understand decisions, records and institutional responsibility.</span>
-  <span class="lang-pt">A minha experiência no sistema judiciário brasileiro moldou a forma como entendo decisões, registros e responsabilidade institucional.</span>
-</p>
+    <p class="hero-desc">
+      <span class="lang-en">My background in the Brazilian judicial system shaped how I understand decisions, records and institutional responsibility.</span>
+      <span class="lang-pt">A minha experiência no sistema judiciário brasileiro moldou a forma como entendo decisões, registros e responsabilidade institucional.</span>
+    </p>
 
-<blockquote class="hero-quote">
-  <span class="lang-en">"What is not properly documented and understood cannot be trusted."</span>
-  <span class="lang-pt">"O que não está devidamente documentado e compreendido não pode ser confiável."</span>
-</blockquote>
+    <blockquote class="hero-quote">
+      <span class="lang-en">"What is not properly documented and understood cannot be trusted."</span>
+      <span class="lang-pt">"O que não está devidamente documentado e compreendido não pode ser confiável."</span>
+    </blockquote>
 
-<div class="hero-cta">
-  <a class="btn-primary" href="projects.html">
-    <span class="lang-en">View Projects</span>
-    <span class="lang-pt">Ver Projetos</span>
-  </a>
-  <a class="btn-outline" href="about.html">
-    <span class="lang-en">About Me</span>
-    <span class="lang-pt">Sobre Mim</span>
-  </a>
-</div>
-```
+    <div class="hero-cta">
+      <a class="btn-primary" href="projects.html">
+        <span class="lang-en">View Projects</span>
+        <span class="lang-pt">Ver Projetos</span>
+      </a>
+
+      <a class="btn-outline" href="about.html">
+        <span class="lang-en">About Me</span>
+        <span class="lang-pt">Sobre Mim</span>
+      </a>
+    </div>
 
   </div>
 
   <div class="hero-right">
+
     <div class="pillar">
       <div class="pillar-icon">⚖️</div>
       <div>
@@ -461,6 +755,7 @@
         </div>
       </div>
     </div>
+
     <div class="pillar">
       <div class="pillar-icon">🤖</div>
       <div>
@@ -474,6 +769,7 @@
         </div>
       </div>
     </div>
+
     <div class="pillar">
       <div class="pillar-icon">🌍</div>
       <div>
@@ -487,168 +783,236 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
-
-<!-- STRIP -->
 
 <div class="strip">
   <p class="strip-quote">
     <span class="lang-en">"This portfolio brings together my professional experience, ongoing learning and reflections on governance, risk, data quality and AI evaluation."</span>
     <span class="lang-pt">"Este portfólio reúne minha experiência profissional, aprendizado contínuo e reflexões sobre governança, risco, qualidade de dados e avaliação de IA."</span>
   </p>
+
   <div class="strip-body">
     <p>
       <span class="lang-en">I believe that strong governance is not a constraint — it is the foundation for <strong>trust, quality and responsible decision-making</strong> in any organisation.</span>
       <span class="lang-pt">Acredito que uma governança sólida não é uma restrição — é a base para <strong>confiança, qualidade e tomada de decisão responsável</strong> em qualquer organização.</span>
     </p>
-    <p style="margin-top:0.85rem">
+
+    <p>
       <span class="lang-en">This work spans the Brazilian judicial system, executive support at companies including Network Rail and CBRE, and ongoing specialisation in AI governance and data quality.</span>
       <span class="lang-pt">Este trabalho abrange o sistema judiciário brasileiro, suporte executivo em empresas como Network Rail e CBRE, e especialização contínua em governança de IA e qualidade de dados.</span>
     </p>
   </div>
 </div>
 
-<!-- FOCUS AREAS -->
-
 <section class="section">
   <div class="section-label">
     <span class="lang-en">What I Do</span>
     <span class="lang-pt">O Que Faço</span>
   </div>
+
   <h2 class="section-title">
     <span class="lang-en">Areas of Focus</span>
     <span class="lang-pt">Áreas de Atuação</span>
   </h2>
+
   <p class="section-sub">
     <span class="lang-en">Structured thinking and analysis in governance, AI evaluation and risk.</span>
     <span class="lang-pt">Pensamento estruturado e análise em governança, avaliação de IA e risco.</span>
   </p>
 
   <div class="card-grid">
+
     <a class="card" href="minutes.html">
       <span class="card-tag">
         <span class="lang-en">Documentation</span>
         <span class="lang-pt">Documentação</span>
       </span>
+
       <div class="card-title">
         <span class="lang-en">Governance & Documentation</span>
         <span class="lang-pt">Governança & Documentação</span>
       </div>
+
       <p class="card-desc">
         <span class="lang-en">I organise and structure information through minutes, records and formal documentation.</span>
         <span class="lang-pt">Organizo e estruturo informações por meio de atas, registros e documentação formal.</span>
       </p>
+
       <span class="card-arrow">
         <span class="lang-en">Explore →</span>
         <span class="lang-pt">Explorar →</span>
       </span>
     </a>
 
-```
-<a class="card v2" href="ai-evaluation.html">
-  <span class="card-tag">
-    <span class="lang-en">AI & Data</span>
-    <span class="lang-pt">IA & Dados</span>
-  </span>
-  <div class="card-title">
-    <span class="lang-en">AI Evaluation & Data Quality</span>
-    <span class="lang-pt">Avaliação de IA & Qualidade de Dados</span>
-  </div>
-  <p class="card-desc">
-    <span class="lang-en">I assess AI outputs for accuracy, bias and reliability, ensuring information can be trusted.</span>
-    <span class="lang-pt">Avalio outputs de IA quanto à precisão, viés e confiabilidade, garantindo que a informação possa ser confiável.</span>
-  </p>
-  <span class="card-arrow">
-    <span class="lang-en">Explore →</span>
-    <span class="lang-pt">Explorar →</span>
-  </span>
-</a>
+    <a class="card v2" href="ai-evaluation.html">
+      <span class="card-tag">
+        <span class="lang-en">AI & Data</span>
+        <span class="lang-pt">IA & Dados</span>
+      </span>
 
-<a class="card v3" href="insights.html">
-  <span class="card-tag">
-    <span class="lang-en">Risk & Analysis</span>
-    <span class="lang-pt">Risco & Análise</span>
-  </span>
-  <div class="card-title">
-    <span class="lang-en">Risk & Decision Support</span>
-    <span class="lang-pt">Risco & Suporte à Decisão</span>
-  </div>
-  <p class="card-desc">
-    <span class="lang-en">I analyse information critically and identify risks before decisions are made.</span>
-    <span class="lang-pt">Analiso informações de forma crítica e identifico riscos antes que as decisões sejam tomadas.</span>
-  </p>
-  <span class="card-arrow">
-    <span class="lang-en">Read →</span>
-    <span class="lang-pt">Ler →</span>
-  </span>
-</a>
-```
+      <div class="card-title">
+        <span class="lang-en">AI Evaluation & Data Quality</span>
+        <span class="lang-pt">Avaliação de IA & Qualidade de Dados</span>
+      </div>
+
+      <p class="card-desc">
+        <span class="lang-en">I assess AI outputs for accuracy, bias and reliability, ensuring information can be trusted.</span>
+        <span class="lang-pt">Avalio outputs de IA quanto à precisão, viés e confiabilidade, garantindo que a informação possa ser confiável.</span>
+      </p>
+
+      <span class="card-arrow">
+        <span class="lang-en">Explore →</span>
+        <span class="lang-pt">Explorar →</span>
+      </span>
+    </a>
+
+    <a class="card v3" href="insights.html">
+      <span class="card-tag">
+        <span class="lang-en">Risk & Analysis</span>
+        <span class="lang-pt">Risco & Análise</span>
+      </span>
+
+      <div class="card-title">
+        <span class="lang-en">Risk & Decision Support</span>
+        <span class="lang-pt">Risco & Suporte à Decisão</span>
+      </div>
+
+      <p class="card-desc">
+        <span class="lang-en">I analyse information critically and identify risks before decisions are made.</span>
+        <span class="lang-pt">Analiso informações de forma crítica e identifico riscos antes que as decisões sejam tomadas.</span>
+      </p>
+
+      <span class="card-arrow">
+        <span class="lang-en">Read →</span>
+        <span class="lang-pt">Ler →</span>
+      </span>
+    </a>
 
   </div>
 </section>
-
-<!-- CREDENTIALS -->
 
 <section class="section-alt">
   <div class="section-label">
     <span class="lang-en">Credentials</span>
     <span class="lang-pt">Credenciais</span>
   </div>
+
   <h2 class="section-title">
     <span class="lang-en">Certifications & Learning</span>
     <span class="lang-pt">Certificações & Aprendizado</span>
   </h2>
+
   <p class="section-sub">
     <span class="lang-en">Continuous learning across AI governance, data protection, cybersecurity and responsible technology.</span>
     <span class="lang-pt">Aprendizado contínuo em governança de IA, proteção de dados, cibersegurança e tecnologia responsável.</span>
   </p>
+
   <div class="creds-grid">
-    <div class="cred"><div class="cred-dot"></div><div><div class="cred-name">AWS Generative AI</div><div class="cred-org">Amazon Web Services · 2026</div></div></div>
-    <div class="cred"><div class="cred-dot" style="background:var(--accent2)"></div><div><div class="cred-name">Responsible AI Practices</div><div class="cred-org">AWS Skill Builder · 2026</div></div></div>
-    <div class="cred"><div class="cred-dot" style="background:var(--warm)"></div><div><div class="cred-name">AI Governance</div><div class="cred-org">Certification · 2025</div></div></div>
-    <div class="cred"><div class="cred-dot"></div><div><div class="cred-name">Data Protection & GDPR</div><div class="cred-org">Certification · 2025</div></div></div>
-    <div class="cred"><div class="cred-dot" style="background:var(--accent2)"></div><div><div class="cred-name">Cybersecurity GRC</div><div class="cred-org">Certification · 2025</div></div></div>
-    <div class="cred"><div class="cred-dot" style="background:var(--warm)"></div><div>
-      <div class="cred-name"><span class="lang-en">Legal Digital Advertising</span><span class="lang-pt">Publicidade Digital Legal</span></div>
-      <div class="cred-org">Santander Open Academy · 10/10</div>
-    </div></div>
-    <div class="cred"><div class="cred-dot"></div><div><div class="cred-name">Certified Mediator</div><div class="cred-org">Court of Justice · Rio de Janeiro</div></div></div>
-    <div class="cred"><div class="cred-dot" style="background:var(--accent2)"></div><div>
-      <div class="cred-name"><span class="lang-en">Law Degree</span><span class="lang-pt">Graduação em Direito</span></div>
-      <div class="cred-org">Brazil</div>
-    </div></div>
+
+    <div class="cred">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-name">AWS Generative AI</div>
+        <div class="cred-org">Amazon Web Services · 2026</div>
+      </div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--navy)"></div>
+      <div>
+        <div class="cred-name">Responsible AI Practices</div>
+        <div class="cred-org">AWS Skill Builder · 2026</div>
+      </div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--gold)"></div>
+      <div>
+        <div class="cred-name">AI Governance</div>
+        <div class="cred-org">Certification · 2025</div>
+      </div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-name">Data Protection & GDPR</div>
+        <div class="cred-org">Certification · 2025</div>
+      </div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--navy)"></div>
+      <div>
+        <div class="cred-name">Cybersecurity GRC</div>
+        <div class="cred-org">Certification · 2025</div>
+      </div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--gold)"></div>
+      <div>
+        <div class="cred-name">
+          <span class="lang-en">Legal Digital Advertising</span>
+          <span class="lang-pt">Publicidade Digital Legal</span>
+        </div>
+        <div class="cred-org">Santander Open Academy · 10/10</div>
+      </div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-name">Certified Mediator</div>
+        <div class="cred-org">Court of Justice · Rio de Janeiro</div>
+      </div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-dot" style="background:var(--navy)"></div>
+      <div>
+        <div class="cred-name">
+          <span class="lang-en">Law Degree</span>
+          <span class="lang-pt">Graduação em Direito</span>
+        </div>
+        <div class="cred-org">Brazil</div>
+      </div>
+    </div>
+
   </div>
 </section>
-
-<!-- CONTACT -->
 
 <section class="contact">
   <div class="section-label">
     <span class="lang-en">Get in Touch</span>
     <span class="lang-pt">Contato</span>
   </div>
+
   <h2 class="section-title">
     <span class="lang-en">Open to Opportunities</span>
     <span class="lang-pt">Aberta a Oportunidades</span>
   </h2>
+
   <p class="section-sub">
     <span class="lang-en">EA/PA and governance roles in financial services, AI and regulated environments — London and the UK.</span>
     <span class="lang-pt">Funções de EA/PA e governança em serviços financeiros, IA e ambientes regulados — Londres e Reino Unido.</span>
   </p>
+
   <div class="contact-links">
     <a class="btn-primary" href="about.html">
       <span class="lang-en">View Full Profile</span>
       <span class="lang-pt">Ver Perfil Completo</span>
     </a>
+
     <a class="btn-outline" href="https://www.linkedin.com/in/thaisgranado-uk" target="_blank" rel="noopener">LinkedIn →</a>
   </div>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
   <p>© 2026 Thais Granado · London, UK</p>
+
   <p>
     <span class="lang-en">Governance · Risk · AI Evaluation</span>
     <span class="lang-pt">Governança · Risco · Avaliação de IA</span>
@@ -664,15 +1028,14 @@
   function applyLanguage() {
     var lang = localStorage.getItem('lang') || 'en';
 
-    // Show/hide all language elements
     document.querySelectorAll('.lang-en, .lang-pt').forEach(function(el) {
       el.classList.remove('show');
     });
+
     document.querySelectorAll('.lang-' + lang).forEach(function(el) {
       el.classList.add('show');
     });
 
-    // Active button state
     document.querySelectorAll('[data-l]').forEach(function(btn) {
       btn.classList.toggle('active', btn.getAttribute('data-l') === lang);
     });
