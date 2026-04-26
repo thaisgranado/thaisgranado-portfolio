@@ -2,431 +2,185 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI Evaluation & Data Quality | Thais Granado</title>
+<title>AI & Data | Thais Granado</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #f4f1ec;
-  --bg-alt: #e9e4dc;
-  --panel-dark: #747471;
-  --card: #ffffff;
-  --text: #1f1f1d;
-  --muted: #5f625f;
-  --gold: #d9c59d;
-  --border: rgba(0,0,0,0.09);
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'DM Sans', Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 22px 40px;
-  background: rgba(244,241,236,0.96);
-  border-bottom: 1px solid var(--border);
-}
-
-.logo {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 24px;
-  line-height: 1.05;
-  color: var(--text);
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: flex-end;
-}
-
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-nav a:hover { color: var(--text); }
-
-.language {
-  margin-top: 14px;
-  text-align: right;
-}
-
-.language button {
-  background: var(--card);
-  color: var(--muted);
-  border: 1px solid var(--border);
-  padding: 8px 14px;
-  margin-left: 6px;
-  cursor: pointer;
-  border-radius: 6px;
-  font-family: 'DM Sans', Arial, sans-serif;
-}
-
-.language button:hover {
-  border-color: var(--panel-dark);
-  color: var(--text);
-}
-
-.container {
-  max-width: 950px;
-  margin: 80px auto;
-  padding: 20px;
-}
-
-h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(44px, 8vw, 76px);
-  line-height: 1;
-  margin-bottom: 30px;
-  color: var(--text);
-}
-
-h2 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  margin-top: 0;
-  color: var(--text);
-  font-size: 30px;
-}
-
-p {
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: 18px;
-}
-
-.card {
-  background: var(--card);
-  padding: 30px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  margin-top: 26px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-}
-
-.small {
-  color: var(--panel-dark);
-  font-size: 15px;
-  border-left: 3px solid var(--gold);
-  padding-left: 14px;
-  margin-top: 20px;
-}
-
-.pt { display: none; }
-
-@media (max-width: 768px) {
-  header {
-    padding: 20px 24px;
-    flex-direction: column;
-  }
-
-  nav { justify-content: flex-start; }
-
-  .language { text-align: left; }
-
-  .container {
-    margin: 55px auto;
-    padding: 20px;
-  }
-
-  .card { padding: 24px; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Thais<br>Granado</div>
+<header class="site-header">
+  <a class="logo" href="index.html">Thais Granado</a>
 
-  <div>
+  <div class="nav-wrap">
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="ai-evaluation.html">AI & Data</a>
       <a href="learning.html">Learning</a>
       <a href="minutes.html">Minutes</a>
       <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="how-i-learn.html">How I Build</a>
     </nav>
 
-    <div class="language">
-      <button onclick="showEnglish()">🇬🇧 English</button>
-      <button onclick="showPortuguese()">🇧🇷 Português</button>
+    <div class="lang-buttons">
+      <button data-l="en" onclick="setLanguage('en')">EN</button>
+      <button data-l="pt" onclick="setLanguage('pt')">PT</button>
     </div>
   </div>
 </header>
 
-<div class="container">
+<main>
 
-<div class="en">
+<section class="container">
 
-<h1>AI Evaluation & Data Quality</h1>
+  <div class="en">
+    <h1>AI & Data</h1>
+    <div class="section-line"></div>
 
-<p>
-I approach AI (Artificial Intelligence) evaluation with the same mindset I developed in legal and governance environments: accuracy matters, context matters and decisions need to be justified.
-</p>
+    <p>
+      I evaluate AI outputs with a focus on accuracy, context, data quality and responsible decision-making.
+    </p>
+  </div>
 
-<p>
-For me, AI evaluation is not only about knowing concepts. It is about identifying what works, what fails, why it fails and how a response can be improved.
-</p>
+  <div class="pt">
+    <h1>IA & Dados</h1>
+    <div class="section-line"></div>
 
-<div class="card">
-<h2>Human Evaluation</h2>
-<p>
-Human evaluation is the process of reviewing AI outputs with judgement, context and responsibility.
-</p>
-<p>
-A response can sound fluent and still be wrong, incomplete or not aligned with the task.
-</p>
-<p class="small">
-How I evaluate: I check accuracy, clarity, usefulness, completeness and whether the response follows the instruction.
-</p>
-</div>
+    <p>
+      Avalio outputs de IA com foco em precisão, contexto, qualidade de dados e tomada de decisão responsável.
+    </p>
+  </div>
 
-<div class="card">
-<h2>Data Quality</h2>
-<p>
-Data quality is essential because AI systems learn from data. If the data is inconsistent, duplicated or incomplete, the output becomes less reliable.
-</p>
-<p>
-Example: if a dataset mixes Brazilian Portuguese and European Portuguese without clear labelling, the model may learn the wrong tone, vocabulary or spelling for the target audience.
-</p>
-<p class="small">
-My judgement: I would flag the inconsistency and recommend standardising the language variant according to the task.
-</p>
-</div>
+</section>
 
-<div class="card">
-<h2>Language and Localisation</h2>
-<p>
-AI evaluation also requires cultural and linguistic judgement. Portuguese is not the same in every context. Brazilian Portuguese and European Portuguese can differ in vocabulary, tone, spelling, legal expressions and user expectations.
-</p>
-<p>
-Example: if a task asks for Brazilian Portuguese, a response using European Portuguese terms may be understandable, but still not fully aligned with the user’s request.
-</p>
-<p class="small">
-How I evaluate: I check whether the language matches the required variant, audience and context.
-</p>
-</div>
+<section class="container">
 
-<div class="card">
-<h2>Hallucinations</h2>
-<p>
-AI hallucinations happen when a system produces information that sounds confident but is false, unsupported or impossible to verify.
-</p>
-<p>
-Example: in a legal context, this would be similar to citing a law, case or regulation that does not exist.
-</p>
-<p class="small">
-How I evaluate: I look for factual errors, unsupported claims and information that requires verification.
-</p>
-</div>
+  <div class="grid-4">
 
-<div class="card">
-<h2>Bias and Fairness</h2>
-<p>
-Bias can appear when responses reflect limited, unfair or unbalanced perspectives.
-</p>
-<p>
-Example: if an AI system assumes that only one cultural, social or linguistic perspective is standard, the output may exclude or misrepresent users.
-</p>
-<p class="small">
-How I evaluate: I check assumptions, representation, tone and possible harm.
-</p>
-</div>
+    <div class="card">
+      <h3>
+        <span class="en">Human Evaluation</span>
+        <span class="pt">Avaliação Humana</span>
+      </h3>
+      <p>
+        <span class="en">I review AI outputs using judgement, context and responsibility.</span>
+        <span class="pt">Avalio respostas de IA usando julgamento, contexto e responsabilidade.</span>
+      </p>
+    </div>
 
-<div class="card">
-<h2>Instruction Following</h2>
-<p>
-A strong AI response must follow the user’s instruction. Good writing is not enough if the answer ignores part of the task.
-</p>
-<p>
-Example: if the prompt asks for a short answer in Brazilian Portuguese and the response is long, formal and written in European Portuguese, it fails the instruction.
-</p>
-<p class="small">
-How I evaluate: I compare the response directly with the prompt and check if every requirement was met.
-</p>
-</div>
+    <div class="card">
+      <h3>
+        <span class="en">Data Quality</span>
+        <span class="pt">Qualidade de Dados</span>
+      </h3>
+      <p>
+        <span class="en">I assess consistency, completeness and potential data issues.</span>
+        <span class="pt">Avalio consistência, completude e possíveis falhas nos dados.</span>
+      </p>
+    </div>
 
-<div class="card">
-<h2>Response Ranking</h2>
-<p>
-Response ranking means comparing different outputs and deciding which one better meets the task.
-</p>
-<p>
-This requires judgement. The best response is not always the longest one. It is the one that is most accurate, useful and aligned with the user’s need.
-</p>
-<p class="small">
-How I evaluate: I compare relevance, completeness, clarity and instruction-following.
-</p>
-</div>
+    <div class="card">
+      <h3>
+        <span class="en">Bias & Fairness</span>
+        <span class="pt">Viés & Justiça</span>
+      </h3>
+      <p>
+        <span class="en">I identify bias, assumptions and representation gaps.</span>
+        <span class="pt">Identifico vieses, suposições e lacunas de representação.</span>
+      </p>
+    </div>
 
-<div class="card">
-<h2>Why this matters</h2>
-<p>
-Small mistakes in AI outputs can be repeated at scale. This is why structured evaluation, human judgement and data quality are essential.
-</p>
-<p>
-My background in law and governance helps me see AI evaluation as a responsibility, not just a technical task.
-</p>
-</div>
+    <div class="card">
+      <h3>
+        <span class="en">Hallucinations</span>
+        <span class="pt">Alucinações</span>
+      </h3>
+      <p>
+        <span class="en">I detect unsupported claims and factual inaccuracies.</span>
+        <span class="pt">Identifico afirmações sem suporte e erros factuais.</span>
+      </p>
+    </div>
 
-</div>
+  </div>
 
-<div class="pt">
+</section>
 
-<h1>Avaliação de IA e Qualidade de Dados</h1>
+<section class="container">
 
-<p>
-Eu abordo a avaliação de IA (Inteligência Artificial) com a mesma mentalidade que desenvolvi em ambientes jurídicos e de governança: precisão importa, contexto importa e decisões precisam ser justificadas.
-</p>
+  <div class="grid-4">
 
-<p>
-Para mim, avaliar IA não é apenas conhecer conceitos. É identificar o que funciona, o que falha, por que falha e como uma resposta pode ser melhorada.
-</p>
+    <div class="card">
+      <h3>
+        <span class="en">Instruction Following</span>
+        <span class="pt">Seguimento de Instruções</span>
+      </h3>
+      <p>
+        <span class="en">I check whether the response follows the request correctly.</span>
+        <span class="pt">Verifico se a resposta segue corretamente a instrução.</span>
+      </p>
+    </div>
 
-<div class="card">
-<h2>Avaliação Humana</h2>
-<p>
-A avaliação humana é o processo de revisar respostas de IA com julgamento, contexto e responsabilidade.
-</p>
-<p>
-Uma resposta pode parecer bem escrita e ainda assim estar errada, incompleta ou desalinhada com a tarefa.
-</p>
-<p class="small">
-Como eu avalio: verifico precisão, clareza, utilidade, completude e aderência às instruções.
-</p>
-</div>
+    <div class="card">
+      <h3>
+        <span class="en">Response Ranking</span>
+        <span class="pt">Classificação de Respostas</span>
+      </h3>
+      <p>
+        <span class="en">I compare outputs and select the most accurate and useful.</span>
+        <span class="pt">Comparo respostas e seleciono a mais precisa e útil.</span>
+      </p>
+    </div>
 
-<div class="card">
-<h2>Qualidade de Dados</h2>
-<p>
-A qualidade dos dados é essencial porque sistemas de IA aprendem a partir de dados. Se os dados são inconsistentes, duplicados ou incompletos, o resultado se torna menos confiável.
-</p>
-<p>
-Exemplo: se um conjunto de dados mistura português brasileiro e português europeu sem identificação clara, o modelo pode aprender tom, vocabulário ou ortografia inadequados para o público-alvo.
-</p>
-<p class="small">
-Meu julgamento: eu sinalizaria a inconsistência e recomendaria padronizar a variante linguística de acordo com a tarefa.
-</p>
-</div>
+    <div class="card">
+      <h3>
+        <span class="en">Language & Localisation</span>
+        <span class="pt">Idioma & Localização</span>
+      </h3>
+      <p>
+        <span class="en">I evaluate tone, clarity and cultural context.</span>
+        <span class="pt">Avalio tom, clareza e contexto cultural.</span>
+      </p>
+    </div>
 
-<div class="card">
-<h2>Linguagem e Localização</h2>
-<p>
-Avaliar IA também exige julgamento cultural e linguístico. O português não é igual em todos os contextos. O português brasileiro e o português europeu podem variar em vocabulário, tom, ortografia, expressões jurídicas e expectativas do usuário.
-</p>
-<p>
-Exemplo: se a tarefa pede português brasileiro, uma resposta com termos de português europeu pode até ser compreensível, mas ainda assim não estar totalmente alinhada ao pedido.
-</p>
-<p class="small">
-Como eu avalio: verifico se a linguagem corresponde à variante exigida, ao público e ao contexto.
-</p>
-</div>
+    <div class="card">
+      <h3>
+        <span class="en">Why It Matters</span>
+        <span class="pt">Por Que Importa</span>
+      </h3>
+      <p>
+        <span class="en">Good evaluation reduces risk and supports better decisions.</span>
+        <span class="pt">Uma boa avaliação reduz riscos e melhora decisões.</span>
+      </p>
+    </div>
 
-<div class="card">
-<h2>Alucinações</h2>
-<p>
-Alucinações em IA acontecem quando o sistema produz informações que parecem confiantes, mas são falsas, sem base ou impossíveis de verificar.
-</p>
-<p>
-Exemplo: em um contexto jurídico, isso seria parecido com citar uma lei, processo ou regulamento que não existe.
-</p>
-<p class="small">
-Como eu avalio: procuro erros factuais, afirmações sem suporte e informações que exigem verificação.
-</p>
-</div>
+  </div>
 
-<div class="card">
-<h2>Viés e Justiça</h2>
-<p>
-O viés pode aparecer quando respostas refletem perspectivas limitadas, injustas ou desequilibradas.
-</p>
-<p>
-Exemplo: se um sistema de IA assume que apenas uma perspectiva cultural, social ou linguística é padrão, a resposta pode excluir ou representar mal alguns usuários.
-</p>
-<p class="small">
-Como eu avalio: verifico suposições, representação, tom e possível impacto.
-</p>
-</div>
+</section>
 
-<div class="card">
-<h2>Aderência às Instruções</h2>
-<p>
-Uma resposta forte de IA precisa seguir a instrução do usuário. Escrever bem não é suficiente se a resposta ignora parte da tarefa.
-</p>
-<p>
-Exemplo: se o prompt pede uma resposta curta em português brasileiro e a resposta é longa, formal e escrita em português europeu, ela falha na instrução.
-</p>
-<p class="small">
-Como eu avalio: comparo a resposta diretamente com o prompt e verifico se todos os requisitos foram atendidos.
-</p>
-</div>
+<section class="container">
 
-<div class="card">
-<h2>Ranking de Respostas</h2>
-<p>
-Ranking de respostas significa comparar diferentes outputs e decidir qual atende melhor à tarefa.
-</p>
-<p>
-Isso exige julgamento. A melhor resposta nem sempre é a mais longa. É aquela que é mais precisa, útil e alinhada à necessidade do usuário.
-</p>
-<p class="small">
-Como eu avalio: comparo relevância, completude, clareza e aderência às instruções.
-</p>
-</div>
+  <div class="card">
+    <p>
+      <span class="en">
+        AI can process information fast, but it does not understand context or consequences.
+        Human judgement ensures reliability.
+      </span>
 
-<div class="card">
-<h2>Por que isso importa</h2>
-<p>
-Pequenos erros em respostas de IA podem ser repetidos em escala. Por isso, avaliação estruturada, julgamento humano e qualidade de dados são essenciais.
-</p>
-<p>
-Minha experiência em Direito e governança me ajuda a enxergar avaliação de IA como responsabilidade, não apenas como tarefa técnica.
-</p>
-</div>
+      <span class="pt">
+        A IA processa informação rapidamente, mas não entende contexto ou consequência.
+        O julgamento humano garante confiabilidade.
+      </span>
+    </p>
+  </div>
 
-</div>
+</section>
 
-</div>
-
-<script>
-function showEnglish() {
-  document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
-  document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
-  localStorage.setItem('lang', 'en');
-}
-
-function showPortuguese() {
-  document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
-  document.querySelectorAll('.pt').forEach(el => el.style.display = 'block');
-  localStorage.setItem('lang', 'pt');
-}
-
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
-  if (lang === 'pt') showPortuguese();
-  else showEnglish();
-}
-
-window.onload = applyLanguage;
-</script>
+</main>
 
 </body>
 </html>
