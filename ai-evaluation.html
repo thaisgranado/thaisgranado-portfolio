@@ -1,10 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI & Data | Thais Granado</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+<a class="logo" href="index.html">Thais Granado</a>
+<div class="nav-wrap">
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="ai-evaluation.html">AI & Data</a>
+<a href="learning.html">Learning</a>
+<a href="minutes.html">Minutes</a>
+<a href="insights.html">Insights</a>
+<a href="projects.html">Projects</a>
+<a href="how-i-learn.html">How I Build</a>
+</nav>
+<div class="lang-buttons">
+<button data-l="en" onclick="setLanguage('en')">EN</button>
+<button data-l="pt" onclick="setLanguage('pt')">PT</button>
+</div>
+</div>
+</header>
+
+<main>
+
+<section class="container">
+<div class="en">
+<h1>AI & Data</h1>
+<div class="section-line"></div>
+<p>I evaluate AI outputs with a focus on accuracy, context, data quality and responsible decision-making.</p>
+</div>
+
+<div class="pt">
+<h1>IA & Dados</h1>
+<div class="section-line"></div>
+<p>Avalio outputs de IA com foco em precisão, contexto, qualidade de dados e tomada de decisão responsável.</p>
+</div>
+</section>
+
+<section class="container">
 <div class="grid-4">
 
-<!-- HUMAN EVALUATION -->
 <div class="card" onclick="toggleCard(this)">
 <h3><span class="en">Human Evaluation</span><span class="pt">Avaliação Humana</span></h3>
 <p><span class="en">I review AI outputs using judgement, context and responsibility.</span><span class="pt">Avalio respostas de IA usando julgamento, contexto e responsabilidade.</span></p>
-
 <div class="card-hidden">
 <div class="en">
 <p>Human data evaluation ensures that AI outputs are accurate, relevant and aligned with task objectives.</p>
@@ -12,7 +59,6 @@
 <p>In ambiguous cases, multiple responses must be compared to determine the most appropriate.</p>
 <p>Consistent evaluation improves data quality and model reliability over time.</p>
 </div>
-
 <div class="pt">
 <p>A avaliação humana garante que outputs de IA sejam precisos, relevantes e alinhados ao objetivo da tarefa.</p>
 <p>Avaliadores aplicam diretrizes para analisar precisão, clareza e aderência às instruções.</p>
@@ -22,158 +68,148 @@
 </div>
 </div>
 
-<!-- DATA QUALITY -->
 <div class="card" onclick="toggleCard(this)">
 <h3><span class="en">Data Quality</span><span class="pt">Qualidade de Dados</span></h3>
 <p><span class="en">I assess consistency, completeness and potential data issues.</span><span class="pt">Avalio consistência, completude e falhas nos dados.</span></p>
-
 <div class="card-hidden">
 <div class="en">
-<p>Data quality determines how reliable and useful AI outputs are.</p>
-<p>Evaluators identify inconsistencies, missing data and incorrect classifications.</p>
-<p>Poor data quality propagates errors into training and reduces system performance.</p>
-<p>Continuous validation ensures consistency and improves model outcomes.</p>
+<p>Data quality is a determining factor in the performance of artificial intelligence systems because models learn directly from the information used in training.</p>
+<p>Inconsistent, incomplete or incorrect data reduces the model’s ability to generate reliable and useful outputs.</p>
+<p>When data quality is not controlled, errors can be incorporated into datasets and propagated during training.</p>
+<p>Robust quality control depends on clear criteria, continuous review and systematic monitoring.</p>
 </div>
-
 <div class="pt">
-<p>A qualidade dos dados determina a confiabilidade dos outputs de IA.</p>
-<p>Avaliadores identificam inconsistências, dados incompletos e classificações incorretas.</p>
-<p>Dados ruins propagam erros no treinamento e reduzem performance.</p>
-<p>Validação contínua melhora consistência e resultados.</p>
+<p>A qualidade dos dados é essencial para o desempenho de sistemas de IA, porque os modelos aprendem diretamente com as informações usadas no treinamento.</p>
+<p>Dados inconsistentes, incompletos ou incorretos reduzem a capacidade do modelo de gerar respostas confiáveis.</p>
+<p>Quando a qualidade não é controlada, erros podem ser incorporados ao dataset e propagados no treinamento.</p>
+<p>O controle de qualidade depende de critérios claros, revisão contínua e monitoramento sistemático.</p>
 </div>
 </div>
 </div>
 
-<!-- BIAS -->
 <div class="card" onclick="toggleCard(this)">
 <h3><span class="en">Bias & Fairness</span><span class="pt">Viés & Justiça</span></h3>
-<p><span class="en">I identify bias, assumptions and representation gaps.</span><span class="pt">Identifico vieses e distorções.</span></p>
-
+<p><span class="en">I identify bias, assumptions and representation gaps.</span><span class="pt">Identifico vieses, suposições e lacunas de representação.</span></p>
 <div class="card-hidden">
 <div class="en">
-<p>Bias occurs when AI outputs reflect distorted or unbalanced patterns from training data.</p>
-<p>Evaluators identify inconsistencies, favoritism or unequal treatment.</p>
-<p>Uncontrolled bias can affect ranking, classification and user experience.</p>
-<p>Mitigation requires diverse data, clear guidelines and continuous evaluation.</p>
+<p>Bias in AI systems occurs when a model produces distorted or unbalanced outputs due to patterns present in training data.</p>
+<p>Evaluators analyse outputs to identify inconsistencies, favouritism or unequal treatment across similar cases.</p>
+<p>When bias is not identified, it can be incorporated into datasets and amplified during training.</p>
+<p>Bias mitigation depends on clear guidelines, diverse data and continuous evaluation.</p>
 </div>
-
 <div class="pt">
-<p>Viés ocorre quando a IA reflete padrões distorcidos presentes nos dados.</p>
-<p>Avaliadores identificam inconsistências e tratamentos desiguais.</p>
-<p>Sem controle, o viés afeta classificação, ranking e experiência do usuário.</p>
-<p>A mitigação depende de diversidade de dados e avaliação contínua.</p>
+<p>Viés em sistemas de IA ocorre quando o modelo produz outputs distorcidos ou desequilibrados por causa de padrões presentes nos dados de treinamento.</p>
+<p>Avaliadores analisam respostas para identificar inconsistências, favorecimento ou tratamento desigual em casos semelhantes.</p>
+<p>Quando o viés não é identificado, ele pode ser incorporado ao dataset e ampliado durante o treinamento.</p>
+<p>A mitigação depende de diretrizes claras, diversidade de dados e avaliação contínua.</p>
 </div>
 </div>
 </div>
 
-<!-- HALLUCINATIONS -->
 <div class="card" onclick="toggleCard(this)">
-<h3><span class="en">AI Hallucinations</span><span class="pt">Alucinações</span></h3>
-<p><span class="en">I detect unsupported claims and factual inaccuracies.</span><span class="pt">Identifico erros factuais.</span></p>
-
+<h3><span class="en">AI Hallucinations</span><span class="pt">Alucinações em IA</span></h3>
+<p><span class="en">I detect unsupported claims and factual inaccuracies.</span><span class="pt">Identifico informações incorretas e não suportadas por fatos.</span></p>
 <div class="card-hidden">
 <div class="en">
-<p>Hallucinations occur when AI generates incorrect or unverifiable information.</p>
-<p>These responses may appear correct but are not grounded in facts.</p>
-<p>Evaluators verify alignment with context and known information.</p>
-<p>Mitigation requires validation, guidelines and continuous review.</p>
+<p>AI hallucinations occur when a model generates outputs that are incorrect, fabricated or not supported by verifiable information.</p>
+<p>These responses may appear coherent and well structured, making this type of error difficult to identify without careful validation.</p>
+<p>When hallucinations are not identified, they may be incorporated into datasets and reinforced during training.</p>
+<p>Mitigation depends on factual validation, clear guidelines and continuous review.</p>
 </div>
-
 <div class="pt">
-<p>Alucinações ocorrem quando a IA gera informações incorretas ou não verificáveis.</p>
-<p>Podem parecer corretas, mas não são baseadas em fatos.</p>
-<p>Avaliadores verificam alinhamento com contexto e informações reais.</p>
-<p>A mitigação exige validação e revisão contínua.</p>
+<p>Alucinações em sistemas de inteligência artificial ocorrem quando o modelo gera outputs incorretos, inventados ou não suportados por informações verificáveis.</p>
+<p>Essas respostas podem parecer coerentes e bem estruturadas, o que torna esse erro difícil de identificar sem validação cuidadosa.</p>
+<p>Quando não identificadas, podem ser incorporadas ao dataset e reforçadas durante o treinamento.</p>
+<p>A mitigação depende de validação factual, diretrizes claras e revisão contínua.</p>
 </div>
 </div>
 </div>
 
-<!-- INSTRUCTION -->
 <div class="card" onclick="toggleCard(this)">
-<h3><span class="en">Instruction Following</span><span class="pt">Instruções</span></h3>
-<p><span class="en">I check if the response follows the request.</span><span class="pt">Verifico aderência à instrução.</span></p>
-
+<h3><span class="en">Instruction Following</span><span class="pt">Seguimento de Instruções</span></h3>
+<p><span class="en">I check whether the response follows the request correctly.</span><span class="pt">Verifico se a resposta segue corretamente a instrução.</span></p>
 <div class="card-hidden">
 <div class="en">
-<p>Instruction following ensures the model responds exactly to the user request.</p>
-<p>Evaluators verify if constraints, format and intent are respected.</p>
-<p>Failures often occur when outputs ignore part of the prompt.</p>
-<p>Accurate instruction following improves usability and trust.</p>
+<p>Instruction following evaluates whether the model responds exactly to the user’s request.</p>
+<p>Evaluators check if the response respects the prompt, required format, constraints and intent.</p>
+<p>Failure happens when the model ignores part of the instruction or answers something different.</p>
+<p>Strong instruction following improves usability, accuracy and trust.</p>
 </div>
-
 <div class="pt">
-<p>Verifica se a resposta segue exatamente o que foi pedido.</p>
-<p>Avaliadores analisam formato, restrições e intenção.</p>
-<p>Erros ocorrem quando partes do prompt são ignoradas.</p>
-<p>Isso impacta diretamente a utilidade da resposta.</p>
+<p>O seguimento de instruções avalia se o modelo responde exatamente ao pedido do usuário.</p>
+<p>Avaliadores verificam se a resposta respeita o prompt, formato, restrições e intenção.</p>
+<p>Falhas ocorrem quando o modelo ignora parte da instrução ou responde algo diferente.</p>
+<p>Um bom seguimento de instruções melhora utilidade, precisão e confiança.</p>
 </div>
 </div>
 </div>
 
-<!-- RANKING -->
 <div class="card" onclick="toggleCard(this)">
-<h3><span class="en">Response Ranking</span><span class="pt">Ranking</span></h3>
-<p><span class="en">I compare outputs and select the best.</span><span class="pt">Comparo respostas.</span></p>
-
+<h3><span class="en">Response Ranking</span><span class="pt">Classificação de Respostas</span></h3>
+<p><span class="en">I compare outputs and select the most accurate and useful.</span><span class="pt">Comparo respostas e seleciono a mais precisa e útil.</span></p>
 <div class="card-hidden">
 <div class="en">
-<p>Ranking compares multiple outputs to determine the most useful and accurate.</p>
-<p>Evaluators consider clarity, correctness and usefulness.</p>
-<p>Small differences can define the best response.</p>
-<p>This improves model alignment with user expectations.</p>
+<p>Response ranking compares multiple AI outputs to determine which one best satisfies the task.</p>
+<p>Evaluators assess accuracy, relevance, clarity, completeness and usefulness.</p>
+<p>Small differences in wording, factuality or instruction adherence can change the ranking.</p>
+<p>This process improves model alignment with user expectations.</p>
 </div>
-
 <div class="pt">
-<p>Ranking compara múltiplas respostas para identificar a melhor.</p>
-<p>Critérios incluem clareza, precisão e utilidade.</p>
-<p>Diferenças sutis determinam a melhor escolha.</p>
-<p>Isso melhora alinhamento com o usuário.</p>
+<p>A classificação de respostas compara múltiplos outputs para identificar qual atende melhor à tarefa.</p>
+<p>Avaliadores analisam precisão, relevância, clareza, completude e utilidade.</p>
+<p>Pequenas diferenças de linguagem, factualidade ou aderência à instrução podem mudar o ranking.</p>
+<p>Esse processo melhora o alinhamento do modelo com a expectativa do usuário.</p>
 </div>
 </div>
 </div>
 
-<!-- LANGUAGE -->
 <div class="card" onclick="toggleCard(this)">
 <h3><span class="en">Language & Localisation</span><span class="pt">Idioma & Localização</span></h3>
-<p><span class="en">I evaluate tone and cultural context.</span><span class="pt">Avalio tom e contexto cultural.</span></p>
-
+<p><span class="en">I evaluate tone, clarity and cultural context.</span><span class="pt">Avalio tom, clareza e contexto cultural.</span></p>
 <div class="card-hidden">
 <div class="en">
-<p>Language evaluation ensures outputs are clear, natural and culturally appropriate.</p>
-<p>Localisation adapts content to regional variations, such as PT-BR vs PT-PT.</p>
-<p>Even correct translations can sound unnatural without localisation.</p>
-<p>This improves user experience and communication accuracy.</p>
+<p>Language and localisation evaluation ensures that outputs are not only grammatically correct, but also natural and culturally appropriate.</p>
+<p>For example, Brazilian Portuguese and European Portuguese can express the same idea differently.</p>
+<p>A response may be technically correct but still sound unnatural if it ignores regional vocabulary, tone or cultural context.</p>
+<p>Good localisation improves clarity, trust and user experience.</p>
 </div>
-
 <div class="pt">
-<p>Avalia se a linguagem é natural e adequada culturalmente.</p>
-<p>Localização adapta conteúdo para regiões, como PT-BR e PT-PT.</p>
-<p>Traduções corretas podem soar estranhas sem adaptação.</p>
-<p>Isso melhora a experiência do usuário.</p>
+<p>A avaliação de idioma e localização garante que os outputs sejam não apenas gramaticalmente corretos, mas também naturais e adequados ao contexto cultural.</p>
+<p>Por exemplo, o português do Brasil e o português europeu podem expressar a mesma ideia de formas diferentes.</p>
+<p>Uma resposta pode estar tecnicamente correta, mas soar artificial se ignorar vocabulário regional, tom ou contexto cultural.</p>
+<p>Uma boa localização melhora clareza, confiança e experiência do usuário.</p>
 </div>
 </div>
 </div>
 
-<!-- WHY -->
 <div class="card" onclick="toggleCard(this)">
 <h3><span class="en">Why It Matters</span><span class="pt">Por Que Importa</span></h3>
-<p><span class="en">Evaluation reduces risk and improves decisions.</span><span class="pt">Reduz risco e melhora decisões.</span></p>
-
+<p><span class="en">Good evaluation reduces risk and supports better decisions.</span><span class="pt">Uma boa avaliação reduz riscos e melhora decisões.</span></p>
 <div class="card-hidden">
 <div class="en">
-<p>AI evaluation directly impacts system reliability and user trust.</p>
-<p>Poor evaluation leads to errors, bias and misinformation.</p>
-<p>Strong evaluation improves consistency and output quality.</p>
-<p>This is critical in real-world decision environments.</p>
+<p>AI evaluation matters because model outputs can influence decisions, workflows and user trust.</p>
+<p>Poor evaluation may allow errors, bias or misinformation to remain in the system.</p>
+<p>Strong evaluation improves consistency, reliability and accountability.</p>
+<p>In real-world environments, human judgement remains essential to responsible AI use.</p>
 </div>
-
 <div class="pt">
-<p>A avaliação impacta diretamente a confiabilidade da IA.</p>
-<p>Erros geram risco e desinformação.</p>
-<p>Boa avaliação melhora consistência e qualidade.</p>
-<p>Isso é essencial em ambientes reais.</p>
+<p>A avaliação de IA importa porque os outputs podem influenciar decisões, fluxos de trabalho e confiança do usuário.</p>
+<p>Uma avaliação fraca pode permitir que erros, vieses ou desinformação permaneçam no sistema.</p>
+<p>Uma avaliação forte melhora consistência, confiabilidade e responsabilidade.</p>
+<p>Em ambientes reais, o julgamento humano continua essencial para o uso responsável da IA.</p>
 </div>
 </div>
 </div>
 
 </div>
+</section>
+
+<section class="container">
+<div class="card">
+<p><span class="en">AI can process information fast, but it does not understand context or consequences. Human judgement ensures reliability.</span><span class="pt">A IA processa informação rapidamente, mas não entende contexto ou consequência. O julgamento humano garante confiabilidade.</span></p>
+</div>
+</section>
+
+</main>
+</body>
+</html>
